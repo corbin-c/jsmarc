@@ -1,0 +1,14 @@
+form
+{
+	padding: 10px;
+}
+input, label, progress
+{
+	padding: 3px;
+	margin: 10px;
+	display: block;
+}
+input, progress
+{
+	margin-left: 40px;
+}
