@@ -1,13 +1,15 @@
 summary = new Summary();
-function custom_push(obj,to_add)
+function custom_push(obj,to_add,field)
 {
 	if (typeof obj[to_add] === "undefined")
 	{
 		obj[to_add] = {value:to_add,count:1}
+		postMessage({added:obj[to_add],field:field})
 	}
 	else
 	{
 		obj[to_add].count++
+		postMessage({increment:obj[to_add],field:field})
 	}
 }
 function Summary()
@@ -75,13 +77,13 @@ Summary.prototype.subfields = function(field_number,field)
 			}
 			else
 			{
-				custom_push(this.fields[field_number],field[Object.keys(field)[a]][b]);
+				custom_push(this.fields[field_number],field[Object.keys(field)[a]][b],field_number);
 			}
 		}
 	}
 	if (this.parameters.concat_with)
 	{
-		custom_push(this.fields[field_number],tmp_field);
+		custom_push(this.fields[field_number],tmp_field,field_number);
 	}
 }
 onmessage = function(e) {
@@ -95,7 +97,7 @@ onmessage = function(e) {
 	}
 	else
 	{
-		summary.incorporate(e.data);
+		summary.incorporate(e.data.fields);
 		postMessage({fields:summary.fields,records:summary.records_done});
 	}
 }

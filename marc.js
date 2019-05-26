@@ -1,4 +1,5 @@
 // INSTANTIATE WORKERS
+marc_pre_parser = new Worker("parser.worker.js");
 marc_parser = new Worker("parser.worker.js");
 marc_summary = new Worker("summary.worker.js");
 marc_filter = new Worker("filter.worker.js");
@@ -69,6 +70,13 @@ async function marc(data)
 		}
 	});
 	// Marc parser parses records & extracts specified fields for further work (filtering, summarizing)
+	marc_pre_parser.postMessage({parameters:
+		{
+			cfz:get_param("cfz",true),
+			ssz:get_param("ssz",true),
+			fields:[Object.keys(config.filter)[0].split("$")[0]]
+		}
+	});
 	marc_parser.postMessage({parameters:
 		{
 			cfz:get_param("cfz",true),
@@ -77,18 +85,23 @@ async function marc(data)
 		}
 	});
 // HANDLE WORKERS RESPONSES
-	marc_parser.onmessage = function (e) {
+	marc_pre_parser.onmessage = function (e) {
 			document.getElementById("parse").setAttribute("value",e.data.records);
-			document.getElementById("parse").innerHTML = Math.floor((e.data.records/document.getElementById("parse").getAttribute("max"))*100)+"%";
+			document.getElementById("parse").innerHTML = Number.parseFloat((e.data.records/document.getElementById("parse").getAttribute("max"))*100).toFixed(1)+"%";
 			document.getElementById("l_parse").children[0].innerHTML = document.getElementById("parse").innerHTML;
 			//if (e.data.recordID < 10) {console.log(e.data)}
 			marc_filter.postMessage(e.data);
 			//marc_summary.postMessage(e.data.fields);
 		};
+	marc_parser.onmessage = function (e) {
+			//if (e.data.recordID < 10) {console.log(e.data)}
+			//marc_filter.postMessage(e.data);
+			marc_summary.postMessage(e.data);
+		};
 	marc_filter.onmessage = function(e) {
 		if (e.data)
 		{
-			marc_summary.postMessage(e.data.fields);
+			marc_parser.postMessage({data:data[e.data.recordID],recordID:e.data.recordID});
 		}
 		else
 		{
@@ -101,6 +114,59 @@ async function marc(data)
 		{
 			console.log(e.data.fields)
 		}
+		else if (typeof e.data.added !== "undefined")
+		{
+			field_table = document.getElementById("table_"+e.data.field);
+			if (field_table === null)
+			{
+				var field_table = document.createElement("table")
+				field_table.setAttribute("id","table_"+e.data.field);
+				var thead = document.createElement("thead");
+				var tbody = document.createElement("tbody");
+				var tr = document.createElement("tr");
+				var tr2 = document.createElement("tr");
+				thead.append(tr);
+				thead.append(tr2);
+				field_table.append(thead);
+				field_table.append(tbody);
+				var th = document.createElement("th");
+				th.setAttribute("colspan",2);
+				th.innerHTML = e.data.field;
+				tr.append(th);
+				var th_value = document.createElement("th");
+				th_value.innerHTML = "Value";
+				var th_count = document.createElement("th");
+				th_count.innerHTML = "Count";
+				tr2.append(th_value)
+				tr2.append(th_count)
+				document.querySelector("section").append(field_table);
+			}
+			var tr3 = document.createElement("tr");
+			tr3.setAttribute("id","row_"+e.data.field+btoa(encodeURI(e.data.added.value)))
+			var td = document.createElement("td");
+			var td2 = document.createElement("td");
+			td2.setAttribute("class","count");
+			td.innerHTML = e.data.added.value
+			td2.innerHTML = e.data.added.count
+			tr3.append(td);
+			tr3.append(td2);
+			field_table.querySelector("tbody").append(tr3);
+		}
+		else if (typeof e.data.increment !== "undefined")
+		{
+			var tr = document.getElementById("row_"+e.data.field+btoa(encodeURI(e.data.increment.value)));
+			count = tr.querySelector(".count");
+			count.innerHTML = e.data.increment.count;
+			var children = [...tr.parentElement.children]
+			for (k=0;k<children.length;k++)
+			{
+				if (Number(children[k].children[1].innerHTML) < Number(count.innerHTML))
+				{
+					tr.parentElement.insertBefore(tr,document.getElementById(children[k].getAttribute("id")))
+					break;
+				}
+			}
+		}
 		else
 		{
 			config.records_done = e.data.records;
@@ -111,11 +177,18 @@ async function marc(data)
 	var r_s = 0;
 	for (i in data)
 	{
-		marc_parser.postMessage({data:data[i],recordID:i});
-		await incr_wait(0,1);
+		if (config.filter_type !== false)
+		{
+			marc_pre_parser.postMessage({data:data[i],recordID:i});
+		}
+		else
+		{
+			marc_parser.postMessage({data:data[i],recordID:i});
+		}
+		await incr_wait(0,0);
 		r_s++;
 		document.getElementById("sent").setAttribute("value",r_s);
-		document.getElementById("sent").innerHTML = Math.floor((r_s/document.getElementById("sent").getAttribute("max"))*100)+"%";
+		document.getElementById("sent").innerHTML = Number.parseFloat((r_s/document.getElementById("sent").getAttribute("max"))*100).toFixed(1)+"%";
 		document.getElementById("l_sent").children[0].innerHTML = document.getElementById("sent").innerHTML;
 	}
 }
@@ -123,7 +196,7 @@ function summarize_upd()
 {
 	document.getElementById("analysis").setAttribute("value",config.records_done);
 	document.getElementById("analysis").setAttribute("max",config.records);
-	document.getElementById("analysis").innerHTML = Math.floor((config.records_done/document.getElementById("analysis").getAttribute("max"))*100)+"%";
+	document.getElementById("analysis").innerHTML = Number.parseFloat((config.records_done/document.getElementById("analysis").getAttribute("max"))*100).toFixed(1)+"%";
 	document.getElementById("l_analysis").children[0].innerHTML = document.getElementById("analysis").innerHTML;
 	if (config.records_done == config.records)
 	{
