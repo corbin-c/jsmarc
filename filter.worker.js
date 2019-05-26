@@ -24,14 +24,14 @@ onmessage = function(e) {
 				}
 				else if (parameters.filter_type == "<")
 				{
-					if (parseInt(e.data.fields[parameters.filter_field][a][parameters.filter_subfield][b]) < parseInt(parameters.filter[Object.keys(parameters.filter)[0]]))
+					if (parseInt(e.data.fields[parameters.filter_field][a][parameters.filter_subfield][b]) <= parseInt(parameters.filter[Object.keys(parameters.filter)[0]]))
 					{
 						filtered = false;
 					}
 				}
 				else if (parameters.filter_type == ">")
 				{
-					if (parseInt(e.data.fields[parameters.filter_field][a][parameters.filter_subfield][b]) > parseInt(parameters.filter[Object.keys(parameters.filter)[0]]))
+					if (parseInt(e.data.fields[parameters.filter_field][a][parameters.filter_subfield][b]) >= parseInt(parameters.filter[Object.keys(parameters.filter)[0]]))
 					{
 						filtered = false;
 					}

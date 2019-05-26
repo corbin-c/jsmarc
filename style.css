@@ -12,3 +12,7 @@ input, progress
 {
 	margin-left: 40px;
 }
+section
+{
+	display:flex;
+}
