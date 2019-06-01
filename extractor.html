@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>MARC Reader</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="../style.css">
+	<script src="config2.js"></script>
+	<script src="marc2.js"></script>
+</head>
+<body>
+	<header><h1>MARC Utility</h1></header>
+	<section>
+		<form id="marc_in">
+			<label for="issn">Champ à filtrer</label><input type="text" id="issn" name="issn" value="010$a">
+			<label for="cfz">Caractère de fin de zone</label><input type="text" id="cfz" name="cfz" value="\u001e">
+			<label for="cfn">Caractère de fin de notice</label><input type="text" id="cfn" name="cfn" value="\u001d">
+			<label for="ssz">Séparateur de sous-zone</label><input type="text" id="ssz" name="ssz" value="\u001f">
+			<label for="input_file1">Sélectionner une notice MARC</label><input type="file" id="input_file1" name="input_file1">
+			<label for="input_file2">Sélectionner un fichier CSV</label><input type="file" id="input_file2" name="input_file2">
+<input type="button" value="Valider" onclick="marc_extract()">
+		</form>
+		<div id="progress" style="display:none;">
+			<label id="l_sent" for="sent">Data loading : <strong></strong></label><progress id="sent" max="100" value="0"></progress>
+			<label id="l_parse" for="parse">Data filtering : <strong></strong></label><progress id="parse" max="100" value="0"></progress>
+			<label id="l_analysis" for="analysis">Data parsing : <strong></strong></label><progress id="analysis" max="100" value="0"></progress>
+		</div>
+	</section>
+	<footer></footer>
+</body></html>
