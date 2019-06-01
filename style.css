@@ -14,5 +14,30 @@ input, progress
 }
 section
 {
-	display:flex;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+.raw *
+{
+	font-weight: lighter !important;
+	font-family: Monospace !important;
+	font-size: 0.9em;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-all;
+	text-align: justify;
+}
+table, table *
+{
+	border: 1px solid black;
+	border-collapse:collapse;
+}
+table *
+{
+	padding: 3px;
+}
+table
+{
+	margin: 10px;
 }
