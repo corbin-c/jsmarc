@@ -1,8 +1,8 @@
 config = {
-	fields:["200"],
+	fields:[],
 	indicators:{},
-	excluded_subfields:{"200":["f","g","b"]},
-	concat:" ",
+	included_subfields:{},
+	concat:"",
 	filter_type:false,
-	filter:{"210$d":"2013"}
+	filter:{}
 }

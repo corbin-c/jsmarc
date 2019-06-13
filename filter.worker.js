@@ -3,8 +3,11 @@ onmessage = function(e) {
 	if (typeof e.data.parameters !== "undefined")
 	{
 		parameters = e.data.parameters;
-		parameters.filter_field = Object.keys(parameters.filter)[0].split("$")[0];
-		parameters.filter_subfield = Object.keys(parameters.filter)[0].split("$")[1];
+		if (e.data.parameters.filter_type !== false)
+		{
+			parameters.filter_field = Object.keys(parameters.filter)[0].split("$")[0];
+			parameters.filter_subfield = Object.keys(parameters.filter)[0].split("$")[1];
+		}
 	}
 	else if (parameters.filter_type)
 	{

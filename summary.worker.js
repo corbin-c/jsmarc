@@ -44,9 +44,9 @@ Summary.prototype.incorporate = function(data)
 				delete tmp_field.indicator;
 				for (k=0;k<Object.keys(data[Object.keys(data)[i]][j]).length;k++)
 				{
-					if (typeof this.parameters.excluded_subfields[Object.keys(data)[i]] !== "undefined")
+					if (typeof this.parameters.included_subfields[Object.keys(data)[i]] !== "undefined")
 					{
-						if (this.parameters.excluded_subfields[Object.keys(data)[i]].indexOf(Object.keys(data[Object.keys(data)[i]][j])[k]) >= 0)
+						if (this.parameters.included_subfields[Object.keys(data)[i]].indexOf(Object.keys(data[Object.keys(data)[i]][j])[k]) < 0)
 						{
 							var key = Object.keys(data[Object.keys(data)[i]][j])[k];
 							delete tmp_field[key];
