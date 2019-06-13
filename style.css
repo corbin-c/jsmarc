@@ -2,15 +2,22 @@ form
 {
 	padding: 10px;
 }
-input, label, progress
+input, label, progress, select
 {
 	padding: 3px;
 	margin: 10px;
 	display: block;
 }
-input, progress
+input, progress, select
 {
 	margin-left: 40px;
+}
+fieldset
+{
+	//display: none;
+	position: absolute;
+	top: 20px;
+	left: 30%;
 }
 section
 {
@@ -40,4 +47,8 @@ table *
 table
 {
 	margin: 10px;
+}
+#l_filter,#filter,#l_td,#to_display,#l_if2,#input_file2
+{
+	display: none;
 }
