@@ -90,6 +90,7 @@ function marc_viz(data,raw)
 		var res = document.createElement("div");
 		res.setAttribute("id","results");
 		document.querySelector("section").append(res);
+		document.querySelector("#results").append(frame);
 	}
 	var traw = document.createElement("tr");
 	traw.setAttribute("class","raw")
@@ -376,6 +377,7 @@ async function marc(data,mode)
 			cfz:get_param("cfz",true),
 			ssz:get_param("ssz",true),
 			fields:config.fields,
+			included_subfields:config.included_subfields
 		}
 	});
 // HANDLE WORKERS RESPONSES
