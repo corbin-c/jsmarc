@@ -69,11 +69,16 @@ Marc.prototype.subfields = function()
 			}
 			else
 			{
-				if (typeof this.wv.field[this.wv.splitted_field[this.wv.i][0]] === "undefined")
+				if (((typeof parameters.included_subfields[this.directory[this.wv.x].etq] !== "undefined")
+					&& (parameters.included_subfields[this.directory[this.wv.x].etq].indexOf(this.wv.splitted_field[this.wv.i][0]) >= 0))
+					|| (typeof parameters.included_subfields[this.directory[this.wv.x].etq] === "undefined"))
 				{
-					this.wv.field[this.wv.splitted_field[this.wv.i][0]] = [];
+					if (typeof this.wv.field[this.wv.splitted_field[this.wv.i][0]] === "undefined")
+					{
+						this.wv.field[this.wv.splitted_field[this.wv.i][0]] = [];
+					}
+					this.wv.field[this.wv.splitted_field[this.wv.i][0]].push(this.wv.splitted_field[this.wv.i].slice(1))
 				}
-				this.wv.field[this.wv.splitted_field[this.wv.i][0]].push(this.wv.splitted_field[this.wv.i].slice(1))
 			}
 		}
 		this.wv.splitted_field = [];
