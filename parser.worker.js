@@ -69,9 +69,9 @@ Marc.prototype.subfields = function()
 			}
 			else
 			{
-				if (((typeof parameters.included_subfields[this.directory[this.wv.x].etq] !== "undefined")
-					&& (parameters.included_subfields[this.directory[this.wv.x].etq].indexOf(this.wv.splitted_field[this.wv.i][0]) >= 0))
-					|| (typeof parameters.included_subfields[this.directory[this.wv.x].etq] === "undefined"))
+				if ( ((typeof parameters.included_subfields === "undefined") || (typeof parameters.included_subfields[this.directory[this.wv.x].etq] === "undefined"))
+				|| ((typeof parameters.included_subfields[this.directory[this.wv.x].etq] !== "undefined") && (parameters.included_subfields[this.directory[this.wv.x].etq].indexOf(this.wv.splitted_field[this.wv.i][0]) >= 0))
+				)
 				{
 					if (typeof this.wv.field[this.wv.splitted_field[this.wv.i][0]] === "undefined")
 					{
