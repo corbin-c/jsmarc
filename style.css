@@ -30,9 +30,7 @@ section
 	font-weight: lighter !important;
 	font-family: Monospace !important;
 	font-size: 0.9em;
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	word-break: break-all;
+	word-break: break-word;
 	text-align: justify;
 }
 table, table *
