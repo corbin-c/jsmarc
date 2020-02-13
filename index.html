@@ -9,34 +9,36 @@
 <script src="marc.js"></script>
 </head>
 <body onload='document.getElementById("go").addEventListener("click", function() {meta_marc()}); document.getElementById("mode").addEventListener("change", function() {upd_config(this)});'>
-	<header><h1><a href="#">MARC Utility</a></h1></header>
-	<section>
-		<form id="marc_in" action="#">
-			<label for="cfz">Caractère de fin de zone</label><input type="text" id="cfz" name="cfz" value="\u001e">
-			<label for="cfn">Caractère de fin de notice</label><input type="text" id="cfn" name="cfn" value="\u001d">
-			<label for="ssz">Séparateur de sous-zone</label><input type="text" id="ssz" name="ssz" value="\u001f">
-			<label for="mode">Mode de fonctionnement</label>
+  <header><h1>JS MARC Utility</h1></header>
+  <main>
+    <section>
+      <form id="marc_in" action="#">
+        <label for="cfz">Caractère de fin de zone</label><input type="text" id="cfz" name="cfz" value="\u001e">
+        <label for="cfn">Caractère de fin de notice</label><input type="text" id="cfn" name="cfn" value="\u001d">
+        <label for="ssz">Séparateur de sous-zone</label><input type="text" id="ssz" name="ssz" value="\u001f">
+        <label for="mode">Mode de fonctionnement</label>
 
-			<select id="mode" name="mode">
-				<option value="" selected disabled hidden>--- Sélectionner ---</option>
-				<option value="extract">Extraction de notices</option>
-				<option value="summarize">Extraction d'informations</option>
-				<option value="display">Visualiser</option>
-			</select>
+        <select id="mode" name="mode">
+          <option value="" selected disabled hidden>--- Sélectionner ---</option>
+          <option value="extract">Extraction de notices</option>
+          <option value="summarize">Extraction d'informations</option>
+          <option value="display">Visualiser</option>
+        </select>
 
-			<label id="l_filter" for="filter">Champ à filtrer</label><input type="text" id="filter" name="filter" value="010$a">
-			<label id="l_if2" for="input_file2">Valeurs à filtrer (CSV)</label><input type="file" id="input_file2" name="input_file2">
+        <label id="l_filter" for="filter">Champ à filtrer</label><input type="text" id="filter" name="filter" value="010$a">
+        <label id="l_if2" for="input_file2">Valeurs à filtrer (CSV)</label><input type="file" id="input_file2" name="input_file2">
 
-			<label id="l_td" for="to_display">Champs à afficher</label><input type="text" id="to_display" name="to_display" value="010$a">
+        <label id="l_td" for="to_display">Champs à afficher</label><input type="text" id="to_display" name="to_display" value="010$a">
 
-			<label for="input_file1">Sélectionner une notice MARC</label><input type="file" id="input_file1" name="input_file1">
-			<input type="button" id="go" value="Valider"/>
-		</form>
-		<div id="progress" style="display:none;">
-			<label id="l_sent" for="sent">Data loading : <strong></strong></label><progress id="sent" max="100" value="0"></progress>
-			<label id="l_parse" for="parse">Data filtering : <strong></strong></label><progress id="parse" max="100" value="0"></progress>
-			<label id="l_analysis" for="analysis">Data parsing : <strong></strong></label><progress id="analysis" max="100" value="0"></progress>
-		</div>
-	</section>
-	<footer></footer>
+        <label for="input_file1">Sélectionner une notice MARC</label><input type="file" id="input_file1" name="input_file1">
+        <input type="button" id="go" value="Valider"/>
+      </form>
+      <div id="progress" style="display:none;">
+        <label id="l_sent" for="sent">Data loading : <strong></strong></label><progress id="sent" max="100" value="0"></progress>
+        <label id="l_parse" for="parse">Data filtering : <strong></strong></label><progress id="parse" max="100" value="0"></progress>
+        <label id="l_analysis" for="analysis">Data parsing : <strong></strong></label><progress id="analysis" max="100" value="0"></progress>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
 </body></html>
