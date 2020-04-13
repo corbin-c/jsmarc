@@ -1,52 +1,56 @@
 form
 {
-	padding: 10px;
+  padding: 10px;
 }
 input, label, progress, select
 {
-	padding: 3px;
-	margin: 10px;
-	display: block;
+  padding: 3px;
+  margin: 10px;
+  display: block;
 }
 input, progress, select
 {
-	margin-left: 40px;
+  margin-left: 40px;
 }
-fieldset
+fieldset {
+  position: absolute;
+  left: 30vw;
+  height: auto;
+  outline: none;
+  border: none;
+}
+fieldset.collapse
 {
-	//display: none;
-	position: absolute;
-	top: 20px;
-	left: 30%;
+  height: 0;
+  overflow: hidden;
 }
 section
 {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .raw *
 {
-	font-weight: lighter !important;
-	font-family: Monospace !important;
-	font-size: 0.9em;
-	word-break: break-word;
-	text-align: justify;
+  font-weight: lighter !important;
+  font-family: Monospace !important;
+  font-size: 0.9em;
+  word-break: break-word;
+  text-align: justify;
 }
 table, table *
 {
-	border: 1px solid black;
-	border-collapse:collapse;
+  border: 1px solid black;
+  border-collapse:collapse;
 }
 table *
 {
-	padding: 3px;
+  padding: 3px;
 }
 table
 {
-	margin: 10px;
+  margin: 10px;
 }
-#l_filter,#filter,#l_td,#to_display,#l_if2,#input_file2
-{
-	display: none;
+.hidden {
+  display: none;
 }
