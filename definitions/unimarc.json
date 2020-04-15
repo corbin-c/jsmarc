@@ -1,0 +1,7260 @@
+{
+  "100": {
+    "ind1": {
+      "0": "Date certaine / Etat de publication certain pour les ressources continues",
+      "1": "Date incertaine / Etat de publication incertain pour les ressources continues"
+    },
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Année de parution ou de production / année de début / la plus ancienne possible"
+      },
+      "b": {
+        "*": "Année de fin"
+      },
+      "c": {
+        "*": "Année la plus récente possible"
+      },
+      "d": {
+        "*": "Année de début (date ouverte)"
+      },
+      "e": {
+        "*": "Année de l'original (fac-similés) / de protection / de production)"
+      },
+      "f": {
+        "*": "Année du copyright de l'expression principale"
+      },
+      "g": {
+        "*": "Année détaillée"
+      },
+      "h": {
+        "*": "Année de fabrication"
+      }
+    },
+    "value": "Données générales de traitement"
+  },
+  "101": {
+    "ind1": {
+      "0": "La ressource est dans la langue originale de l’œuvre",
+      "1": "La ressource est une traduction de l’œuvre originale ou d’une œuvre intermédiaire",
+      "2": "La ressource contient des traductions autres que des résumés traduits"
+    },
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Langue d'un texte, d'une bande son, etc."
+      },
+      "b": {
+        "*": "Langue d'un texte intermédiaire quand la ressource n'est pas une traduction de l’œuvre originale"
+      },
+      "c": {
+        "*": "Langue de l'oeuvre originale"
+      },
+      "d": {
+        "*": "Langue d'un résumé"
+      },
+      "e": {
+        "*": "Langue de la table des matières"
+      },
+      "f": {
+        "*": "Langue de la page de titre si elle diffère de celle du texte"
+      },
+      "g": {
+        "*": "Langue du titre propre si elle diffère de la langue du texte, ou de la bande son, etc."
+      },
+      "h": {
+        "*": "Langue d'un livret, etc."
+      },
+      "i": {
+        "*": "Langue des textes d'accompagnement"
+      },
+      "j": {
+        "*": "Langue des sous-titres"
+      }
+    },
+    "value": "Langue de la ressource"
+  },
+  "102": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Source du code non-ISO"
+      },
+      "a": {
+        "*": "Pays de parution ou de production"
+      },
+      "b": {
+        "*": "Lieu de parution ou de production (non-ISO)"
+      },
+      "c": {
+        "*": "Lieu de parution ou de production (ISO 3166-2)"
+      }
+    },
+    "value": "Pays de publication, production, diffusion/distribution, fabrication"
+  },
+  "106": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Données codées sur la forme de la ressource - présentation matérielle"
+      }
+    },
+    "value": "Données codées - Forme de la ressource"
+  },
+  "115": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Type de document"
+      },
+      "b": {
+        "*": "Longueur"
+      },
+      "c": {
+        "*": "Couleur"
+      },
+      "d": {
+        "*": "Son"
+      },
+      "e": {
+        "*": "Support son"
+      },
+      "f": {
+        "*": "Largeur ou dimension"
+      },
+      "g": {
+        "*": "Présentation matérielle : images projetées, films"
+      },
+      "h": {
+        "*": "Technique : vidéo, film"
+      },
+      "i": {
+        "*": "Format de film"
+      },
+      "j": {
+        "*": "Matériel d'accompagnement"
+      },
+      "k": {
+        "*": "Présentation matérielle : vidéo"
+      },
+      "l": {
+        "*": "Format : vidéo"
+      },
+      "m": {
+        "*": "Support de l'émulsion : images projetées"
+      },
+      "n": {
+        "*": "Support secondaire : images projetées"
+      },
+      "o": {
+        "*": "Normes de diffusion des enregistrements vidéo"
+      },
+      "A": {
+        "*": "Copie (génération)"
+      },
+      "B": {
+        "*": "Eléments de production (montage)"
+      },
+      "C": {
+        "*": "Catégories fines de couleurs (films)"
+      },
+      "D": {
+        "*": "Emulsion (polarité)"
+      },
+      "E": {
+        "*": "Support du film"
+      },
+      "F": {
+        "*": "Type de sonorisation (films)"
+      },
+      "G": {
+        "*": "Type de film ou d'épreuve (tirage)"
+      },
+      "H": {
+        "*": "Etat de la copie (détérioration)"
+      },
+      "J": {
+        "*": "Etat de la version (complétude)"
+      },
+      "K": {
+        "*": "Date de contrôle du film"
+      }
+    },
+    "value": "Données codées pour les images projetées,\nenregistrements vidéo et films"
+  },
+  "117": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Présentation matérielle"
+      },
+      "b": {
+        "*": "Matériau"
+      },
+      "c": {
+        "*": "Couleur"
+      }
+    },
+    "value": "Données codées pour les objets en trois dimensions naturels ou fabriqués"
+  },
+  "120": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Indicateur de couleur"
+      },
+      "b": {
+        "*": "Indicateur d'index"
+      },
+      "c": {
+        "*": "Indicateur de texte"
+      },
+      "d": {
+        "*": "Code de représentation du relief"
+      },
+      "e": {
+        "*": "Projection"
+      },
+      "f": {
+        "*": "Méridien de référence"
+      }
+    },
+    "value": "Données codées pour les ressources cartographiques - généralités"
+  },
+  "121": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "F": ""
+      },
+      "b": {
+        "F": ""
+      },
+      "c": {
+        "F": ""
+      },
+      "d": {
+        "F": ""
+      },
+      "e": {
+        "F": ""
+      },
+      "f": {
+        "F": ""
+      },
+      "g": {
+        "F": ""
+      },
+      "A": {
+        "F": ""
+      },
+      "B": {
+        "F": ""
+      },
+      "C": {
+        "F": ""
+      },
+      "D": {
+        "F": ""
+      },
+      "E": {
+        "F": ""
+      },
+      "F": {
+        "F": ""
+      }
+    },
+    "value": "Données codées pour les ressources cartographiques - caractéristiques matérielles"
+  },
+  "122": {
+    "ind1": {
+      "0": "Indicateur du nombre de dates : date simple",
+      "1": "Indicateur du nombre de dates : plusieurs dates",
+      "2": "Indicateur du nombre de dates : tranche chronologique"
+    },
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Période chronologique (de 9999 av. J.-C. à nos jours)"
+      }
+    },
+    "value": "Données codées sur la période chronologique couverte par la ressource"
+  },
+  "124": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Origine de l'image"
+      },
+      "b": {
+        "*": "Forme du document cartographique"
+      },
+      "c": {
+        "*": "Présentation technique..."
+      },
+      "d": {
+        "*": "Position de la base pour les images photographiques ou de télédétection"
+      },
+      "e": {
+        "*": "Catégorie de satellite pour la télédétection"
+      },
+      "f": {
+        "*": "Nom du satellité pour la télédétection"
+      },
+      "g": {
+        "*": "Techniques d'enregistrement pour les images de télédétection"
+      }
+    },
+    "value": "Zone de données codées"
+  },
+  "125": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Présentation musicale (musique imprimée ou manuscrite)"
+      },
+      "b": {
+        "*": "Présence de parties"
+      },
+      "A": {
+        "*": "Genre du texte (enregistrements sonores non musicaux)"
+      },
+      "B": {
+        "*": "Présentations musicales multiples"
+      }
+    },
+    "value": "Zone de données codées"
+  },
+  "126": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Présentation matérielle"
+      },
+      "b": {
+        "*": "Vitesse"
+      },
+      "c": {
+        "*": "Type de son"
+      },
+      "d": {
+        "*": "Largeur du sillon"
+      },
+      "e": {
+        "*": "Dimensions matérielles (enregistrements sonores)"
+      },
+      "f": {
+        "*": "Largeur de la bande"
+      },
+      "g": {
+        "*": "Spécifications de la bande magnétique"
+      },
+      "h": {
+        "*": "Texte d'accompagnement"
+      },
+      "i": {
+        "*": "Technique d'enregistrement"
+      },
+      "j": {
+        "*": "Technique de reproduction"
+      },
+      "A": {
+        "*": "Type de disque, cylindre ou bande magnétique"
+      },
+      "B": {
+        "*": "Type de document"
+      },
+      "C": {
+        "*": "Type de gravure"
+      }
+    },
+    "value": "Zone de données codées"
+  },
+  "127": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Durée"
+      }
+    },
+    "value": "Zone de données codées"
+  },
+  "128": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Forme d'une œuvre musicale"
+      },
+      "b": {
+        "*": "Instrument ou voix dans un ensemble"
+      },
+      "c": {
+        "*": "Instrument ou voix solistes"
+      },
+      "d": {
+        "*": "Tonalité ou mode de l'œuvre musicale"
+      }
+    },
+    "value": "Données codées - forme de l'oeuvre musicale et tonalité ou mode"
+  },
+  "130": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Présentation matérielle"
+      },
+      "b": {
+        "*": "Polarité"
+      },
+      "c": {
+        "*": "Dimensions"
+      },
+      "d": {
+        "*": "Rapport de réduction"
+      },
+      "e": {
+        "*": "Rapport de réduction spécifique"
+      },
+      "f": {
+        "*": "Couleur"
+      },
+      "g": {
+        "*": "Emulsion"
+      },
+      "h": {
+        "*": "Génération (copies)"
+      },
+      "i": {
+        "*": "Support du film"
+      }
+    },
+    "value": "Zone de données codées"
+  },
+  "135": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Type de fichier informatique"
+      },
+      "b": {
+        "*": "Type de support utilisé"
+      },
+      "c": {
+        "*": "Couleur"
+      },
+      "d": {
+        "*": "Dimensions"
+      },
+      "e": {
+        "*": "Son"
+      },
+      "f": {
+        "*": "Bits par pixel"
+      },
+      "g": {
+        "*": "Nombre de formats de fichier"
+      },
+      "h": {
+        "*": "Indicateur d'assurance de qualité"
+      },
+      "i": {
+        "*": "Source ou antécédent"
+      },
+      "j": {
+        "*": "Compression"
+      },
+      "k": {
+        "*": "Qualité du reformatage"
+      }
+    },
+    "value": "Zone de données codées"
+  },
+  "181": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "c": {
+        "NR": ""
+      },
+      "P": {
+        "NR": ""
+      }
+    },
+    "value": "Type de contenu et type de médiation"
+  },
+  "182": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "c": {
+        "NR": ""
+      },
+      "P": {
+        "NR": ""
+      }
+    },
+    "value": "Type de contenu et type de médiation"
+  },
+  "183": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "R": ""
+      },
+      "P": {
+        "R": ""
+      }
+    },
+    "value": "Type de support matériel"
+  },
+  "200": {
+    "ind1": {
+      "0": "Titre non significatif",
+      "1": "Titre significatif"
+    },
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre propre"
+      },
+      "b": {
+        "*": "Indication générale du type de document"
+      },
+      "c": {
+        "*": "Titre propre d'un auteur différent"
+      },
+      "d": {
+        "*": "Titre parallèle"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "f": {
+        "*": "Première mention de responsabilité"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "r": {
+        "*": "Autres données issues de la page de titre en complément du titre propre"
+      },
+      "z": {
+        "*": "Langue du titre parallèle"
+      }
+    },
+    "value": "Titre et mention de responsabilité"
+  },
+  "205": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "9": {
+        "*": "Sous-zone de tri"
+      },
+      "a": {
+        "*": "Mention d'édition"
+      },
+      "b": {
+        "*": "Autre mention d'édition"
+      },
+      "d": {
+        "*": "Mention parallèle d'édition"
+      },
+      "f": {
+        "*": "Mention de responsabilité relative à l'édition"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante"
+      }
+    },
+    "value": "Mention d'édition"
+  },
+  "206": {
+    "ind1": {
+      "0": "Zone structurée",
+      "#": "Zone non structurée"
+    },
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Mention de données mathématiques"
+      },
+      "b": {
+        "*": "Mention de l'échelle"
+      },
+      "c": {
+        "*": "Mention de la projection"
+      },
+      "d": {
+        "*": "Mention des coordonnées"
+      },
+      "e": {
+        "*": "Mention de la zone"
+      },
+      "f": {
+        "*": "Mention de l'équinoxe"
+      }
+    },
+    "value": "Zone particulière à certains types de ressources"
+  },
+  "207": {
+    "ind1": {},
+    "ind2": {
+      "0": "Formatage du numéro : formaté",
+      "1": "Formatage du numéro : non formaté"
+    },
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Numérotation : indication de date et de volume"
+      },
+      "z": {
+        "*": "Source d'information sur la numérotation"
+      }
+    },
+    "value": "Zone particulière à certains types de ressources"
+  },
+  "208": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Mention de présentation musicale"
+      },
+      "d": {
+        "*": "Mention parallèle de présentation musicale"
+      }
+    },
+    "value": "Zone particulière à certains types de ressources"
+  },
+  "209": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "(En réserve pour un usage futur)"
+      },
+      "b": {
+        "*": "Tome ou volume"
+      },
+      "c": {
+        "*": "Année"
+      },
+      "d": {
+        "*": "Numéro ou fascicule"
+      },
+      "e": {
+        "*": "(En réserve)"
+      },
+      "f": {
+        "*": "(En réserve)"
+      },
+      "g": {
+        "*": "(En réserve)"
+      },
+      "h": {
+        "*": "Séquence de pagination"
+      },
+      "i": {
+        "*": "(En réserve)"
+      }
+    },
+    "value": "Volumaison et pagination des parties composantes"
+  },
+  "210": {
+    "ind1": {
+      "0": "Adresse de départ ou intermédiaire",
+      "1": "Adresse courante ou dernière adresse",
+      "#": "Non applicable / Adresse d'origine"
+    },
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Lieu de publication, de diffusion, etc."
+      },
+      "b": {
+        "*": "Adresse de l'éditeur, du diffuseur, etc."
+      },
+      "c": {
+        "*": "Nom de l'éditeur, du diffuseur, etc."
+      },
+      "d": {
+        "*": "Date de publication, de diffusion, etc."
+      },
+      "e": {
+        "*": "Lieu de fabrication"
+      },
+      "f": {
+        "*": "Adresse du fabricant"
+      },
+      "g": {
+        "*": "Nom du fabricant"
+      },
+      "h": {
+        "*": "Date de fabrication"
+      },
+      "r": {
+        "*": "Adresse entière prise à la page de titre"
+      },
+      "s": {
+        "*": "Adresse entière prise au colophon ou à l'achevé d'imprimé"
+      }
+    },
+    "value": "Publication, production, diffusion, etc."
+  },
+  "211": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Date"
+      }
+    },
+    "value": "Date de publication prévue"
+  },
+  "214": {
+    "ind1": {
+      "0": "Adresse de départ ou intermédiaire (pour les ressources continues)",
+      "1": "Adresse courante ou dernière adresse (pour les ressources continues)",
+      "#": "Non applicable / Adresse d'origine (pour les ressources continues)"
+    },
+    "ind2": {
+      "0": "Mention de publication",
+      "1": "Mention de production",
+      "2": "Mention de diffusion / distribution",
+      "3": "Mention de fabrication / impression",
+      "4": "Date de copyright ou de protection",
+      "#": "Adresse bibliographique (livre ancien ou publication en série ancienne)"
+    },
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones (en cas écriture non latine)"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Lieu de publication / Lieu de production / Lieu de diffusion ou de distribution / Lieu de fabrication"
+      },
+      "b": {
+        "*": "Adresse de l'éditeur / Adresse du producteur / Adresse du diffuseur ou du distributeur / Adresse du fabricant"
+      },
+      "c": {
+        "*": "Nom de l'éditeur / Nom du producteur / Nom du diffuseur ou du distributeur / Nom du fabricant"
+      },
+      "d": {
+        "*": "Date de publication / Date de production / Date de diffusion ou de distribution / Date de fabrication / Date de copyright ou de protection"
+      },
+      "r": {
+        "*": "Adresse entière prise à la page de titre"
+      },
+      "s": {
+        "*": "Adresse entière prise au colophon ou à l'achevé d'imprimer"
+      },
+      "P": {
+        "*": ""
+      }
+    },
+    "value": "Mention de publication, production, diffusion, fabrication"
+  },
+  "215": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Type de présentation matérielle et importance matérielle"
+      },
+      "c": {
+        "*": "Autres caractéristiques matérielles"
+      },
+      "d": {
+        "*": "Dimensions"
+      },
+      "e": {
+        "*": "Matériel d'accompagnement"
+      }
+    },
+    "value": "Description matérielle"
+  },
+  "225": {
+    "ind1": {
+      "0": "[Forme du titre : différent de la forme d'autorité]",
+      "1": "[Forme du titre : pas de forme établie]",
+      "2": "[Forme du titre : identique à la forme d'autorité]"
+    },
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre de la collection"
+      },
+      "d": {
+        "*": "Titre parallèle de la collection"
+      },
+      "e": {
+        "*": "Compléments du titre de la collection"
+      },
+      "f": {
+        "*": "Mention de responsabilité"
+      },
+      "h": {
+        "*": "Numéro de la sous-collection"
+      },
+      "i": {
+        "*": "Titre de la sous-collection"
+      },
+      "v": {
+        "*": "Numéro du volume"
+      },
+      "x": {
+        "*": "ISSN de la collection"
+      },
+      "z": {
+        "*": "Langue du titre parallèle"
+      }
+    },
+    "value": "Collection"
+  },
+  "230": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Définition et taille des fichiers"
+      }
+    },
+    "value": "Zone particulière à certains types de documents"
+  },
+  "300": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note générale"
+  },
+  "301": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les identifiants"
+  },
+  "302": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les informations codées"
+  },
+  "303": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note générale sur la description bibliographique"
+  },
+  "304": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur le titre et la mention de responsabilité"
+  },
+  "305": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur l'édition et l'histoire bibliographique"
+  },
+  "306": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la publication, la production, la diffusion, etc."
+  },
+  "307": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la description matérielle"
+  },
+  "308": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la collection"
+  },
+  "309": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Texte de la note"
+      },
+      "b": {
+        "*": "Identifiant"
+      },
+      "c": {
+        "*": "Commande de recherche"
+      },
+      "d": {
+        "*": "Date et heure (AAAA-MM-JJ HH:MM:SS.SSS)"
+      }
+    },
+    "value": "Note d'information interne au Sudoc"
+  },
+  "310": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la reliure et la disponibilité"
+  },
+  "311": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les zones de liens"
+  },
+  "312": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les titres associés"
+  },
+  "313": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les autorités sujet"
+  },
+  "314": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la responsabilité"
+  },
+  "315": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur l'information propre au type de ressource"
+  },
+  "316": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur l'exemplaire"
+  },
+  "317": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la provenance"
+  },
+  "320": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les bibliographies ou les index contenus dans la ressource"
+  },
+  "321": {
+    "ind1": {
+      "0": "[Type et mode d'indexation : recension analytique (\"Indexé dans : \")]",
+      "1": "[Type et mode d'indexation : recension signalétique (\"Cité dans : \")]",
+      "#": "[Type et mode d'indexation : aucun renseignement n'est fourni]"
+    },
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Nom de la source externe"
+      },
+      "b": {
+        "*": "Dates de recension de la ressource cataloguée ou date de publication de la source externe"
+      },
+      "c": {
+        "*": "Localisation dans la source"
+      },
+      "x": {
+        "*": "Numéro international normalisé"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les index, extraits et citations publiés séparément"
+  },
+  "322": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur le générique (pour les films, les vidéogrammes et les enregistrements sonores)"
+  },
+  "323": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les interprètes (pour les films, les vidéogrammes et les enregistrements sonores)"
+  },
+  "324": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur l'original reproduit"
+  },
+  "325": {
+    "ind1": {
+      "#": "La ressource cataloguée est un original"
+    },
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la reproduction"
+  },
+  "326": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "b": {
+        "*": "Dates"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la périodicité (ressources continues)"
+  },
+  "327": {
+    "ind1": {
+      "0": "Note sur le contenu incomplète",
+      "1": "Note sur le contenu complète",
+      "2": "Note sur le contenu partielle",
+      "#": "Niveau de complétude de la note non défini"
+    },
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur le contenu"
+  },
+  "328": {
+    "ind1": {},
+    "ind2": {
+      "1": "Note non structurée",
+      "#": "Pas d'information sur le caractère structuré ou non de la note"
+    },
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte intégral de la note non structurée"
+      },
+      "u": {
+        "*": "URI"
+      },
+      "z": {
+        "*": "Texte explicatif précédant la note"
+      }
+    },
+    "value": "Note sur les thèses"
+  },
+  "330": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Résumé ou extrait"
+  },
+  "332": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Référence bibliographique recommandée pour citer la ressource"
+  },
+  "333": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur le public destinataire"
+  },
+  "334": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte intégral de la note non structurée"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur les récompenses"
+  },
+  "336": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur le type de ressource électronique"
+  },
+  "337": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Texte de la note"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Note sur la configuration requise (ressources électroniques)"
+  },
+  "339": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Format de la ressource"
+      },
+      "d": {
+        "*": "Date de publication"
+      }
+    },
+    "value": "Note sur les formats électroniques disponibles (ressources en ligne)"
+  },
+  "345": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Source de l'acquisition, adresse pour l'abonnement"
+      },
+      "b": {
+        "*": "Numéro d'éditeur"
+      },
+      "c": {
+        "*": "Support"
+      },
+      "d": {
+        "*": "Disponibilité"
+      },
+      "u": {
+        "*": "URI"
+      }
+    },
+    "value": "Renseignements sur l'acquisition"
+  },
+  "359": {
+    "ind1": {
+      "0": "Zone non structurée [Ne pas utiliser dans le Sudoc]",
+      "1": "Zone structurée sans hiérarchie [Ne pas utiliser dans le Sudoc]",
+      "2": "Zone avec structure hiérarchique"
+    },
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Contenu de la totalité de la table des matières non structurée [Ne pas utiliser dans le Sudoc]"
+      },
+      "b": {
+        "*": "Entrée de table des matières de niveau 1"
+      },
+      "c": {
+        "*": "Entrée de table des matières de niveau 2"
+      },
+      "d": {
+        "*": "Entrée de table des matières de niveau 3"
+      },
+      "e": {
+        "*": "Entrée de table des matières de niveau 4"
+      },
+      "f": {
+        "*": "Entrée de table des matières de niveau 5"
+      },
+      "g": {
+        "*": "Entrée de table des matières de niveau 6"
+      },
+      "h": {
+        "*": "Entrée de table des matières de niveau 7"
+      },
+      "i": {
+        "*": "Entrée de table des matières de niveau 8"
+      },
+      "p": {
+        "*": "Numéro de page ou de plage"
+      },
+      "v": {
+        "*": "Tomaison / Numérotation de l'unité physique"
+      }
+    },
+    "value": "Transcription de la table des matières ou du sommaire"
+  },
+  "410": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice de collection (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Appartient à la collection"
+  },
+  "411": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice de sous-collection (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "A pour sous-collection"
+  },
+  "412": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document principal (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Est un extrait ou un tiré à part de"
+  },
+  "413": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du tité à part ou de l'extrait (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "A pour extrait ou tiré à part"
+  },
+  "421": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du supplément (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "A pour supplément"
+  },
+  "422": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice de la publication-mère du supplément (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Est un supplément de"
+  },
+  "423": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Est publié avec"
+  },
+  "424": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Est mis à jour par"
+  },
+  "425": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Met à jour"
+  },
+  "430": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Suite de"
+  },
+  "431": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Suite partielle de"
+  },
+  "432": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Remplace"
+  },
+  "433": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Remplace partiellement"
+  },
+  "434": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document absorbé (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Absorbe"
+  },
+  "435": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document partiellement absorbé (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Absorbe partiellement"
+  },
+  "436": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Fusion de ... et de ..."
+  },
+  "437": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Séparé de"
+  },
+  "440": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Devient"
+  },
+  "441": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Devient partiellement"
+  },
+  "442": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Remplacé par"
+  },
+  "443": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Remplacé partiellement par"
+  },
+  "444": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Absorbé par"
+  },
+  "445": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Absorbé partiellement par"
+  },
+  "446": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Scindé en ... et en ..."
+  },
+  "447": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Fusionne avec ... pour former ..."
+  },
+  "448": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication[210$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication[210$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du distributeur, etc.[210$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Redevient"
+  },
+  "451": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Autre édition sur le même support"
+  },
+  "452": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Autre édition sur un autre support"
+  },
+  "453": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication[214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Traduit sous le titre"
+  },
+  "454": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Est une traduction de"
+  },
+  "455": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Reproduction de"
+  },
+  "456": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Reproduit comme"
+  },
+  "461": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Dans"
+  },
+  "463": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Comprend / Dans"
+  },
+  "464": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Contient"
+  },
+  "470": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Ressource analysée"
+  },
+  "481": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Est aussi relié dans ce volume"
+  },
+  "482": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Relié à la suite de"
+  },
+  "488": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "PPN de la notice du document en relation (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Auteur[7x0 du document en relation]"
+      },
+      "b": {
+        "*": "Indication générale du type de document[200$b du document en relation]"
+      },
+      "c": {
+        "*": "Lieu de publication, production, diffusion/distribution, fabrication [214$a du document en relation]"
+      },
+      "d": {
+        "*": "Date de publication, production, diffusion/distribution, copyright, fabrication [214$d du document en relation]"
+      },
+      "e": {
+        "*": "Mention d'édition[205 du document en relation]"
+      },
+      "f": {
+        "*": "Première mention de responsabilité[200$f du document en relation]"
+      },
+      "g": {
+        "*": "Mention de responsabilité suivante[200$g du document en relation]"
+      },
+      "h": {
+        "*": "Numéro de partie[200$h du document en relation]"
+      },
+      "i": {
+        "*": "Titre de partie[200$i du document en relation]"
+      },
+      "l": {
+        "*": "Titre parallèle[200$d du document en relation]"
+      },
+      "n": {
+        "*": "Nom de l'éditeur, du producteur, du diffuseur/distributeur, du fabricant [214$c du document en relation]"
+      },
+      "o": {
+        "*": "Sous-titre ou complément de titre[200$e du document en relation]"
+      },
+      "p": {
+        "*": "Indication spécifique du type de document et importance matérielle[215$a du document en relation]"
+      },
+      "s": {
+        "*": "Mention de collection[225$a du document en relation]"
+      },
+      "t": {
+        "*": "Titre[200$a du document en relation]"
+      },
+      "u": {
+        "*": "URI[856$u du document en relation]"
+      },
+      "v": {
+        "*": "Numéro de partie / de volume du document catalogué"
+      },
+      "x": {
+        "*": "ISSN[011 du document en relation]"
+      },
+      "y": {
+        "*": "ISBN/ISMN[010 / 013 du document en relation]"
+      }
+    },
+    "value": "Autre type de relation"
+  },
+  "500": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre uniforme"
+      },
+      "b": {
+        "*": "Indication générale du type de document"
+      },
+      "h": {
+        "*": "Numéro de section ou de partie"
+      },
+      "i": {
+        "*": "Titre de section ou de partie"
+      },
+      "k": {
+        "*": "Date de publication"
+      },
+      "l": {
+        "*": "Qualificatif de forme"
+      },
+      "m": {
+        "*": "Langue"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "q": {
+        "*": "Version (ou date d'une version)"
+      },
+      "r": {
+        "*": "Distribution instrumentale et vocale (pour la musique)"
+      },
+      "s": {
+        "*": "Référence numérique (pour la musique)"
+      },
+      "u": {
+        "*": "Tonalité (pour la musique)"
+      },
+      "w": {
+        "*": "Elements additionnels (pour la musique)"
+      }
+    },
+    "value": "Titre uniforme"
+  },
+  "501": {
+    "ind1": {
+      "0": "[Type : oeuvres complètes]",
+      "1": "[Type : oeuvres choisies]",
+      "2": "[Type : textes choisis]"
+    },
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Rubrique de classement"
+      },
+      "b": {
+        "*": "Indication générale du type de document"
+      },
+      "e": {
+        "*": "Subdivision"
+      },
+      "k": {
+        "*": "Date de publication, etc."
+      },
+      "m": {
+        "*": "Langue"
+      },
+      "r": {
+        "*": "Mode d'interprétation (pour la musique)"
+      },
+      "s": {
+        "*": "Indication de numéro (pour la musique)"
+      },
+      "u": {
+        "*": "Clé (pour la musique)"
+      },
+      "w": {
+        "*": "Mention d'arrangement (pour la musique)"
+      }
+    },
+    "value": "Rubrique de classement"
+  },
+  "503": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre de forme"
+      },
+      "b": {
+        "*": "Subdivision"
+      },
+      "d": {
+        "*": "Mois et jour"
+      },
+      "e": {
+        "*": "Nom de personne, élément d'entrée"
+      },
+      "f": {
+        "*": "Nom de personne, élément(s) du nom rejeté(s)"
+      },
+      "h": {
+        "*": "Qualificatif"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Année"
+      },
+      "k": {
+        "*": "Numérotation (en chiffres arabes)"
+      },
+      "l": {
+        "*": "Numérotation (en chiffres romains)"
+      },
+      "m": {
+        "*": "Localisation"
+      },
+      "n": {
+        "*": "Etablissement précisant la localisation"
+      },
+      "o": {
+        "*": "Lieu précis"
+      }
+    },
+    "value": "Titre de forme"
+  },
+  "510": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre parallèle"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associées au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre parallèle"
+  },
+  "512": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre de couverture"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associées au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre de couverture"
+  },
+  "513": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre figurant sur une autre page de titre"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associés au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre figurant sur une autre page de titre"
+  },
+  "514": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre de départ"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associés au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre de départ"
+  },
+  "515": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre courant"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associés au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre courant"
+  },
+  "516": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre de dos"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associés au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre de dos"
+  },
+  "517": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Variante du titre"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associés au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Autres variantes du titre"
+  },
+  "518": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre propre, variante du titre ou titre uniforme en graphie moderne"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associés au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Graphie moderne du titre"
+  },
+  "520": {
+    "ind1": {
+      "0": "Titre non significatif",
+      "1": "Titre significatif"
+    },
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Variante historique du titre"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates de la variante historique du titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "x": {
+        "*": "ISSN du titre précédent"
+      }
+    },
+    "value": "Variante historique du titre (ressources continues)"
+  },
+  "530": {
+    "ind1": {
+      "0": "Titre clé identique au titre propre",
+      "1": "Titre clé différent du titre propre"
+    },
+    "ind2": {},
+    "subfields": {
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre clé"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "j": {
+        "*": "Numéro de volume ou dates associés au titre clé"
+      },
+      "": {
+        "*": "Données de lien entre zones"
+      }
+    },
+    "value": "Titre clé (ressources continues)"
+  },
+  "531": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre clé abrégé"
+      },
+      "b": {
+        "*": "Qualificatif"
+      }
+    },
+    "value": "Titre clé abrégé (ressources continues)"
+  },
+  "532": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre développé"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre développé (ressources continues)"
+  },
+  "540": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre ajouté"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associées au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre"
+      }
+    },
+    "value": "Titre ajouté par le catalogueur"
+  },
+  "541": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre traduit"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "z": {
+        "*": "Langue du titre traduit"
+      }
+    },
+    "value": "Titre traduit ajouté par le catalogueur"
+  },
+  "545": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Titre de section"
+      },
+      "e": {
+        "*": "Complément du titre"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Titre de partie"
+      },
+      "j": {
+        "*": "Volume ou dates associés au titre"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "z": {
+        "*": "Langue du titre de section"
+      }
+    },
+    "value": "Titre de section"
+  },
+  "579": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "1": {
+        "*": "Code du programme de calcul de regroupement"
+      },
+      "3": {
+        "*": "Numéro de la notice de regroupement et titre de l'œuvre"
+      }
+    },
+    "value": "Titre de l'œuvre [dans la notice de regroupement]"
+  },
+  "600": {
+    "ind1": {},
+    "ind2": {
+      "0": "Nom entré au prénom ou au nom dans l'ordre direct",
+      "1": "Nom entré au nom de famille"
+    },
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Partie du nom autre que l'élément d'entrée"
+      },
+      "c": {
+        "*": "Qualificatifs autres que les dates"
+      },
+      "d": {
+        "*": "Numérotation en chiffres romains"
+      },
+      "D": {
+        "*": "Numérotation en chiffres arabes"
+      },
+      "f": {
+        "*": "Dates"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Nom de personne"
+  },
+  "601": {
+    "ind1": {
+      "0": "Collectivité",
+      "1": "Congrès"
+    },
+    "ind2": {
+      "0": "Inversion de l'ordre des mots du point d'accès",
+      "1": "Premier élément est un nom de lieu",
+      "2": "Nom entré sous sa forme directe"
+    },
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Élément d'entrée"
+      },
+      "b": {
+        "*": "Subdivision (ou nom si l'entrée est au nom de lieu)"
+      },
+      "c": {
+        "*": "Élément ajouté au nom ou qualificatif"
+      },
+      "d": {
+        "*": "Numéro de congrès et/ou de session"
+      },
+      "e": {
+        "*": "Lieu du congrès"
+      },
+      "f": {
+        "*": "Date du congrès"
+      },
+      "g": {
+        "*": "Élément rejeté"
+      },
+      "h": {
+        "*": "Partie du nom autre que l'élément d'entrée et que l'élément rejeté"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Collectivité"
+  },
+  "602": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "c": {
+        "*": "Type de famille"
+      },
+      "d": {
+        "*": "Lieu associé à la famille"
+      },
+      "f": {
+        "*": "Dates"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Nom de famille"
+  },
+  "604": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de notice liée"
+      },
+      "a": {
+        "*": "Auteur"
+      },
+      "t": {
+        "*": "Titre"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Auteur/Titre"
+  },
+  "605": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "h": {
+        "*": "Numéro de partie"
+      },
+      "i": {
+        "*": "Nom de partie"
+      },
+      "k": {
+        "*": "Date de publication"
+      },
+      "l": {
+        "*": "Qualificatif de forme"
+      },
+      "m": {
+        "*": "Langue"
+      },
+      "n": {
+        "*": "Autres informations"
+      },
+      "q": {
+        "*": "Version (ou date d'une version)"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Titre uniforme"
+  },
+  "606": {
+    "ind1": {
+      "0": "[Niveau du mot sujet : aucun niveau n'est spécifié]",
+      "1": "[Niveau du mot sujet : terme primaire]",
+      "2": "[Niveau du mot sujet : terme secondaire]",
+      "#": "[Niveau du mot sujet : aucune information n'est donnée]"
+    },
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de notice d'autorité (lien créé)"
+      },
+      "a": {
+        "*": "Élément d'entrée"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Nom commun"
+  },
+  "607": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de notice d'autorité (lien créé)"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Nom géographique"
+  },
+  "608": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "3": {
+        "*": "Numéro de la notice d'autorité"
+      },
+      "a": {
+        "*": "Élément d'entrée"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès forme, genre ou caractéristiques physiques"
+  },
+  "610": {
+    "ind1": {
+      "0": "[Niveau du mot matière : sans précision de niveau]",
+      "1": "[Niveau du mot matière : terme principal]",
+      "2": "[Niveau du mot matière : terme secondaire]"
+    },
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Descripteur"
+      }
+    },
+    "value": "Indexation en vocabulaire libre"
+  },
+  "615": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation"
+      },
+      "a": {
+        "*": "Catégorie sujet sous forme textuelle"
+      },
+      "m": {
+        "*": "Subdivision de la catégorie sujet sous forme codée"
+      },
+      "n": {
+        "*": "Catégorie sujet sous forme codée"
+      },
+      "x": {
+        "*": "Subdivision de la catégorie sujet sous forme textuelle"
+      }
+    },
+    "value": "Catégorie sujet"
+  },
+  "616": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "c": {
+        "*": "Qualificatifs (autres que les dates)"
+      },
+      "f": {
+        "*": "Dates"
+      },
+      "x": {
+        "*": "Subdivision de sujet"
+      },
+      "y": {
+        "*": "Subdivision géographique"
+      },
+      "z": {
+        "*": "Subdivision chronologique"
+      }
+    },
+    "value": "Point d'accès sujet - Nom de marque"
+  },
+  "626": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Marque et modèle de machine"
+      },
+      "b": {
+        "*": "Langage de programmation"
+      },
+      "c": {
+        "*": "Système d'exploitation"
+      }
+    },
+    "value": "Accès par des données techniques (ressources électroniques)(Périmé)"
+  },
+  "660": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Code"
+      }
+    },
+    "value": "Code de zone géographique (GAC)"
+  },
+  "661": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Code de date"
+      }
+    },
+    "value": "Code de date"
+  },
+  "670": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "b": {
+        "*": "Numéro indicateur de sujet"
+      },
+      "c": {
+        "*": "Chaîne"
+      },
+      "e": {
+        "*": "Numéro indicateur de référence"
+      },
+      "z": {
+        "*": "Langue des termes"
+      }
+    },
+    "value": "PRECIS"
+  },
+  "675": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Indice"
+      },
+      "v": {
+        "*": "Edition"
+      },
+      "z": {
+        "*": "Langue d'édition"
+      }
+    },
+    "value": "Classification décimale universelle (CDU)"
+  },
+  "676": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Indice"
+      },
+      "v": {
+        "*": "Edition"
+      },
+      "z": {
+        "*": "Langue de l'édition"
+      }
+    },
+    "value": "Classification décimale Dewey"
+  },
+  "680": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Indice"
+      },
+      "b": {
+        "*": "Numéro de livre"
+      }
+    },
+    "value": "Classification de la Bibliothèque du Congrès"
+  },
+  "686": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système"
+      },
+      "a": {
+        "*": "Indice"
+      },
+      "b": {
+        "*": "Numéro de livre"
+      },
+      "c": {
+        "*": "Subdivision de la classification"
+      },
+      "v": {
+        "*": "Edition"
+      }
+    },
+    "value": "Autres classifications"
+  },
+  "700": {
+    "ind1": {},
+    "ind2": {
+      "0": "Nom entré au prénom ou au nom dans l'ordre direct",
+      "1": "Nom entré au nom (de famille, patronymique, etc.)"
+    },
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Partie du nom autre que l'élément d'entrée"
+      },
+      "c": {
+        "*": "Qualificatifs autres que les dates"
+      },
+      "d": {
+        "*": "Chiffres romains"
+      },
+      "f": {
+        "*": "Dates"
+      },
+      "g": {
+        "*": "Forme développée des initiales du prénom"
+      },
+      "p": {
+        "*": "Affiliation ou adresse"
+      }
+    },
+    "value": "Nom de personne (relatif à l'oeuvre ou à l'expression)"
+  },
+  "701": {
+    "ind1": {},
+    "ind2": {
+      "0": "Nom entré au prénom ou au nom dans l'ordre direct",
+      "1": "Nom entré au nom (de famille, patronymique, etc.)"
+    },
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction",
+        "100": "Auteur d'oeuvre adaptée ou continuée",
+        "110": "Relieur",
+        "120": "Maquettiste de la reliure",
+        "130": "Maquettiste",
+        "140": "Concepteur de la jaquette",
+        "150": "Concepteur de l'ex-libris",
+        "160": "Libraire",
+        "170": "Calligraphe",
+        "180": "Cartographe",
+        "190": "Censeur",
+        "195": "Chef de choeur",
+        "200": "Chorégraphe",
+        "202": "Artiste de cirque",
+        "205": "Collaborateur",
+        "206": "Collecteur",
+        "207": "Humoriste",
+        "210": "Commentateur",
+        "212": "Auteur du commentaire",
+        "220": "Compilateur",
+        "230": "Compositeur",
+        "233": "Compositeur de l’oeuvre adaptée",
+        "236": "Compositeur de l’oeuvre principale",
+        "240": "Compositeur d'imprimerie",
+        "245": "Concepteur de l'idée originale",
+        "250": "Chef d'orchestre",
+        "255": "Consultant de projet",
+        "257": "Auteur (continuateur)",
+        "260": "Détenteur du copyright",
+        "270": "Correcteur (manuscrits)",
+        "273": "Commissaire d'exposition",
+        "275": "Danseur",
+        "280": "Dédicataire",
+        "290": "Dédicateur",
+        "295": "Organisme de soutenance",
+        "300": "Metteur en scène ou réalisateur",
+        "303": "Disc jockey",
+        "305": "Candidat",
+        "310": "Distributeur",
+        "320": "Donateur",
+        "330": "Auteur présumé",
+        "340": "Éditeur scientifique",
+        "350": "Graveur",
+        "360": "Aquafortiste",
+        "365": "Expert",
+        "370": "Monteur",
+        "380": "Faussaire",
+        "390": "Ancien possesseur",
+        "395": "Fondateur",
+        "400": "Bailleur de fonds",
+        "410": "Technicien graphique",
+        "420": "Personne honorée",
+        "430": "Enlumineur",
+        "440": "Illustrateur",
+        "445": "Impresario",
+        "450": "Auteur de l'envoi",
+        "460": "Personne interviewée",
+        "470": "Intervieweur",
+        "475": "Collectivité éditrice",
+        "480": "Librettiste",
+        "490": "Détenteur de licence",
+        "500": "Concédant de licence",
+        "510": "Lithographe",
+        "520": "Parolier",
+        "530": "Graveur sur métal",
+        "535": "Mime",
+        "540": "Moniteur",
+        "545": "Musicien",
+        "550": "Narrateur",
+        "555": "Membre du jury",
+        "557": "Organisateur de réunion",
+        "560": "Instigateur",
+        "570": "Autre",
+        "580": "Fabricant du papier",
+        "582": "Demandeur de brevet",
+        "584": "Inventeur de brevet",
+        "587": "Titulaire de brevet",
+        "590": "Interprète",
+        "595": "Directeur de la recherche",
+        "600": "Photographe",
+        "605": "Présentateur",
+        "610": "Imprimeur",
+        "620": "Imprimeur de gravures",
+        "630": "Producteur",
+        "632": "Directeur artistique",
+        "633": "Membre de l'équipe de production",
+        "635": "Programmeur",
+        "637": "Gestionnaire de projet",
+        "640": "Correcteur sur épreuves",
+        "650": "Éditeur commercial",
+        "651": "Directeur de publication",
+        "655": "Marionnettiste",
+        "660": "Destinataire de lettres",
+        "665": "Producteur de phonogramme",
+        "670": "Ingénieur du son",
+        "672": "Remixeur",
+        "673": "Responsable de l'équipe de recherche",
+        "675": "Responsable du compte-rendu critique",
+        "677": "Membre de l'équipe de recherche",
+        "680": "Rubricateur",
+        "690": "Scénariste",
+        "695": "Conseiller scientifique",
+        "700": "Copiste",
+        "705": "Sculpteur",
+        "710": "Secrétaire",
+        "720": "Signataire",
+        "721": "Chanteur",
+        "723": "Mécène",
+        "725": "Organisme de normalisation",
+        "726": "Cascadeur",
+        "727": "Directeur de thèse",
+        "730": "Traducteur",
+        "740": "Concepteur de caractères",
+        "750": "Typographe",
+        "753": "Vendeur",
+        "755": "Exécutant vocal",
+        "760": "Graveur sur bois",
+        "770": "Auteur du matériel d'accompagnement",
+        "956": "Président du jury de soutenance",
+        "958": "Rapporteur de la thèse",
+        "981": "Laboratoire associé à la thèse",
+        "982": "Entreprise associée à la thèse",
+        "983": "Fondation associée à la thèse",
+        "984": "Equipe de recherche associée à la thèse",
+        "985": "Autre partenaire associé à la thèse",
+        "995": "Organisme de cotutelle",
+        "996": "Ecole doctorale associée à la thèse",
+        "000": "Fonction à préciser",
+        "005": "Acteur",
+        "010": "Adaptateur",
+        "018": "Auteur de l'animation",
+        "020": "Annotateur",
+        "030": "Arrangeur",
+        "040": "Artiste",
+        "050": "Autre détenteur du privilège",
+        "060": "Nom associé à l'exemplaire",
+        "065": "Commissaire-priseur",
+        "070": "Auteur",
+        "070 + 210": "Conférencier",
+        "072": "Auteur des citations ou des fragments textuels",
+        "075": "Auteur de la postface, du colophon, etc.",
+        "080": "Préfacier, etc.",
+        "090": "Dialoguiste"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Partie du nom autre que l'élément d'entrée"
+      },
+      "c": {
+        "*": "Qualificatifs autres que les dates"
+      },
+      "d": {
+        "*": "Chiffres romains"
+      },
+      "f": {
+        "*": "Dates"
+      },
+      "g": {
+        "*": "Forme développée des initiales du prénom"
+      },
+      "p": {
+        "*": "Affiliation ou adresse"
+      }
+    },
+    "value": "Nom de personne (relatif à l'oeuvre ou à l'expression)"
+  },
+  "702": {
+    "ind1": {},
+    "ind2": {
+      "0": "Nom entré au prénom ou au nom dans l'ordre direct",
+      "1": "Nom entré au nom (de famille, patronymique, etc.)"
+    },
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Partie du nom autre que l'élément d'entrée"
+      },
+      "c": {
+        "*": "Qualificatifs autres que les dates"
+      },
+      "d": {
+        "*": "Chiffres romains"
+      },
+      "f": {
+        "*": "Dates"
+      },
+      "g": {
+        "*": "Forme développée des initiales du prénom"
+      },
+      "p": {
+        "*": "Affiliation ou adresse"
+      }
+    },
+    "value": "Nom de personne (relatif à la manifestation ou à l'item)"
+  },
+  "710": {
+    "ind1": {
+      "0": "Collectivité",
+      "1": "Congrès"
+    },
+    "ind2": {
+      "0": "Inversion de l'ordre des mots du point d'accès",
+      "1": "Le premier élément est un nom de lieu",
+      "2": "Pas d'inversion dans l'ordre des mots"
+    },
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Subdivision"
+      },
+      "c": {
+        "*": "Elément ajouté au nom ou qualificatif"
+      },
+      "d": {
+        "*": "Numéro de congrès et/ou de session"
+      },
+      "e": {
+        "*": "Lieu du congrès"
+      },
+      "f": {
+        "*": "Date du congrès"
+      },
+      "g": {
+        "*": "Elément rejeté"
+      },
+      "h": {
+        "*": "Partie du nom autre que l'élément d'entrée et que l'élément rejeté"
+      },
+      "p": {
+        "*": "Affiliation ou adresse"
+      }
+    },
+    "value": "Collectivité (relative à l'oeuvre ou à l'expression)"
+  },
+  "711": {
+    "ind1": {
+      "0": "Collectivité",
+      "1": "Congrès"
+    },
+    "ind2": {
+      "0": "Inversion de l'ordre des mots du point d'accès",
+      "1": "Le premier élément est un nom de lieu",
+      "2": "Pas d'inversion dans l'ordre des mots"
+    },
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Subdivision"
+      },
+      "c": {
+        "*": "Elément ajouté au nom ou qualificatif"
+      },
+      "d": {
+        "*": "Numéro de congrès et/ou de session"
+      },
+      "e": {
+        "*": "Lieu du congrès"
+      },
+      "f": {
+        "*": "Date du congrès"
+      },
+      "g": {
+        "*": "Elément rejeté"
+      },
+      "h": {
+        "*": "Partie du nom autre que l'élément d'entrée et que l'élément rejeté"
+      },
+      "p": {
+        "*": "Affiliation ou adresse"
+      }
+    },
+    "value": "Collectivité (relative à l'oeuvre ou à l'expression)"
+  },
+  "712": {
+    "ind1": {
+      "0": "Collectivité",
+      "1": "Congrès"
+    },
+    "ind2": {
+      "0": "Inversion de l'ordre des mots de la point d'accès",
+      "1": "Le premier élément est un nom de lieu",
+      "2": "Pas d'inversion dans l'ordre des mots"
+    },
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Subdivision"
+      },
+      "c": {
+        "*": "Elément ajouté au nom ou qualificatif"
+      },
+      "d": {
+        "*": "Numéro de congrès et/ou de session"
+      },
+      "e": {
+        "*": "Lieu du congrès"
+      },
+      "f": {
+        "*": "Date du congrès"
+      },
+      "g": {
+        "*": "Elément rejeté"
+      },
+      "h": {
+        "*": "Partie du nom autre que l'élément d'entrée et que l'élément rejeté"
+      },
+      "p": {
+        "*": "Affiliation ou adresse"
+      }
+    },
+    "value": "Collectivité (relative à la manifestation ou à l'item)"
+  },
+  "716": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "c": {
+        "*": "Qualificatifs (autres que les dates)"
+      },
+      "f": {
+        "*": "Dates"
+      }
+    },
+    "value": "Marque commerciale - Mention de responsabilité"
+  },
+  "720": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "c": {
+        "*": "Type de famille"
+      },
+      "d": {
+        "*": "Lieu associé à la famille"
+      },
+      "f": {
+        "*": "Dates"
+      }
+    },
+    "value": "Nom de famille (relatif à l'oeuvre ou à l'expression)"
+  },
+  "721": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "c": {
+        "*": "Type de famille"
+      },
+      "d": {
+        "*": "Lieu associé à la famille"
+      },
+      "f": {
+        "*": "Dates"
+      }
+    },
+    "value": "Nom de famille (relatif à l'oeuvre ou à l'expression)"
+  },
+  "722": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "Numéro de la notice d'autorité (lien créé)"
+      },
+      "4": {
+        "*": "Code de fonction"
+      },
+      "6": {
+        "*": "Données de lien entre zones"
+      },
+      "7": {
+        "*": "Informations codées sur l'écriture de catalogage des données de la zone"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "c": {
+        "*": "Type de famille"
+      },
+      "d": {
+        "*": "Lieu associé à la famille"
+      },
+      "f": {
+        "*": "Dates"
+      }
+    },
+    "value": "Nom de famille (relatif à la manifestation ou à l'item)"
+  },
+  "801": {
+    "ind1": {},
+    "ind2": {
+      "0": "Agence ayant fait le catalogage original",
+      "1": "Agence de saisie",
+      "2": "Agence ayant modifié les données",
+      "3": "Agence diffusant la notice"
+    },
+    "subfields": {
+      "2": {
+        "*": "Code du système"
+      },
+      "a": {
+        "*": "Pays"
+      },
+      "b": {
+        "*": "Agence de catalogage"
+      },
+      "c": {
+        "*": "Date de la transaction"
+      },
+      "g": {
+        "*": "Règles de catalogage utilisées (conventions pour la description)"
+      },
+      "h": {
+        "*": "Identifiant d'origine"
+      }
+    },
+    "value": "Source de catalogage"
+  },
+  "802": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {},
+    "value": "Centre ISSN"
+  },
+  "830": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Texte de la note"
+      }
+    },
+    "value": "Note générale du catalogueur"
+  },
+  "856": {
+    "ind1": {
+      "0": "Messagerie électronique",
+      "1": "FTP",
+      "2": "Telnet",
+      "3": "Numéro de téléphone",
+      "4": "HTTP",
+      "7": "Mode d’accès spécifié dans la sous-zone $y",
+      "#": "Aucune information fournie"
+    },
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte du lien hypertexte"
+      },
+      "a": {
+        "*": "Nom du serveur"
+      },
+      "b": {
+        "*": "Numéro d'accès"
+      },
+      "c": {
+        "*": "Informations sur la compression de fichiers"
+      },
+      "d": {
+        "*": "Chemin d'accès"
+      },
+      "e": {
+        "*": "Date et heure de consultation"
+      },
+      "f": {
+        "*": "Nom du fichier électronique"
+      },
+      "h": {
+        "*": "Opérateur de la requête"
+      },
+      "i": {
+        "*": "Instruction"
+      },
+      "j": {
+        "*": "Bits par seconde"
+      },
+      "k": {
+        "*": "Mot de passe"
+      },
+      "l": {
+        "*": "Logon/Login"
+      },
+      "m": {
+        "*": "Assistance technique pour l’accès à la ressource"
+      },
+      "n": {
+        "*": "Adresse du serveur cité en $a"
+      },
+      "o": {
+        "*": "Système d'exploitation"
+      },
+      "p": {
+        "*": "Port"
+      },
+      "q": {
+        "*": "Format électronique du fichier"
+      },
+      "r": {
+        "*": "Configuration de transfert de données"
+      },
+      "s": {
+        "*": "Taille du fichier"
+      },
+      "t": {
+        "*": "Emulation du terminal"
+      },
+      "u": {
+        "*": "URI (Uniform Resource Identifier)"
+      },
+      "v": {
+        "*": "Heures d'accès"
+      },
+      "w": {
+        "*": "Identifiant de la notice"
+      },
+      "x": {
+        "*": "Note non destinée au public"
+      },
+      "y": {
+        "*": "Mode d'accès"
+      },
+      "z": {
+        "*": "Note destinée au public"
+      }
+    },
+    "value": "Adresse électronique et mode d'accès"
+  },
+  "859": {
+    "ind1": {
+      "0": "Courrier électronique",
+      "1": "FTP",
+      "2": "Connexion pour l'accès à distance (Telnet)",
+      "3": "Accès par le réseau téléphonique commuté",
+      "4": "HTTP",
+      "7": "Méthode précisée dans la sous-zone $y",
+      "#": "Non défini"
+    },
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Texte de lien hypertexte"
+      },
+      "a": {
+        "*": "Nom du serveur"
+      },
+      "b": {
+        "*": "Numéro d'accès"
+      },
+      "c": {
+        "*": "Informations sur la compression"
+      },
+      "d": {
+        "*": "Chemin d'accès"
+      },
+      "e": {
+        "*": "Date et heure de consultation"
+      },
+      "f": {
+        "*": "Nom du fichier"
+      },
+      "h": {
+        "*": "Moteur de recherche"
+      },
+      "i": {
+        "*": "Instruction"
+      },
+      "j": {
+        "*": "Bits par seconde"
+      },
+      "k": {
+        "*": "Mot de passe"
+      },
+      "l": {
+        "*": "Logon/Login"
+      },
+      "m": {
+        "*": "Aide pour l'accès à distance"
+      },
+      "n": {
+        "*": "Nom et localisation du serveur dans la sous-zone $a"
+      },
+      "o": {
+        "*": "Système d'exploitation"
+      },
+      "p": {
+        "*": "Port"
+      },
+      "q": {
+        "*": "Format électronique du fichier"
+      },
+      "r": {
+        "*": "Paramètres de transmission"
+      },
+      "s": {
+        "*": "Taille du fichier"
+      },
+      "t": {
+        "*": "Emulation du terminal"
+      },
+      "u": {
+        "*": "URI (Uniform Resource Identifier)"
+      },
+      "v": {
+        "*": "Horaires d'accès au service"
+      },
+      "w": {
+        "*": "Numéro de contrôle de l'enregistrement"
+      },
+      "x": {
+        "*": "Note confidentielle"
+      },
+      "y": {
+        "*": "Méthode d'accès"
+      },
+      "z": {
+        "*": "Note publique"
+      }
+    },
+    "value": "Adresse électronique et mode d'accès obtenus des fournisseurs de notices"
+  },
+  "915": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Numéro d'inventaire"
+      },
+      "b": {
+        "*": "Numéro de code à barres"
+      },
+      "c": {
+        "*": "Code à barres : Préfixe"
+      },
+      "d": {
+        "*": "Code à barres : Incrémentation"
+      },
+      "e": {
+        "*": "Code à barres : Suffixe"
+      }
+    },
+    "value": "Numéro de gestion"
+  },
+  "917": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Données de communication"
+      }
+    },
+    "value": "Données codées sur le prêt, le dépôt, la communication et la reproduction"
+  },
+  "919": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Numéro de l'exemplaire dans le système local"
+      }
+    },
+    "value": "Références dans le système local"
+  },
+  "930": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système de classification utilisé dans la cotation"
+      },
+      "a": {
+        "*": "Cote complète"
+      },
+      "b": {
+        "*": "Localisation de niveau 1 : Identifiant de l'établissement"
+      },
+      "c": {
+        "*": "Localisation de niveau 2 : Localisation complémentaire"
+      },
+      "d": {
+        "*": "Localisation de niveau 3 : Localisation complémentaire"
+      },
+      "e": {
+        "*": "Fonds spécifique"
+      },
+      "f": {
+        "*": "Dépositaire permanent"
+      },
+      "g": {
+        "*": "Indice de classification"
+      },
+      "h": {
+        "*": "Partie du titre, du nom de l'auteur ou du segment auteur/titre prise comme élément de classement"
+      },
+      "i": {
+        "*": "Complément de la cote"
+      },
+      "j": {
+        "*": "Code de PEB"
+      },
+      "w": {
+        "*": "Code de statut de l'exemplaire"
+      },
+      "l": {
+        "*": "Localisation de niveau 4 : Localisation complémentaire"
+      },
+      "t": {
+        "*": "Numéro de regroupement..."
+      },
+      "v": {
+        "*": "Volumaison ou qualificatif"
+      },
+      "z": {
+        "*": "Code du plan de conservation partagée"
+      },
+      "p": {
+        "*": "Pôle de conservation ou pôle associé dans le cadre d'un PCPP"
+      }
+    },
+    "value": "Localisation et cote"
+  },
+  "931": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système de classification utilisé dans la cotation"
+      },
+      "a": {
+        "*": "Cote complète"
+      },
+      "b": {
+        "*": "Localisation de niveau 1 : Identifiant de l'établissement"
+      },
+      "c": {
+        "*": "Localisation de niveau 2 : Localisation complémentaire"
+      },
+      "d": {
+        "*": "Localisation de niveau 3 : Localisation complémentaire"
+      },
+      "e": {
+        "*": "Fonds spécifique"
+      },
+      "g": {
+        "*": "Indice de classification"
+      },
+      "h": {
+        "*": "Partie du titre, du nom de l'auteur ou du segment auteur/titre prise comme élément de classement"
+      },
+      "i": {
+        "*": "Complément de la cote"
+      },
+      "l": {
+        "*": "Localisation de niveau 4 : Localisation complémentaire"
+      },
+      "t": {
+        "*": "Numéro de regroupement"
+      },
+      "v": {
+        "*": "Volumaison ou qualificatif"
+      }
+    },
+    "value": "Ancienne cote"
+  },
+  "932": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système de classification utilisé dans la cotation"
+      },
+      "a": {
+        "*": "Cote complète"
+      },
+      "b": {
+        "*": "Localisation de niveau 1 : Identifiant de l'établissement"
+      },
+      "c": {
+        "*": "Localisation de niveau 2 : Localisation complémentaire"
+      },
+      "d": {
+        "*": "Localisation de niveau 3 : Localisation complémentaire"
+      },
+      "g": {
+        "*": "Indice de classification"
+      },
+      "h": {
+        "*": "Partie du titre, du nom de l'auteur ou du segment auteur/titre prise comme élément de classement"
+      },
+      "i": {
+        "*": "Complément de la cote"
+      },
+      "l": {
+        "*": "Localisation de niveau 4 : Localisation complémentaire"
+      },
+      "t": {
+        "*": "Numéro de regroupement"
+      },
+      "v": {
+        "*": "Volumaison ou qualificatif"
+      }
+    },
+    "value": "Future cote"
+  },
+  "955": {
+    "ind1": {
+      "1": "[Degré de précision de l'état de collection : état de collection minimal]",
+      "3": "[Degré de précision de l'état de collection : état de collection succinct]",
+      "4": "[Degré de précision de l'état de collection : état de collection détaillé]",
+      "#": "[Degré de précision de l'état de collection : non précisé]"
+    },
+    "ind2": {
+      "1": "[Présentation : sous forme compacte]",
+      "2": "[Présentation : état de collection détaillé]",
+      "#": "[Présentation : non applicable]"
+    },
+    "subfields": {
+      "0": {
+        "*": "Séparateur de groupe pour chaque groupe \"Début\""
+      },
+      "1": {
+        "*": "Délai de conservation"
+      },
+      "2": {
+        "*": "Année de début de conservation"
+      },
+      "3": {
+        "*": "Nombre de copies conservées"
+      },
+      "4": {
+        "*": "Commentaire sur l'ensemble de la collection"
+      },
+      "5": {
+        "*": "Numérotation parallèle"
+      },
+      "7": {
+        "*": "Mention de lacunes"
+      },
+      "a": {
+        "*": "Année de début"
+      },
+      "b": {
+        "*": "Jour de début"
+      },
+      "c": {
+        "*": "Mois de début"
+      },
+      "d": {
+        "*": "Volume de début"
+      },
+      "e": {
+        "*": "Numéro de début"
+      },
+      "f": {
+        "*": "Indication de début"
+      },
+      "g": {
+        "*": "Commentaire pour le groupe \"Début\""
+      },
+      "k": {
+        "*": "Année de fin"
+      },
+      "l": {
+        "*": "Jour de fin"
+      },
+      "m": {
+        "*": "Mois de fin"
+      },
+      "n": {
+        "*": "Volume de fin"
+      },
+      "o": {
+        "*": "Numéro de fin"
+      },
+      "p": {
+        "*": "Indication de fin"
+      },
+      "q": {
+        "*": "Commentaire pour le groupe \"Fin\""
+      },
+      "-": {
+        "*": "Indication \"en cours\""
+      }
+    },
+    "value": "Etat de collection des publications en série, unités bibliographiques"
+  },
+  "956": {
+    "ind1": {
+      "1": "[Degré de précision de l'état de collection : état de collection minimal]",
+      "3": "[Degré de précision de l'état de collection : état de collection succinct]",
+      "4": "[Degré de précision de l'état de collection : état de collection détaillé]",
+      "#": "[Degré de précision de l'état de collection : non précisé]"
+    },
+    "ind2": {
+      "1": "[Présentation : sous forme compacte]",
+      "2": "[Présentation : état de collection détaillé]",
+      "#": "[Présentation : non applicable]"
+    },
+    "subfields": {
+      "0": {
+        "*": "Séparateur de groupe pour chaque groupe \"Début\""
+      },
+      "1": {
+        "*": "Délai de conservation"
+      },
+      "2": {
+        "*": "Année de début de conservation"
+      },
+      "3": {
+        "*": "Nombre de copies conservées"
+      },
+      "4": {
+        "*": "Commentaire sur l'ensemble de la collection"
+      },
+      "5": {
+        "*": "Numérotation parallèle"
+      },
+      "7": {
+        "*": "Mention de lacunes"
+      },
+      "a": {
+        "*": "Année de début"
+      },
+      "b": {
+        "*": "Jour de début"
+      },
+      "c": {
+        "*": "Mois de début"
+      },
+      "d": {
+        "*": "Volume de début"
+      },
+      "e": {
+        "*": "Numéro de début"
+      },
+      "f": {
+        "*": "Indication de début"
+      },
+      "g": {
+        "*": "Commentaire pour le groupe \"Début\""
+      },
+      "k": {
+        "*": "Année de fin"
+      },
+      "l": {
+        "*": "Jour de fin"
+      },
+      "m": {
+        "*": "Mois de fin"
+      },
+      "n": {
+        "*": "Volume de fin"
+      },
+      "o": {
+        "*": "Numéro de fin"
+      },
+      "p": {
+        "*": "Indication de fin"
+      },
+      "q": {
+        "*": "Commentaire pour le groupe \"Fin\""
+      },
+      "-": {
+        "*": "Indication \"en cours\""
+      }
+    },
+    "value": "Etat de collection des publications en série, unités bibliographiques secondaires - suppléments et matériel d'accompagnement"
+  },
+  "957": {
+    "ind1": {
+      "1": "[Degré de précision de l'état de collection : état de collection minimal]",
+      "3": "[Degré de précision de l'état de collection : état de collection succinct]",
+      "4": "[Degré de précision de l'état de collection : état de collection détaillé]",
+      "#": "[Degré de précision de l'état de collection : non précisé]"
+    },
+    "ind2": {
+      "1": "[Présentation : sous forme compacte]",
+      "2": "[Présentation : état de collection détaillé]",
+      "#": "[Présentation : non applicable]"
+    },
+    "subfields": {
+      "0": {
+        "*": "Séparateur de groupe pour chaque groupe \"Début\""
+      },
+      "1": {
+        "*": "Délai de conservation"
+      },
+      "2": {
+        "*": "Année de début de conservation"
+      },
+      "3": {
+        "*": "Nombre de copies conservées"
+      },
+      "4": {
+        "*": "Commentaire sur l'ensemble de la collection"
+      },
+      "5": {
+        "*": "Numérotation parallèle"
+      },
+      "7": {
+        "*": "Mention de lacunes"
+      },
+      "a": {
+        "*": "Année de début"
+      },
+      "b": {
+        "*": "Jour de début"
+      },
+      "c": {
+        "*": "Mois de début"
+      },
+      "d": {
+        "*": "Volume de début"
+      },
+      "e": {
+        "*": "Numéro de début"
+      },
+      "f": {
+        "*": "Indication de début"
+      },
+      "g": {
+        "*": "Commentaire pour le groupe \"Début\""
+      },
+      "k": {
+        "*": "Année de fin"
+      },
+      "l": {
+        "*": "Jour de fin"
+      },
+      "m": {
+        "*": "Mois de fin"
+      },
+      "n": {
+        "*": "Volume de fin"
+      },
+      "o": {
+        "*": "Numéro de fin"
+      },
+      "p": {
+        "*": "Indication de fin"
+      },
+      "q": {
+        "*": "Commentaire pour le groupe \"Fin\""
+      },
+      "-": {
+        "*": "Indication \"en cours\""
+      }
+    },
+    "value": "Etat de collection des publications en série, unités bibliographiques secondaires - tables et index"
+  },
+  "958": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Titre"
+      },
+      "c": {
+        "*": "Collation de la partie"
+      },
+      "v": {
+        "*": "Numéro de volume"
+      }
+    },
+    "value": "Nom et importance matérielle d'une partie"
+  },
+  "959": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "Séparateur de séquence"
+      },
+      "4": {
+        "*": "Commentaire général sur l'ensemble des lacunes (affiché en fin de zone)"
+      },
+      "d": {
+        "*": "Volume"
+      },
+      "e": {
+        "*": "Numéro"
+      },
+      "f": {
+        "*": "Série (niveau supplémentaire dans la numérotation, ne pas confondre avec \"hors-série\")"
+      },
+      "b": {
+        "*": "Jour"
+      },
+      "c": {
+        "*": "Mois"
+      },
+      "a": {
+        "*": "Année"
+      },
+      "h": {
+        "*": "Information additionnelle sur la numérotation de la livraison manquante"
+      },
+      "i": {
+        "*": "Information additionnelle sur le contenu de la livraison manquante"
+      },
+      "g": {
+        "*": "Commentaire sur la livraison manquante"
+      }
+    },
+    "value": "Etat des lacunes des publications en série"
+  },
+  "990": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Texte de la note"
+      }
+    },
+    "value": "Note de contenu propre à l'établissement"
+  },
+  "991": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système d'indexation utilisé"
+      },
+      "a": {
+        "*": "Elément d'entrée"
+      },
+      "b": {
+        "*": "Subdivision"
+      },
+      "c": {
+        "*": "Qualificatif"
+      }
+    },
+    "value": "Indexation locale"
+  },
+  "992": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système de classification utilisé"
+      },
+      "a": {
+        "*": "Indice"
+      }
+    },
+    "value": "Classification locale"
+  },
+  "997": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Numero dans la source"
+      },
+      "b": {
+        "*": "Nom de la source"
+      }
+    },
+    "value": "Numéro de la notice source"
+  },
+  "001": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {},
+    "value": "Identifiant de la notice"
+  },
+  "003": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {},
+    "value": "Identifiant pérenne de la notice"
+  },
+  "007": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {},
+    "value": "Identification de l'instance responsable de la suppression de la notice et date de suppression de la notice"
+  },
+  "011": {
+    "ind1": {
+      "0": "Publication d'intérêt national ou international",
+      "1": "Publication d'intérêt local",
+      "#": "Niveau d'intérêt non spécifié"
+    },
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Numéro (ISSN)"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "d": {
+        "*": "Disponibilité et/ou prix"
+      },
+      "f": {
+        "*": "ISSN-L (= ISSN de lien)"
+      },
+      "g": {
+        "*": "ISSN-L annulé"
+      },
+      "y": {
+        "*": "ISSN annulé"
+      },
+      "z": {
+        "*": "ISSN ou ISSN-L erroné"
+      }
+    },
+    "value": "Numéro international normalisé d'une ressource continue (ISSN)"
+  },
+  "010": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "9": {
+        "*": "ISBN d'une livraison de publication en série"
+      },
+      "a": {
+        "*": "Numéro (ISBN) (dit \"ISBN-10\")"
+      },
+      "A": {
+        "*": "Numéro (ISBN) (dit \"ISBN-13\")"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "d": {
+        "*": "Disponibilité et/ou prix"
+      },
+      "z": {
+        "*": "ISBN erroné"
+      }
+    },
+    "value": "Numéro international normalisé du livre (ISBN)"
+  },
+  "012": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Code du système utilisé pour l'empreinte"
+      },
+      "a": {
+        "*": "Empreinte"
+      }
+    },
+    "value": "Empreinte identifiant le document"
+  },
+  "013": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Numéro (ISMN)"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "d": {
+        "*": "Disponibilité et/ou prix"
+      },
+      "z": {
+        "*": "ISMN erroné"
+      }
+    },
+    "value": "Numéro international normalisé de document musical (ISMN)"
+  },
+  "014": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Système de codification"
+      },
+      "a": {
+        "*": "Numéro d'article"
+      },
+      "z": {
+        "*": "Numéro d'article erroné"
+      }
+    },
+    "value": "Numéro d'identification d'un article de périodique"
+  },
+  "015": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Numéro (ISRN)"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "d": {
+        "*": "Disponibilité et/ou prix"
+      },
+      "z": {
+        "*": "ISRN annulé/erroné"
+      }
+    },
+    "value": "Numéro international normalisé de rapport technique (ISRN)"
+  },
+  "017": {
+    "ind1": {
+      "7": "Source du type de numéro ou de code normalisé précisée en $2",
+      "8": "Type de numéro normalisé non précisé"
+    },
+    "ind2": {
+      "0": "Pas d'indication sur l'identité / la différence entre l'identifiant sous forme de code-à-barres et sa transcription en clair (sur le document)",
+      "1": "L'identifiant sous forme de code-à-barres et sa transcription en clair (sur le document) sont identiques",
+      "2": "L'identifiant sous forme de code-à-barres et sa transcription en clair (sur le document) sont différents"
+    },
+    "subfields": {
+      "2": {
+        "*": "Code du référentiel"
+      },
+      "a": {
+        "*": "Numéro ou code normalisé"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "d": {
+        "*": "Modalités d'acquisition et/ou prix"
+      },
+      "z": {
+        "*": "Numéro ou code erroné"
+      }
+    },
+    "value": "Autre identifiant normalisé"
+  },
+  "019": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Numéro (ISBN) (dit \"ISBN-10\")"
+      },
+      "A": {
+        "*": "Numéro (ISBN) (dit \"ISBN-13\")"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "d": {
+        "*": "Disponibilité et/ou prix"
+      },
+      "z": {
+        "*": "ISBN erroné"
+      }
+    },
+    "value": "Numéro international normalisé du livre (ISBN) fourni dans les notices de ressources électroniques"
+  },
+  "020": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Code de pays"
+      },
+      "b": {
+        "*": "Numéro"
+      },
+      "z": {
+        "*": "Numéro erroné"
+      }
+    },
+    "value": "Numéro de la bibliographie nationale"
+  },
+  "021": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Code de pays"
+      },
+      "b": {
+        "*": "Numéro"
+      },
+      "z": {
+        "*": "Numéro erroné"
+      }
+    },
+    "value": "Numéro de dépôt légal"
+  },
+  "022": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Code de pays"
+      },
+      "b": {
+        "*": "Numéro"
+      },
+      "z": {
+        "*": "Numéro erroné"
+      }
+    },
+    "value": "Numéro de publication officielle"
+  },
+  "023": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "PPN de la notice préférée"
+      }
+    },
+    "value": "Identifiant de la notice préférée"
+  },
+  "024": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "3": {
+        "*": "PPN de la notice préférée"
+      },
+      "a": {
+        "*": "Nom de la table de fusion"
+      },
+      "b": {
+        "*": "Etat du candidat doublon"
+      },
+      "x": {
+        "*": "Taux de similarité"
+      }
+    },
+    "value": "zone de dédoublonnage"
+  },
+  "029": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "Pays d'obtention du diplôme (code, ISO 3166)"
+      },
+      "b": {
+        "*": "Numéro national de thèse"
+      }
+    },
+    "value": "Numéro national de thèse"
+  },
+  "033": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Source du chargement"
+      },
+      "a": {
+        "*": "Identifiant pérenne (valide)"
+      },
+      "d": {
+        "*": "Date de chargement"
+      },
+      "z": {
+        "*": "Identifiant pérenne annulé ou erroné"
+      }
+    },
+    "value": "Identifiant pérenne de la notice dans un autre système"
+  },
+  "034": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "0": {
+        "*": "Numéro d'identification de la notice"
+      },
+      "a": {
+        "*": "Identifiant de la source"
+      }
+    },
+    "value": "Numéro de la notice dans le catalogue WorldCat"
+  },
+  "035": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "2": {
+        "*": "Source"
+      },
+      "a": {
+        "*": "Identifiant de la notice dans un autre système"
+      },
+      "z": {
+        "*": "Identifiant annulé ou erroné"
+      }
+    },
+    "value": "Identifiant de la notice dans un autre système"
+  },
+  "040": {
+    "ind1": {},
+    "ind2": {},
+    "subfields": {
+      "a": {
+        "*": "CODEN"
+      },
+      "z": {
+        "*": "CODEN erroné"
+      }
+    },
+    "value": "CODEN"
+  },
+  "071": {
+    "ind1": {
+      "0": "Enregistrements sonores : référence commerciale",
+      "1": "Enregistrements sonores : numéro de matrice",
+      "2": "Musique imprimée : cotage",
+      "3": "Musique imprimée : autre numéro d'éditeur",
+      "4": "Vidéogrammes : référence commerciale",
+      "5": "Autre type de référence commerciale",
+      "6": "Ressources électroniques (p. ex., cédérom) : référence commerciale"
+    },
+    "ind2": {
+      "1": "Génération d'une note"
+    },
+    "subfields": {
+      "a": {
+        "*": "Numéro de référence éditoriale"
+      },
+      "b": {
+        "*": "Source"
+      },
+      "c": {
+        "*": "Qualificatif"
+      },
+      "d": {
+        "*": "Disponibilité et/ou prix"
+      },
+      "z": {
+        "*": "Numéro d'éditeur erroné"
+      }
+    },
+    "value": "Référence éditoriale"
+  },
+  "072": {
+    "ind1": {},
+    "ind2": {
+      "0": "On ignore s'il y a une différence entre le code scanné et le code visible à l'œil nu",
+      "1": "Pas de différence entre le code scanné et le code visible à l'œil nu",
+      "2": "Il y a une différence entre le code scanné et le code visible à l'œil nu"
+    },
+    "subfields": {
+      "a": {
+        "*": "Numéro UPC"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "c": {
+        "*": "Codes additionnels suivant le numéro UPC"
+      },
+      "d": {
+        "*": "Modalités d'acquisition et/ou prix"
+      },
+      "z": {
+        "*": "Numéro UPC erroné"
+      }
+    },
+    "value": "UPC (Universal product code = code universel de produit)"
+  },
+  "073": {
+    "ind1": {},
+    "ind2": {
+      "0": "On ignore s'il y a une différence entre le code scanné et le code visible à l'œil nu",
+      "1": "Pas de différence entre le code scanné et le code visible à l'œil nu",
+      "2": "Il y a une différence entre le code scanné et le code visible à l'œil nu"
+    },
+    "subfields": {
+      "a": {
+        "*": "Numéro EAN"
+      },
+      "b": {
+        "*": "Qualificatif"
+      },
+      "c": {
+        "*": "Codes additionnels suivant le numéro EAN"
+      },
+      "d": {
+        "*": "Modalités d'acquisition et/ou prix"
+      },
+      "z": {
+        "*": "Numéro EAN erroné"
+      }
+    },
+    "value": "EAN (International article number = code international d'article)"
+  }
+}
