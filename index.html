@@ -10,7 +10,7 @@
 <body>
   <header><h1>JsMarc</h1></header>
   <main>
-    <section>
+    <section id="query">
       <form id="marc_in" action="#">
         <fieldset class="collapse"><legend onclick="document.querySelector('fieldset').classList.toggle('collapse')">Advanced parameters</legend>
           <label for="cfn">Record Separator</label><input type="text" id="cfn" name="cfn" value="\u001d">
@@ -32,11 +32,23 @@
         <label id="l_td" for="toDisplay" class="hidden">Fields to display</label><input class="hidden" type="text" id="toDisplay" name="toDisplay" value="010$a">
 
         <label for="inputFile">Load a MARC record</label><input type="file" id="inputFile" name="inputFile">
-        <input type="button" value="Submit"/>
+        <input type="button" id="submit" value="Submit"/>
       </form>
       <div id="progress" class="hidden">
-        <label id="l_sent" for="sent">Progress : <strong></strong></label><progress id="sent" max="100" value="0"></progress>
+        <label id="l_sent" for="sent">Progress: <strong></strong></label><progress id="sent" max="100" value="0"></progress>
       </div>
+    </section>
+    <section id="results">
+      <template id="marcView">
+        <table>
+          <thead>
+            <tr class="raw"><th>Raw record</th><th class="rawRecord" colspan="3"></th></tr>
+            <tr><th>Field</th><th>Indicators</th><th>Subfields</th><th>Value</th></tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </template>
     </section>
   </main>
   <footer></footer>
