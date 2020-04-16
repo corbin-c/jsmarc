@@ -50,9 +50,7 @@ const MARC = { //Template object
 }
 class MarcParser {
   constructor(rec,params={}) {
-    Object.keys(MARC).map(e => { //locally reproduce the template
-      this[e] = MARC[e];
-    });
+    Object.assign(this,JSON.parse(JSON.stringify(MARC))); //locally copy template
     //populate object
     this.rawRecord = rec;
     this.fieldSeparator = (params.fields || this.fieldSeparator);
