@@ -1,10 +1,14 @@
 import { Workerify } from "https://corbin-c.github.io/workerify/workerify.js";
 import * as Marc from "./parser.js";
-const context = Object.keys(Marc).map(e => {
-  return {name:e,value:Marc[e]};
-});
-const parse = Workerify(Marc.parseRecord,context);
-const filter = Workerify(Marc.filterRecord);
+import * as MarcHelper from "./helper.js";
+
+const mkContext = (obj) => {
+  return Object.keys(obj).map(e => {
+    return {name:e,value:obj[e]};
+  });
+}
+const parse = Workerify(Marc.parseRecord,mkContext(Marc),10);
+const filter = Workerify(Marc.filterRecord,[],10);
 
 let inputToStr = (input) => {
   return new Promise((resolve,reject) => {
@@ -16,10 +20,22 @@ let inputToStr = (input) => {
   })
 };
 
+let makeLabel = (label,parent) => {
+  if (typeof label !== "undefined") {
+    let span = document.createElement("span");
+    label = (typeof label === "string") ? label
+      : label.filter(e => typeof e !== "undefined").join(" | ");
+    span.innerText = label;
+    span.classList.add("label");
+    if (span.innerText != "") {
+      parent.append(span);
+    }
+  }
+}
+
 let makeMarcView = (record) => {
-  console.log(record);
   let template = document.querySelector("#marcView");
-  let table = document.importNode(template.content, true);
+  let table = document.importNode(template.content, true).querySelector("table");
   table.querySelector(".rawRecord").innerText = record.rawRecord;
   let body = table.querySelector("tbody");
   record.fields.map(e => {
@@ -29,7 +45,9 @@ let makeMarcView = (record) => {
     let subfield = document.createElement("td");
     let value = document.createElement("td");
     field.innerText = e.code;
-    indicator.innerText = (e.indicator || "").replace(/ /g,"_");    
+    indicator.innerText = (e.indicator || "").replace(/ /g,"_");
+    makeLabel(e.label,field);
+    makeLabel(e.indicators_label,indicator);  
     fieldLine.append(field);
     fieldLine.append(indicator);
     fieldLine.append(subfield);
@@ -52,6 +70,7 @@ let makeMarcView = (record) => {
         }
         subfield.innerText = e.subfields[s].code;
         value.innerText = e.subfields[s].value;
+        makeLabel(e.subfields[s].label,subfield);
       });
     }
   });
@@ -59,10 +78,15 @@ let makeMarcView = (record) => {
 }
 
 const operations = {
-  display:(records,params={}) => {
-    records.split(JSON.parse('"'+document.querySelector("#cfn").value+'"')).map(async e => {
+  display: async (records,params={}) => {
+    await MarcHelper.formats;
+    const helper = Workerify(MarcHelper.explainRecord,mkContext(MarcHelper),10);
+    records.split(JSON.parse('"'+document.querySelector("#cfn").value+'"')).map(async (e,i) => {
+      console.log(e);
       if (["","\n"].indexOf(e) < 0) {
-        document.querySelector("#results").append(makeMarcView(await parse(e)));
+        e = await parse(e);
+        e = await helper(e,"unimarc");
+        document.querySelector("#results").append(makeMarcView(e));
       }
     });
   }
