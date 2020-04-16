@@ -3,7 +3,7 @@
 In order to display the meaning of the fields when working with records, JsMarc
 relies on Marc formats definitions, stored in this folder in the form of JSON
 files. You might want to ammend those definitions or even add your own. You can do
-so by creating a JSON file which follow the accepted structure and add it to the list
+so by creating a JSON file which follows the required structure and add it to the list
 under `../formats.json`.
 
 ## Structure
@@ -34,6 +34,8 @@ under `../formats.json`.
 
 ## Data sources
 
+**/!\ Provided files describe bibliographic records, not authorities.**
+
 ### Unimarc
 
 The definitions for Unimarc are from the ABES documentation:
@@ -44,7 +46,7 @@ The lousy script used for data extraction is located at `./abes.js`
 The ABES documentation is [CC BY-SA](http://creativecommons.org/licenses/by-nc-sa/3.0/fr/)
 and so are these definitions.
 
-/!\ The Unimarc description is in French and may include non-standard variations 
+**/!\ The Unimarc description is in French and may include non-standard variations**
 
 ### Marc21
 
