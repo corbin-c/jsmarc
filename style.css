@@ -24,7 +24,7 @@ fieldset.collapse
   height: 0;
   overflow: hidden;
 }
-section
+#query
 {
   display: flex;
   flex-direction: row;
@@ -53,4 +53,17 @@ table
 }
 .hidden {
   display: none;
+}
+.label {
+  border: 1px solid black;
+  background: #ffc;
+  position: absolute;
+  padding: 3px;
+  box-shadow: 6px 6px 20px 6px rgba(0,0,0,0.3);  
+  color: grey;
+  font-size: small;
+  display: none;
+}
+td:hover .label {
+  display: block;
 }
