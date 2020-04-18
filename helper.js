@@ -27,6 +27,35 @@ let formats = ((form_defs) => {
   formats = await formats;
 })()
 
+let searchField = async (str,format) => {
+  let compare = (str1,str2) => {
+    return (str1.toLowerCase().indexOf(str2.toLowerCase()) >= 0);
+  }
+  let results = [];
+  await formats;
+  if (typeof formats[format] === "undefined") {
+    throw new Error("No such format `"+format+"`");
+  }
+  format = formats[format];
+  Object.keys(format).map(code => {
+    if (typeof format[code].value !== "undefined") {
+      if (compare(format[code].value,str)) {
+        results.push({code:code,value:format[code].value});
+      }
+    }
+    if (typeof format[code].subfields !== "undefined") {
+      Object.keys(format[code].subfields).map(sf_code => {
+        Object.keys(format[code].subfields[sf_code]).map(e => {
+          if (compare(format[code].subfields[sf_code][e],str)) {
+            results.push({code:code+"$"+sf_code,value:format[code].subfields[sf_code][e]});
+          }
+        })
+      })
+    }
+  });
+  return results;
+}
+
 let explainField = async (field,format) => {
   await formats;
   let code = field.code;
@@ -64,8 +93,10 @@ let explainField = async (field,format) => {
   }
   return field;
 };
+
 let explainRecord = async (record,format) => {
   record.fields = await Promise.all(record.fields.map(async e => await explainField(e,format)));
   return record;
 }
-export { formats, explainField, explainRecord }
+
+export { formats, explainField, explainRecord, searchField }
