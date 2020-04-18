@@ -2,15 +2,16 @@ import { Workerify } from "https://corbin-c.github.io/workerify/workerify.js";
 import * as Marc from "./parser.js";
 import * as MarcHelper from "./helper.js";
 
+/* WORKERS DECLARATIONS */
 const mkContext = (obj) => {
   return Object.keys(obj).map(e => {
     return {name:e,value:obj[e]};
   });
 }
-
 const parse = Workerify(Marc.parseRecord,mkContext(Marc),10);
 const filter = Workerify(Marc.filterRecord,[],10);
 
+/* UTILITY FUNCTIONS */
 let inputToStr = (input) => {
   return new Promise((resolve,reject) => {
     var reader = new FileReader();
@@ -78,14 +79,60 @@ let makeMarcView = (record) => {
   return table;
 }
 
+let displayFieldsHelp = async (result,params) => {
+  let table = document.querySelector("#helpbox table");
+  table.innerHTML = "";
+  if (result.length > 0) {
+    table.classList.remove("hidden");
+  } else {
+    table.classList.add("hidden");
+  }
+  result.sort((a,b) => {
+    return (parseInt(a.code.split("$")[0])-parseInt(b.code.split("$")[0]));
+  }).map(e => {
+    let tr = document.createElement("tr");
+    let code = document.createElement("td");
+    let value = document.createElement("td");
+    tr.append(value);
+    tr.append(code);
+    code.innerText = e.code;
+    code.setAttribute("class","code");
+    value.innerText = e.value;
+    tr.addEventListener("click",() => {
+      let target = params.mode;
+      target = {display:"toDisplay",extract:"toFilter"}[target];
+      if (typeof target !== "undefined") {
+        let targetElement = document.querySelector("#"+target);
+        if (["*",""].indexOf(targetElement.value) >= 0) {
+          targetElement.value = e.code;
+        } else {
+          targetElement.value += ","+e.code; 
+        }
+        params[target] = targetElement.value;
+      }
+    });
+    table.append(tr);  
+  });
+}
+let activateSearch = (value="") => {
+  if ((value == "disabled") || ((value == ""))) {
+    document.querySelector("#search").setAttribute("disabled",true);
+    document.querySelector("#startSearch").setAttribute("disabled",true);
+  } else {
+    document.querySelector("#search").removeAttribute("disabled");
+    document.querySelector("#startSearch").removeAttribute("disabled");
+  }
+}
+
+/* MAIN CONTROLLER */
 (async (query,results) => {
   let parameters = {};
-  ["cfn","cfz","ssz","mode","helper","filterField","filterValues","toDisplay"]
+  ["cfn","cfz","ssz","mode","helper","filterField","filterValues","toDisplay"]  //PARAMETERS ACQUISITION
     .map(e => {
       let onEvent = (targetValue) => {
         parameters[e] = targetValue;
         if (e == "mode" && targetValue.length > 0) {
-          let ops = {
+          let ops = { //MODE SELECTOR OPERATIONS MAP
             display:() => {
               ["toDisplay","filterField","filterValues"].map((element,i) => {
                 let action = "add";
@@ -114,6 +161,8 @@ let makeMarcView = (record) => {
       });
       onEvent(query.querySelector("#"+e).value);
     });
+
+  /* HELPER INIT */
   await MarcHelper.formats;
   Object.keys(MarcHelper.formats).map(e => {
     let option = document.createElement("option");
@@ -124,6 +173,16 @@ let makeMarcView = (record) => {
   });
   const helper = Workerify(MarcHelper.explainRecord,mkContext(MarcHelper),10);
   const search = Workerify(MarcHelper.searchField,mkContext(MarcHelper));
+  const startSearch = async (searchFunc) => {
+    if (document.querySelector("#search").value != "") {
+      displayFieldsHelp(await search(
+        document.querySelector("#search").value,
+        document.querySelector("#search_format").value    
+      ),parameters);
+    }
+  }
+
+  /* MAIN OPERATIONS MAP */
   const operations = {
     display: async (records) => {
       records.split(JSON.parse('"'+parameters.cfn+'"')).map(async (e,i) => {
@@ -142,62 +201,10 @@ let makeMarcView = (record) => {
           results.append(makeMarcView(e));
         }
       });
-    },
-    displayFieldsHelp: async (str,format) => {
-      let result = await search(str,format);
-      let table = query.querySelector("#helpbox table");
-      table.innerHTML = "";
-      if (result.length > 0) {
-        table.classList.remove("hidden");
-      } else {
-        table.classList.add("hidden");
-      }
-      result.sort((a,b) => {
-        return (parseInt(a.code.split("$")[0])-parseInt(b.code.split("$")[0]));
-      }).map(e => {
-        let tr = document.createElement("tr");
-        let code = document.createElement("td");
-        let value = document.createElement("td");
-        tr.append(value);
-        tr.append(code);
-        code.innerText = e.code;
-        code.setAttribute("class","code");
-        value.innerText = e.value;
-        tr.addEventListener("click",() => {
-          let target = parameters.mode;
-          target = {display:"toDisplay",extract:"toFilter"}[target];
-          if (typeof target !== "undefined") {
-            let targetElement = document.querySelector("#"+target);
-            if (["*",""].indexOf(targetElement.value) >= 0) {
-              targetElement.value = e.code;
-            } else {
-              targetElement.value += ","+e.code; 
-            }
-            parameters[target] = targetElement.value;
-          }
-        });
-        table.append(tr);  
-      });
-
-    },
-    startSearch: () => {
-      if (query.querySelector("#search").value != "") {
-        operations.displayFieldsHelp(
-          document.querySelector("#search").value,
-          document.querySelector("#search_format").value
-        );
-      }
-    },
-    activateSearch: (value) => {
-      if ((value == "disabled") || ((value == ""))) {
-        document.querySelector("#search").setAttribute("disabled",true);
-        document.querySelector("#startSearch").setAttribute("disabled",true);
-      } else {
-        document.querySelector("#search").removeAttribute("disabled");
-        document.querySelector("#startSearch").removeAttribute("disabled");
-      }
     }
   }
+  
+  /* EVENTS DISPATCH */
   query.querySelector("#submit").addEventListener("click",async () => {
     let mode = document.querySelector("#mode").value;
     let records = await inputToStr(document.querySelector("#inputFile"));
@@ -224,16 +231,18 @@ let makeMarcView = (record) => {
         query.querySelector("#helpbox").classList.remove("hidden");
       });
   });
-  document.querySelector("#search_format").addEventListener("change", (e) => {
-    operations.activateSearch(e.target.value);
+  document.querySelector("#search_format").addEventListener("change",e => {
+    activateSearch(e.target.value);
   });
   document.querySelector("#searchForm").addEventListener("submit", e => {
     e.preventDefault();
-    operations.startSearch();
+    startSearch(search);
   });
-  document.querySelector("#startSearch").addEventListener("click", async (e) => {
-    operations.startSearch();
+  document.querySelector("#startSearch").addEventListener("click",e => {
+    startSearch();
   });
+
+  /* INIT */
   [...document.forms].map(e => e.reset());
-  operations.activateSearch("");
+  activateSearch();
 })(document.querySelector("#query"),document.querySelector("#results"));
