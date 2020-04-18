@@ -16,12 +16,10 @@ let getJson = (() => {
 let formats = ((form_defs) => {
   return new Promise(async (resolve,reject) => {
     form_defs = await getJson(form_defs);
-    Object.keys(form_defs).map(async (e,i,a) => {
+    await Promise.all(Object.keys(form_defs).map(async e => {
       form_defs[e] = await getJson(form_defs[e]);
-      if (Object.keys(form_defs).length == a.length) {
-        resolve(form_defs);
-      }
-    });
+    }));
+    resolve(form_defs);
   });
 })(DEFINITIONS);
 
