@@ -47,7 +47,12 @@ let searchField = async (str,format) => {
       Object.keys(format[code].subfields).map(sf_code => {
         Object.keys(format[code].subfields[sf_code]).map(e => {
           if (compare(format[code].subfields[sf_code][e],str)) {
-            results.push({code:code+"$"+sf_code,value:format[code].subfields[sf_code][e]});
+            if (!results.some(r => r.code == code+"$"+sf_code)) {
+              results.push({
+                code:code+"$"+sf_code,
+                value:format[code].subfields[sf_code][e]
+              });
+            }
           }
         })
       })
