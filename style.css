@@ -52,18 +52,85 @@ table
   margin: 10px;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
-.label {
+code {
+  font-family: monospace;
+  color: black;
+  background-color: #DEDEDE;
+  letter-spacing: 0.2em;
+}
+
+.label, #helpbox {
   border: 1px solid black;
   background: #ffc;
   position: absolute;
-  padding: 3px;
-  box-shadow: 6px 6px 20px 6px rgba(0,0,0,0.3);  
+  padding: 10px;
+  box-shadow: 5px 7px 11px 2px rgba(0,0,0,0.3);
   color: grey;
+}
+#close {
+  float: right;
+  border: 2px solid #33AAFF;
+  border-radius: 50%;
+  height: 1.3em;
+  width: 1.3em;
+  box-shadow: 2px 4px 11px 2px rgba(0,0,0,0.3);
+  text-align: center;
+  background: #DEDEDE;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  position: relative;
+  top: -0.8em;
+  right: -0.8em;
+}
+#helpbox {
+  width: 60vw;
+  max-height: 80vh;
+  overflow: hidden;
+  right: 10vw;
+  top: 10vh;
+  z-index: 103;
+  padding: 20px;
+}
+#table_container {
+  position: relative;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+#helpbox table {
+  border: 0px;
+  margin: 5px;
+}
+#helpbox table * {
+  border: 0px;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+#helpbox label, #helpbox input, #helpbox select {
+  display: inline;
+  margin: 0px;
+}
+.code {
+  font-family: monospace;
+  font-size: 1.2em;
+}
+.label {
+  padding: 3px;
+  margin-left: 2.5em;
+  margin-top: -1em;
   font-size: small;
   display: none;
+  max-width: 30vw;
+  z-index: 103;
 }
 td:hover .label {
   display: block;
+}
+.helper {
+  float: right;
+  cursor: help;
 }
