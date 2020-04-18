@@ -26,10 +26,16 @@
           <option value="display">Display</option>
         </select>
 
+        <label for="helper">Helper format</label>
+        <select id="helper" name="helper">
+          <option value="" selected disabled hidden>--- Select ---</option>
+          <option value="disabled">Disabled</option>
+        </select>
+
         <label id="l_filterField" for="filterField" class="hidden">Field to filter</label><input class="hidden" type="text" id="filterField" name="filterField" value="010$a">
         <label id="l_filterValues" for="filterValues" class="hidden">Values to filter</label><textarea class="hidden" id="filterValues" name="filterValues" placeholder="line separated values"></textarea>
 
-        <label id="l_td" for="toDisplay" class="hidden">Fields to display</label><input class="hidden" type="text" id="toDisplay" name="toDisplay" value="010$a">
+        <label id="l_toDisplay" for="toDisplay" class="hidden">Fields to display</label><input class="hidden" type="text" id="toDisplay" name="toDisplay" value="*">
 
         <label for="inputFile">Load a MARC record</label><input type="file" id="inputFile" name="inputFile">
         <input type="button" id="submit" value="Submit"/>
