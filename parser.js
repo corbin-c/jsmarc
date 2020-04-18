@@ -57,18 +57,18 @@ class MarcParser {
     this.subfieldSeparator = (params.subfields || this.subfieldSeparator);
     this.toParse = (params.toParse || "*");
   }
-  parse() {
+  parse() { //main parser function
     this.parseHeader();
     this.parseBody(this.body());
     return this;
   }
-  parseHeader() {
-    let rawDirectory = this.rawRecord.split(this.fieldSeparator)[0].slice(24);
-    this.leader  = this.rawRecord.slice(0,24);
+  parseHeader() { //isolate the header (leader+directory)
+    let rawDirectory = this.rawRecord.split(this.fieldSeparator)[0].slice(24); //25th char to first separator
+    this.leader  = this.rawRecord.slice(0,24); //24 chars of the record
     this.header = this.leader+rawDirectory+this.fieldSeparator;
     this.directory = this.parseDirectory(rawDirectory);
   }
-  parseDirectory(rawDir) {
+  parseDirectory(rawDir) { //divides the directory in 12-chars segments, sliced as code/length/position
     return [...(new Array(rawDir.length/12)).fill(0)].map((e,i) => {
       let index = rawDir.slice(i*12,(i+1)*12);
       e = {};
@@ -79,7 +79,7 @@ class MarcParser {
     });
   }
   parseBody(rawBody) {
-    let toParseFilter = (e,array=false) => {
+    let toParseFilter = (e,array=false) => { //filter function in case not all fields have to be parsed
       if (this.toParse == "*") {
         return true;
       } else {
@@ -95,6 +95,7 @@ class MarcParser {
         });
       }
     };
+    //read the directory for the fields to be parsed
     this.directory
       .filter(f => toParseFilter(f))
       .map(e => {
@@ -105,12 +106,14 @@ class MarcParser {
               parseInt(e.position),
               parseInt(e.length)+parseInt(e.position)
             )
-          },this.toParse
+          },(this.toParse == "*" ? []
+            :this.toParse
             .filter(f => (f.indexOf("$") > 0)
               && toParseFilter({code:f.split("$")[0]},[e.code]))
-            .map(f => f.split("$")[1])
+            .map(f => f.split("$")[1]))
         ));
       });
+    this.fields = this.fields.filter(e => (typeof e.value !== "undefined" || e.subfields.length > 0));
   }
   parseField(field,toParse) {
     field.value = field.value.split(this.fieldSeparator)[0];
