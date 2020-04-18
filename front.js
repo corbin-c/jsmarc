@@ -173,7 +173,7 @@ let activateSearch = (value="") => {
   });
   const helper = Workerify(MarcHelper.explainRecord,mkContext(MarcHelper),10);
   const search = Workerify(MarcHelper.searchField,mkContext(MarcHelper));
-  const startSearch = async (searchFunc) => {
+  const startSearch = async () => {
     if (document.querySelector("#search").value != "") {
       displayFieldsHelp(await search(
         document.querySelector("#search").value,
@@ -236,7 +236,7 @@ let activateSearch = (value="") => {
   });
   document.querySelector("#searchForm").addEventListener("submit", e => {
     e.preventDefault();
-    startSearch(search);
+    startSearch();
   });
   document.querySelector("#startSearch").addEventListener("click",e => {
     startSearch();

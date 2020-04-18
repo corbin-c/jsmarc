@@ -1,6 +1,6 @@
 const DEFINITIONS = "./formats.json";
 
-let getJson = (() => {
+let getJson = (() => { //get Json no matter the context
   if (typeof module !== "undefined") { //Node
     const fs = require("fs");
     return (file) => {
@@ -13,7 +13,7 @@ let getJson = (() => {
   }
 })();
 
-let formats = ((form_defs) => {
+let formats = ((form_defs) => { //generate formats definitions by grabbing the JSON files listed in DEFINITIONS
   return new Promise(async (resolve,reject) => {
     form_defs = await getJson(form_defs);
     await Promise.all(Object.keys(form_defs).map(async e => {
@@ -28,6 +28,8 @@ let formats = ((form_defs) => {
 })()
 
 let searchField = async (str,format) => {
+  //recurse through a format definition to find a given string
+  // returns an array of codes/value pairs
   let compare = (str1,str2) => {
     return (str1.toLowerCase().indexOf(str2.toLowerCase()) >= 0);
   }
@@ -62,6 +64,8 @@ let searchField = async (str,format) => {
 }
 
 let explainField = async (field,format) => {
+  //for a given field obj and format string, returns the field object enriched with
+  //labels. Field object has to be in the form of the Marc parser output. 
   await formats;
   let code = field.code;
   if (typeof formats[format] !== "undefined") {
@@ -100,6 +104,8 @@ let explainField = async (field,format) => {
 };
 
 let explainRecord = async (record,format) => {
+  //for a given record obj and format string, returns the record object enriched with
+  //labels. record object has to be in the form of the Marc parser output.
   record.fields = await Promise.all(record.fields.map(async e => await explainField(e,format)));
   return record;
 }
