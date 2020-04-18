@@ -33,7 +33,7 @@ const MARC = { //Template object
   fieldSeparator:"\u001e",
   subfieldSeparator:"\u001f",
   rawRecord:"",
-  label:"",
+  leader:"",
   directory:[],
   fields:[],
   "@fields":{
@@ -64,8 +64,8 @@ class MarcParser {
   }
   parseHeader() {
     let rawDirectory = this.rawRecord.split(this.fieldSeparator)[0].slice(24);
-    this.label  = this.rawRecord.slice(0,24);
-    this.header = this.label+rawDirectory+this.fieldSeparator;
+    this.leader  = this.rawRecord.slice(0,24);
+    this.header = this.leader+rawDirectory+this.fieldSeparator;
     this.directory = this.parseDirectory(rawDirectory);
   }
   parseDirectory(rawDir) {
@@ -79,31 +79,57 @@ class MarcParser {
     });
   }
   parseBody(rawBody) {
-    this.directory
-      .filter(e => {
-        if (this.toParse == "*") {
-          return true;
-        } else {
-          return this.toParse.some(code => code == e.code)
+    let toParseFilter = (e,array=false) => {
+      if (this.toParse == "*") {
+        return true;
+      } else {
+        if (!array) {
+          array = this.toParse;
         }
-      })
+        return array.some(code => {
+          if (code.indexOf("$") < 0) {
+            return (code == e.code);
+          } else {
+            return (code.split("$")[0] == e.code); 
+          }
+        });
+      }
+    };
+    this.directory
+      .filter(f => toParseFilter(f))
       .map(e => {
         this.fields.push(this.parseField({
-          code: e.code,
-          value: bin.slice(rawBody,parseInt(e.position),parseInt(e.length)+parseInt(e.position))
-        }));
+            code: e.code,
+            value: bin.slice(
+              rawBody,
+              parseInt(e.position),
+              parseInt(e.length)+parseInt(e.position)
+            )
+          },this.toParse
+            .filter(f => (f.indexOf("$") > 0)
+              && toParseFilter({code:f.split("$")[0]},[e.code]))
+            .map(f => f.split("$")[1])
+        ));
       });
   }
-  parseField(field) {
+  parseField(field,toParse) {
     field.value = field.value.split(this.fieldSeparator)[0];
     if (field.value.indexOf(this.subfieldSeparator) >= 0) {
       field.indicator = field.value.slice(0,2);
-      field.subfields = field.value.slice(2).split(this.subfieldSeparator).slice(1).map(e => {
-        let subfield = {}
-        subfield.code = e.slice(0,1);
-        subfield.value = e.slice(1);
-        return subfield;
-      });
+      field.subfields = field.value
+        .slice(2)
+        .split(this.subfieldSeparator)
+        .slice(1)
+        .map(e => {
+          let subfield = {}
+          subfield.code = e.slice(0,1);
+          subfield.value = e.slice(1);
+          return subfield;
+        });
+      if (toParse.length > 0) {
+        field.subfields = field.subfields
+          .filter(subfield => toParse.some(code => code == subfield.code));
+      }
       delete field.value;
     }
     return field;
