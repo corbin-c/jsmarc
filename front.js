@@ -7,6 +7,7 @@ const mkContext = (obj) => {
     return {name:e,value:obj[e]};
   });
 }
+
 const parse = Workerify(Marc.parseRecord,mkContext(Marc),10);
 const filter = Workerify(Marc.filterRecord,[],10);
 
@@ -24,7 +25,7 @@ let makeLabel = (label,parent) => {
   if (typeof label !== "undefined") {
     let span = document.createElement("span");
     label = (typeof label === "string") ? label
-      : label.filter(e => typeof e !== "undefined").join(" | ");
+      : label.filter(e => typeof e !== "undefined").join("\n");
     span.innerText = label;
     span.classList.add("label");
     if (span.innerText != "") {
@@ -77,31 +78,79 @@ let makeMarcView = (record) => {
   return table;
 }
 
-const operations = {
-  display: async (records,params={}) => {
-    await MarcHelper.formats;
-    const helper = Workerify(MarcHelper.explainRecord,mkContext(MarcHelper),10);
-    records.split(JSON.parse('"'+document.querySelector("#cfn").value+'"')).map(async (e,i) => {
-      console.log(e);
-      if (["","\n"].indexOf(e) < 0) {
-        e = await parse(e);
-        e = await helper(e,"unimarc");
-        document.querySelector("#results").append(makeMarcView(e));
+(async (query,results) => {
+  let parameters = {};
+  ["cfn","cfz","ssz","mode","helper","filterField","filterValues","toDisplay"]
+    .map(e => {
+      let onEvent = (targetValue) => {
+        parameters[e] = targetValue;
+        if (e == "mode" && targetValue.length > 0) {
+          let ops = {
+            display:() => {
+              ["toDisplay","filterField","filterValues"].map((element,i) => {
+                let action = "add";
+                if (i==0) {
+                  action = "remove";
+                }
+                query.querySelector("#"+element).classList[action]("hidden");
+                query.querySelector("#l_"+element).classList[action]("hidden");
+              });
+            },
+            extract:() => {
+            },
+            summarize:() => {
+            },
+          };
+          ops[targetValue]();
+        }
+      }
+      query.querySelector("#"+e).addEventListener("change",event => {
+        onEvent(event.target.value);
+      });
+      onEvent(query.querySelector("#"+e).value);
+    });
+  await MarcHelper.formats;
+  Object.keys(MarcHelper.formats).map(e => {
+    let option = document.createElement("option");
+    option.value = e;
+    option.innerText = e[0].toUpperCase()+e.slice(1);
+    query.querySelector("#helper").append(option);
+  });
+  const helper = Workerify(MarcHelper.explainRecord,mkContext(MarcHelper),10);
+  const operations = {
+    display: async (records) => {
+      records.split(JSON.parse('"'+parameters.cfn+'"')).map(async (e,i) => {
+        if (["","\n"].indexOf(e) < 0) {
+          let toParse = (parameters.toDisplay == "*") ?
+            ["*"]:parameters.toDisplay.split(",").map(f => {
+              while (f.length < 3) {
+                f = "0"+f;
+              }
+              return f;
+            });
+          e = await parse(e,{toParse});
+          if (parameters.helper != "disabled") {
+            e = await helper(e,parameters.helper);
+          }
+          results.append(makeMarcView(e));
+        }
+      });
+    }
+  }
+  query.querySelector("#submit").addEventListener("click",async () => {
+    let mode = document.querySelector("#mode").value;
+    let records = await inputToStr(document.querySelector("#inputFile"));
+    query.classList.add("hidden");
+    results.classList.remove("hidden");
+    [...results.children].map(e => {
+      if (e.nodeName.toLowerCase() != "template") {
+        e.remove();
       }
     });
-  }
-}
-document.querySelector("#submit").addEventListener("click",async () => {
-  let mode = document.querySelector("#mode").value;
-  let records = await inputToStr(document.querySelector("#inputFile"));
-  operations[mode](records);
-});
-/*
-(async () => {
-  let rec = ""
-  let z = await parse(rec);
-  console.log(z.fields.find(e => e.code == "856"));
-  console.log(await filter(z,{field:"856",subfield:"u",values:["http://journals.openedition.org/anatoli"]}));
-
-})()
-*/
+    operations[mode](records);
+  });
+  document.querySelector("h1").addEventListener("click",() => {
+    query.classList.remove("hidden");
+    results.classList.add("hidden");
+  });
+})(document.querySelector("#query"),document.querySelector("#results"));
