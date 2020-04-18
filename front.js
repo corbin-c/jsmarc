@@ -94,6 +94,11 @@ let makeMarcView = (record) => {
                 }
                 query.querySelector("#"+element).classList[action]("hidden");
                 query.querySelector("#l_"+element).classList[action]("hidden");
+                try {
+                  query.querySelector("#h_"+element).classList[action]("hidden");
+                } catch {
+                  //console.warn("no helper");
+                }
               });
             },
             extract:() => {
@@ -115,8 +120,10 @@ let makeMarcView = (record) => {
     option.value = e;
     option.innerText = e[0].toUpperCase()+e.slice(1);
     query.querySelector("#helper").append(option);
+    query.querySelector("#search_format").append(option.cloneNode(true));
   });
   const helper = Workerify(MarcHelper.explainRecord,mkContext(MarcHelper),10);
+  const search = Workerify(MarcHelper.searchField,mkContext(MarcHelper));
   const operations = {
     display: async (records) => {
       records.split(JSON.parse('"'+parameters.cfn+'"')).map(async (e,i) => {
@@ -135,6 +142,60 @@ let makeMarcView = (record) => {
           results.append(makeMarcView(e));
         }
       });
+    },
+    displayFieldsHelp: async (str,format) => {
+      let result = await search(str,format);
+      let table = query.querySelector("#helpbox table");
+      table.innerHTML = "";
+      if (result.length > 0) {
+        table.classList.remove("hidden");
+      } else {
+        table.classList.add("hidden");
+      }
+      result.sort((a,b) => {
+        return (parseInt(a.code.split("$")[0])-parseInt(b.code.split("$")[0]));
+      }).map(e => {
+        let tr = document.createElement("tr");
+        let code = document.createElement("td");
+        let value = document.createElement("td");
+        tr.append(value);
+        tr.append(code);
+        code.innerText = e.code;
+        code.setAttribute("class","code");
+        value.innerText = e.value;
+        tr.addEventListener("click",() => {
+          let target = parameters.mode;
+          target = {display:"toDisplay",extract:"toFilter"}[target];
+          if (typeof target !== "undefined") {
+            let targetElement = document.querySelector("#"+target);
+            if (["*",""].indexOf(targetElement.value) >= 0) {
+              targetElement.value = e.code;
+            } else {
+              targetElement.value += ","+e.code; 
+            }
+            parameters[target] = targetElement.value;
+          }
+        });
+        table.append(tr);  
+      });
+
+    },
+    startSearch: () => {
+      if (query.querySelector("#search").value != "") {
+        operations.displayFieldsHelp(
+          document.querySelector("#search").value,
+          document.querySelector("#search_format").value
+        );
+      }
+    },
+    activateSearch: (value) => {
+      if ((value == "disabled") || ((value == ""))) {
+        document.querySelector("#search").setAttribute("disabled",true);
+        document.querySelector("#startSearch").setAttribute("disabled",true);
+      } else {
+        document.querySelector("#search").removeAttribute("disabled");
+        document.querySelector("#startSearch").removeAttribute("disabled");
+      }
     }
   }
   query.querySelector("#submit").addEventListener("click",async () => {
@@ -153,4 +214,26 @@ let makeMarcView = (record) => {
     query.classList.remove("hidden");
     results.classList.add("hidden");
   });
+  document.querySelector("#close").addEventListener("click",() => {
+    query.querySelector("#helpbox table").innerHTML = "";
+    query.querySelector("#helpbox table").classList.add("hidden");
+    query.querySelector("#helpbox").classList.add("hidden");
+  });
+  [...document.querySelectorAll(".helper")].map(e => {
+      e.addEventListener("click", () => {
+        query.querySelector("#helpbox").classList.remove("hidden");
+      });
+  });
+  document.querySelector("#search_format").addEventListener("change", (e) => {
+    operations.activateSearch(e.target.value);
+  });
+  document.querySelector("#searchForm").addEventListener("submit", e => {
+    e.preventDefault();
+    operations.startSearch();
+  });
+  document.querySelector("#startSearch").addEventListener("click", async (e) => {
+    operations.startSearch();
+  });
+  [...document.forms].map(e => e.reset());
+  operations.activateSearch("");
 })(document.querySelector("#query"),document.querySelector("#results"));
