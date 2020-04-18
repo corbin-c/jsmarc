@@ -134,3 +134,6 @@ td:hover .label {
   float: right;
   cursor: help;
 }
+fieldset legend {
+  cursor: pointer;
+}
