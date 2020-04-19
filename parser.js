@@ -58,8 +58,12 @@ class MarcParser {
     this.toParse = (params.toParse || "*");
   }
   parse() { //main parser function
-    this.parseHeader();
-    this.parseBody(this.body());
+    try {
+      this.parseHeader();
+      this.parseBody(this.body());
+    } catch (e) {
+      console.log(e,this);
+    }
     return this;
   }
   parseHeader() { //isolate the header (leader+directory)
@@ -146,10 +150,13 @@ let parseRecord = (record,parameters) => {
 }
 let filterRecord = (record,parameters) => {
   let filter = record.fields.find(f => f.code == parameters.field);
-  if (typeof parameters.subfield !== "undefined") {
+  if ((typeof filter !== "undefined")
+    && (typeof parameters.subfield !== "undefined")) {
     filter = filter.subfields.find(s => s.code == parameters.subfield);
   }
-  return parameters.values.some(value => value == filter.value);
+  return (typeof filter !== "undefined")
+    ? parameters.values.some(value => value == filter.value)
+    : false;
 }
 
 export { bin, MARC, MarcParser, parseRecord,filterRecord }
