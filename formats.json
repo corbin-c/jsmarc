@@ -1,4 +1,4 @@
 {
-  "unimarc":"./definitions/unimarc.json",
-  "marc21":"./definitions/marc21.json"
+  "unimarc":"definitions/unimarc.json",
+  "marc21":"definitions/marc21.json"
 }
