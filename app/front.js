@@ -8,8 +8,9 @@ const mkContext = (obj) => {
     return {name:e,value:obj[e]};
   });
 }
-const parse = Workerify(Marc.parseRecord,mkContext(Marc),1);
-const filter = Workerify(Marc.filterRecord,[{name:"analyzeFieldNotation",value:Marc.analyzeFieldNotation}],10);
+const parse = Workerify(Marc.parseRecord,mkContext(Marc),10);
+const filter = Workerify(Marc.filterRecord,
+  [{name:"analyzeFieldNotation",value:Marc.analyzeFieldNotation}],10);
 
 /* UTILITY FUNCTIONS */
 let inputToStr = (input) => {
@@ -254,12 +255,31 @@ let activateSearch = (value="") => {
       if (toParse == "*") {
         throw new Error("Some fields have to be selected for extraction");
       }
-      records.split(JSON.parse('"'+parameters.cfn+'"'))
+      let summary = {};
+      await Promise.all(records.split(JSON.parse('"'+parameters.cfn+'"'))
         .filter(e => ["","\n"].indexOf(e) < 0)
-        .map(async (e,i) => {
+        .flatmap(async (e,i) => {
           e = await parse(e,{toParse});
-          return e;
-        });
+          e = await e.fields.map(e => {
+            if (typeof e.value !== "undefined") {
+              return [{ code: e.code, value: e.value }];
+            } else {
+              return e.subfields.map(f => {
+                return { code: e.code+"$"+f.code, value: f.value };
+              });
+            }
+          }).map(field => {
+            if (typeof summary[field.code] === "undefined") {
+              summary[field.code] = [];
+            }
+            if (parameters.cumul_values) {
+              //special duplicates reduce
+            } else {
+              summary[field.code].push(field.value);
+            }
+          });
+        }));
+        console.log(summary)
     }
   }
   
