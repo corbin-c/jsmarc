@@ -129,6 +129,7 @@ let activateSearch = (value="") => {
 /* MAIN CONTROLLER */
 (async (query,results) => {
   /* RESET */
+  document.querySelector("#submit").setAttribute("disabled",true);
   activateSearch();
   [...document.forms].map(e => e.reset());
   let parameters = {};
@@ -257,7 +258,7 @@ let activateSearch = (value="") => {
   
   /* EVENTS DISPATCH */
   query.querySelector("#submit").addEventListener("click",async () => {
-    let mode = document.querySelector("#mode").value;
+    let mode = (document.querySelector("#mode").value || "display");
     let records = await inputToStr(document.querySelector("#inputFile"));
     [...results.children].map(e => {
       if (e.nodeName.toLowerCase() != "template") {
@@ -279,6 +280,9 @@ let activateSearch = (value="") => {
       e.addEventListener("click", () => {
         query.querySelector("#helpbox").classList.remove("hidden");
       });
+  });
+  document.querySelector("#inputFile").addEventListener("change",() => {
+    document.querySelector("#submit").removeAttribute("disabled");
   });
   document.querySelector("#search_format").addEventListener("change",e => {
     activateSearch(e.target.value);
