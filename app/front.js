@@ -9,7 +9,7 @@ const mkContext = (obj) => {
   });
 }
 const parse = Workerify(Marc.parseRecord,mkContext(Marc),1);
-const filter = Workerify(Marc.filterRecord,[],10);
+const filter = Workerify(Marc.filterRecord,[{name:"analyzeFieldNotation",value:Marc.analyzeFieldNotation}],10);
 
 /* UTILITY FUNCTIONS */
 let inputToStr = (input) => {
@@ -138,7 +138,7 @@ let activateSearch = (value="") => {
   [...document.forms].map(e => e.reset());
   let parameters = {};
   ["cfn","cfz","ssz","mode","helper","filterField","filterValues","toDisplay",
-  "toExtract","cumul_values","cumul_fields","output"]  //PARAMETERS ACQUISITION
+  "toExtract","cumul_values","output"]  //PARAMETERS ACQUISITION
     .map(e => {
       let onEvent = (targetValue) => {
         targetValue = (targetValue.getAttribute("type") == "checkbox")
@@ -149,7 +149,7 @@ let activateSearch = (value="") => {
           let ops = { //MODE SELECTOR OPERATIONS MAP
             toggle:(values) => {
               ["toDisplay","helper","filterField","filterValues",
-              "toExtract","cumul_values","cumul_fields","output"].map((element,i) => {
+              "toExtract","cumul_values","output"].map((element,i) => {
                 let action = "add";
                 if (values.indexOf(i) >= 0) {
                   action = "remove";
@@ -165,7 +165,7 @@ let activateSearch = (value="") => {
             },
             display: () => { ops.toggle([0,1]) },
             extract:() => { ops.toggle([2,3]) },
-            summarize:() => { ops.toggle([4,5,6,7]) },
+            summarize:() => { ops.toggle([4,5,6]) },
           };
           ops[targetValue]();
         }
@@ -195,54 +195,41 @@ let activateSearch = (value="") => {
       ),parameters);
     }
   }
-
-  /* MAIN OPERATIONS MAP */
+  /* MAIN OPERATIONS MAP
+   * WORK ON A BATCH OF RECORDS
+   * separator: parameters.cfn (end of record separator) */
   const operations = {
-    display: async (records) => {
+    display: async (records) => { //parses and displays the required fields of each record
       query.classList.add("hidden");
       results.classList.remove("hidden");
-      let toParse = (parameters.toDisplay == "*") ?
-        ["*"]:parameters.toDisplay.split(",").map(f => {
-          while (f.length < 3) {
-            f = "0"+f;
-          }
-          return f;
-        });
       records.split(JSON.parse('"'+parameters.cfn+'"'))
         .filter(e => ["","\n"].indexOf(e) < 0)
         .map(async (e,i) => {
-          e = await parse(e,{toParse});
+          e = await parse(e,{toParse:parameters.toDisplay});
           if (parameters.helper != "disabled") {
             e = await helper(e,parameters.helper);
           }
           results.append(makeMarcView(e));
       });
     },
-    extract: async (records) => {
+    extract: async (records) => { //parses only the field on which perform filter and then filters, outputs raw records (DL)
       let progess = document.querySelector("#progress");
       progress.classList.remove("hidden");
-      let toParse = (parameters.filterField == "*") ?
-        ["*"]:[parameters.filterField.split(",").map(f => {
-          while (f.length < 3) {
-            f = "0"+f;
-          }
-          return f;
-        })[0]];
+      let toParse = parameters.filterField;
       let filterValues = parameters.filterValues.split("\n").filter(e => e != "");
-      if (toParse == ["*"]) {
+      if (toParse == "*") {
         throw new Error("A field to filter has to be selected");
       }
       if (filterValues.length == 0) {
         throw new Error("No values to filter provided");
       }
-      let parseField = toParse[0].split("$");
       records = records.split(JSON.parse('"'+parameters.cfn+'"'))
         .filter(e => ["","\n"].indexOf(e) < 0);
       progress.querySelector("progress").setAttribute("max",records.length);
       records = await Promise.all(
         records.map(async (e,i) => {
           e = await parse(e,{toParse});
-          e = (await filter(e,{field:parseField[0],subfield:parseField[1],values:filterValues}))
+          e = (await filter(e,toParse,filterValues))
             ? e.rawRecord
             : false; 
           progress.querySelector("progress").value++;
@@ -262,7 +249,17 @@ let activateSearch = (value="") => {
         "records.mrc");
       progress.classList.add("hidden");
     },
-    summarize: async (records) => {
+    summarize: async (records) => { //extract data from each record
+      let toParse = parameters.toExtract;
+      if (toParse == "*") {
+        throw new Error("Some fields have to be selected for extraction");
+      }
+      records.split(JSON.parse('"'+parameters.cfn+'"'))
+        .filter(e => ["","\n"].indexOf(e) < 0)
+        .map(async (e,i) => {
+          e = await parse(e,{toParse});
+          return e;
+        });
     }
   }
   
@@ -280,7 +277,7 @@ let activateSearch = (value="") => {
     } catch (e) {
       alert(`Something went wrong.
 Look at the browser console for more details.`);
-      console.log(e);
+      console.error(e);
     }
   });
   document.querySelector("h1").addEventListener("click",() => {
