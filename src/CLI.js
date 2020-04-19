@@ -30,9 +30,6 @@ let show = (field,value) => {
   })
 }
 let displayRecord = async (record,help=false) => {
-  if (help) {
-    record = await MarcHelper.explainRecord(record,help);
-  }
   show("Leader",record.leader);
   record.fields.map(e => {
     if (typeof e.value !== "undefined") {
