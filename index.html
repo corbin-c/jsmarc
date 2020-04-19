@@ -44,14 +44,14 @@
           <option value="display">Display</option>
         </select>
 
-        <label for="helper">Helper format</label>
-        <select id="helper" name="helper">
+        <label id="l_helper" class="hidden" for="helper">Helper format</label>
+        <select id="helper" name="helper" class="hidden">
           <option value="" selected disabled hidden>--- Select ---</option>
           <option value="disabled">Disabled</option>
         </select>
 
         <label id="l_filterField" for="filterField" class="hidden">Field to filter</label>
-        <p id="h_filterFields" class="helper hidden">❓</p>
+        <p id="h_filterField" class="helper hidden">❓</p>
         <input class="hidden" type="text" id="filterField" name="filterField" value="010$a">
         <label id="l_filterValues" for="filterValues" class="hidden">Values to filter</label><textarea class="hidden" id="filterValues" name="filterValues" placeholder="line separated values"></textarea>
 
