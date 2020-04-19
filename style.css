@@ -24,12 +24,6 @@ fieldset.collapse
   height: 0;
   overflow: hidden;
 }
-#query
-{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
 .raw *
 {
   font-weight: lighter !important;
@@ -131,7 +125,7 @@ td:hover .label {
   display: block;
 }
 .helper {
-  float: right;
+  float: left;
   cursor: help;
 }
 fieldset legend {
