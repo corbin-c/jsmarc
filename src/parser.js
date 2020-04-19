@@ -1,4 +1,4 @@
-let bin = { //slice and length function adapted to work on binary count, not char count
+const bin = { //slice and length function adapted to work on binary count, not char count
   length:(str) => {
     try {
       return new Blob([str]).size; //browser context
@@ -29,6 +29,36 @@ let bin = { //slice and length function adapted to work on binary count, not cha
     }
   }
 }
+const analyzeFieldNotation = (str) => {
+  if (str == "*") {
+    return () => true;
+  }
+  str = str.split(",").map(f => {
+    f = f.split("$");
+    while (f[0].length < 3) {
+      f[0] = "0"+f[0];
+    }
+    return { field:f[0],subfield:(f[1]||false) }
+  });
+  return function(recordPart) {
+    if (recordPart.code.length == 3) {
+      return str.map(e => e.field).some(code => code == recordPart.code);
+    } else if (this.parentCode !== undefined) {
+      return str.filter(e => e.field === this.parentCode)
+        .map(e => e.subfield)
+        .some(code => {
+          if (code === false) {
+            return true;
+          } else {
+            return code === recordPart.code;
+          }
+        });
+    } else {
+      return true;
+    }
+  }
+}
+
 const MARC = { //Template object
   fieldSeparator:"\u001e",
   subfieldSeparator:"\u001f",
@@ -55,14 +85,19 @@ class MarcParser {
     this.rawRecord = rec;
     this.fieldSeparator = (params.fields || this.fieldSeparator);
     this.subfieldSeparator = (params.subfields || this.subfieldSeparator);
-    this.toParse = (params.toParse || "*");
+    this.parseCode = (params.toParse || "*");
+  }
+  toParse(code,parentCode=undefined) {
+    return (...args) => {
+      return analyzeFieldNotation(code).call({parentCode},...args);
+    }
   }
   parse() { //main parser function
     try {
       this.parseHeader();
       this.parseBody(this.body());
     } catch (e) {
-      console.log(e,this);
+      console.error(e,this);
     }
     return this;
   }
@@ -83,25 +118,9 @@ class MarcParser {
     });
   }
   parseBody(rawBody) {
-    let toParseFilter = (e,array=false) => { //filter function in case not all fields have to be parsed
-      if (this.toParse == "*") {
-        return true;
-      } else {
-        if (!array) {
-          array = this.toParse;
-        }
-        return array.some(code => {
-          if (code.indexOf("$") < 0) {
-            return (code == e.code);
-          } else {
-            return (code.split("$")[0] == e.code); 
-          }
-        });
-      }
-    };
     //read the directory for the fields to be parsed
     this.directory
-      .filter(f => toParseFilter(f))
+      .filter(this.toParse(this.parseCode))
       .map(e => {
         this.fields.push(this.parseField({
             code: e.code,
@@ -109,17 +128,11 @@ class MarcParser {
               rawBody,
               parseInt(e.position),
               parseInt(e.length)+parseInt(e.position)
-            )
-          },(this.toParse == "*" ? []
-            :this.toParse
-            .filter(f => (f.indexOf("$") > 0)
-              && toParseFilter({code:f.split("$")[0]},[e.code]))
-            .map(f => f.split("$")[1]))
-        ));
-      });
+            )}));
+        });
     this.fields = this.fields.filter(e => (typeof e.value !== "undefined" || e.subfields.length > 0));
   }
-  parseField(field,toParse) {
+  parseField(field) {
     field.value = field.value.split(this.fieldSeparator)[0];
     if (field.value.indexOf(this.subfieldSeparator) >= 0) {
       field.indicator = field.value.slice(0,2);
@@ -133,10 +146,8 @@ class MarcParser {
           subfield.value = e.slice(1);
           return subfield;
         });
-      if (toParse.length > 0) {
-        field.subfields = field.subfields
-          .filter(subfield => toParse.some(code => code == subfield.code));
-      }
+      field.subfields = field.subfields
+        .filter(this.toParse(this.parseCode,field.code))
       delete field.value;
     }
     return field;
@@ -148,15 +159,16 @@ class MarcParser {
 let parseRecord = (record,parameters) => {
   return new MarcParser(record,parameters).parse();
 }
-let filterRecord = (record,parameters) => {
-  let filter = record.fields.find(f => f.code == parameters.field);
-  if ((typeof filter !== "undefined")
-    && (typeof parameters.subfield !== "undefined")) {
-    filter = filter.subfields.find(s => s.code == parameters.subfield);
+let filterRecord = (record,field,values) => {
+  field = (typeof field === "string") ? analyzeFieldNotation(field):field;
+  console.log(field.toString());
+  let filter = record.fields.find(field);
+  if (typeof filter !== "undefined") {
+    filter = filter.subfields.find(field,{parentCode:filter.code});
   }
   return (typeof filter !== "undefined")
-    ? parameters.values.some(value => value == filter.value)
+    ? values.some(value => value == filter.value)
     : false;
 }
 
-export { bin, MARC, MarcParser, parseRecord,filterRecord }
+export { bin, MARC, MarcParser, parseRecord, filterRecord, analyzeFieldNotation }
