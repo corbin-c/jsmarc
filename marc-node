@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const ESrequire = require("./ESrequire.js");
-const MarcParser = ESrequire("parser.js");
-const MarcHelper = ESrequire("helper.js");
+const ESrequire = require("./src/ESrequire.js");
+const MarcParser = ESrequire("./src/parser.js");
+const MarcHelper = ESrequire("./src/helper.js");
 const fs = require("fs");
 const readline = require("readline");
 const rl = readline.createInterface({
