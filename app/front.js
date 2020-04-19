@@ -141,6 +141,9 @@ let activateSearch = (value="") => {
   "toExtract","cumul_values","cumul_fields","output"]  //PARAMETERS ACQUISITION
     .map(e => {
       let onEvent = (targetValue) => {
+        targetValue = (targetValue.getAttribute("type") == "checkbox")
+          ? targetValue.checked
+          : targetValue.value;
         parameters[e] = targetValue;
         if (e == "mode" && targetValue.length > 0) {
           let ops = { //MODE SELECTOR OPERATIONS MAP
@@ -168,9 +171,9 @@ let activateSearch = (value="") => {
         }
       }
       query.querySelector("#"+e).addEventListener("change",event => {
-        onEvent(event.target.value);
+        onEvent(event.target);
       });
-      onEvent(query.querySelector("#"+e).value);
+      onEvent(query.querySelector("#"+e));
     });
 
   /* HELPER INIT */
@@ -260,7 +263,6 @@ let activateSearch = (value="") => {
       progress.classList.add("hidden");
     },
     summarize: async (records) => {
-      
     }
   }
   
