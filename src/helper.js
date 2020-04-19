@@ -35,7 +35,7 @@ let formats = ((form_defs) => { //generate formats definitions by grabbing the J
 
 let searchField = async (str,format) => {
   //recurse through a format definition to find a given string
-  // returns an array of codes/value pairs
+  // returns an array of code/value pairs
   let compare = (str1,str2) => {
     return (str1.toLowerCase().indexOf(str2.toLowerCase()) >= 0);
   }
