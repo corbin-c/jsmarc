@@ -8,7 +8,7 @@ const mkContext = (obj) => {
     return {name:e,value:obj[e]};
   });
 }
-const parse = Workerify(Marc.parseRecord,mkContext(Marc),10);
+const parse = Workerify(Marc.parseRecord,mkContext(Marc),1);
 const filter = Workerify(Marc.filterRecord,[],10);
 
 /* UTILITY FUNCTIONS */
@@ -100,10 +100,11 @@ let displayFieldsHelp = async (result,params) => {
     value.innerText = e.value;
     tr.addEventListener("click",() => {
       let target = params.mode;
-      target = {display:"toDisplay",extract:"toFilter"}[target];
+      target = {display:"toDisplay",extract:"filterField"}[target];
       if (typeof target !== "undefined") {
         let targetElement = document.querySelector("#"+target);
-        if (["*",""].indexOf(targetElement.value) >= 0) {
+        if ((["*",""].indexOf(targetElement.value) >= 0)
+          || (params.mode == "extract")){
           targetElement.value = e.code;
         } else {
           targetElement.value += ","+e.code; 
@@ -114,6 +115,7 @@ let displayFieldsHelp = async (result,params) => {
     table.append(tr);  
   });
 }
+
 let activateSearch = (value="") => {
   if ((value == "disabled") || ((value == ""))) {
     document.querySelector("#search").setAttribute("disabled",true);
@@ -126,6 +128,9 @@ let activateSearch = (value="") => {
 
 /* MAIN CONTROLLER */
 (async (query,results) => {
+  /* RESET */
+  activateSearch();
+  [...document.forms].map(e => e.reset());
   let parameters = {};
   ["cfn","cfz","ssz","mode","helper","filterField","filterValues","toDisplay"]  //PARAMETERS ACQUISITION
     .map(e => {
@@ -133,10 +138,10 @@ let activateSearch = (value="") => {
         parameters[e] = targetValue;
         if (e == "mode" && targetValue.length > 0) {
           let ops = { //MODE SELECTOR OPERATIONS MAP
-            display:() => {
-              ["toDisplay","filterField","filterValues"].map((element,i) => {
+            toggle:(values) => {
+              ["toDisplay","helper","filterField","filterValues"].map((element,i) => {
                 let action = "add";
-                if (i==0) {
+                if (values.indexOf(i) >= 0) {
                   action = "remove";
                 }
                 query.querySelector("#"+element).classList[action]("hidden");
@@ -148,8 +153,8 @@ let activateSearch = (value="") => {
                 }
               });
             },
-            extract:() => {
-            },
+            display: () => { ops.toggle([0,1]) },
+            extract:() => { ops.toggle([2,3]) },
             summarize:() => {
             },
           };
@@ -185,22 +190,68 @@ let activateSearch = (value="") => {
   /* MAIN OPERATIONS MAP */
   const operations = {
     display: async (records) => {
-      records.split(JSON.parse('"'+parameters.cfn+'"')).map(async (e,i) => {
-        if (["","\n"].indexOf(e) < 0) {
-          let toParse = (parameters.toDisplay == "*") ?
-            ["*"]:parameters.toDisplay.split(",").map(f => {
-              while (f.length < 3) {
-                f = "0"+f;
-              }
-              return f;
-            });
+      query.classList.add("hidden");
+      results.classList.remove("hidden");
+      let toParse = (parameters.toDisplay == "*") ?
+        ["*"]:parameters.toDisplay.split(",").map(f => {
+          while (f.length < 3) {
+            f = "0"+f;
+          }
+          return f;
+        });
+      records.split(JSON.parse('"'+parameters.cfn+'"'))
+        .filter(e => ["","\n"].indexOf(e) < 0)
+        .map(async (e,i) => {
           e = await parse(e,{toParse});
           if (parameters.helper != "disabled") {
             e = await helper(e,parameters.helper);
           }
           results.append(makeMarcView(e));
-        }
       });
+    },
+    extract: async (records) => {
+      let progess = document.querySelector("#progress");
+      progress.classList.remove("hidden");
+      let toParse = (parameters.filterField == "*") ?
+        ["*"]:[parameters.filterField.split(",").map(f => {
+          while (f.length < 3) {
+            f = "0"+f;
+          }
+          return f;
+        })[0]];
+      let filterValues = parameters.filterValues.split("\n").filter(e => e != "");
+      if (toParse == ["*"]) {
+        throw new Error("An field to filter has to be selected");
+      }
+      if (filterValues.length == 0) {
+        throw new Error("No values to filter provided");
+      }
+      let parseField = toParse[0].split("$");
+      records = records.split(JSON.parse('"'+parameters.cfn+'"'))
+        .filter(e => ["","\n"].indexOf(e) < 0);
+      progress.querySelector("progress").setAttribute("max",records.length);
+      records = await Promise.all(
+        records.map(async (e,i) => {
+          e = await parse(e,{toParse});
+          e = (await filter(e,{field:parseField[0],subfield:parseField[1],values:filterValues}))
+            ? e.rawRecord
+            : false; 
+          progress.querySelector("progress").value++;
+          return e;
+        })
+      );
+      console.log(records);
+      ((data,type,filename) => {
+        let a = window.document.createElement("a");
+        a.href = window.URL.createObjectURL(new Blob([data], {type}));
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();        
+        document.body.removeChild(a);
+      })(records.filter(e => e !== false).join(JSON.parse('"'+parameters.cfn+'"')),
+        "text/iso2709",
+        "records.mrc");
+      progress.classList.add("hidden");
     }
   }
   
@@ -208,8 +259,6 @@ let activateSearch = (value="") => {
   query.querySelector("#submit").addEventListener("click",async () => {
     let mode = document.querySelector("#mode").value;
     let records = await inputToStr(document.querySelector("#inputFile"));
-    query.classList.add("hidden");
-    results.classList.remove("hidden");
     [...results.children].map(e => {
       if (e.nodeName.toLowerCase() != "template") {
         e.remove();
@@ -241,8 +290,4 @@ let activateSearch = (value="") => {
   document.querySelector("#startSearch").addEventListener("click",e => {
     startSearch();
   });
-
-  /* INIT */
-  [...document.forms].map(e => e.reset());
-  activateSearch();
 })(document.querySelector("#query"),document.querySelector("#results"));
