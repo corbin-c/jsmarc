@@ -127,6 +127,9 @@ td:hover .label {
   float: left;
   cursor: help;
 }
-fieldset legend {
+fieldset legend, input[type=file], input[type=button] {
   cursor: pointer;
+}
+input[disabled] {
+  cursor: not-allowed;
 }
