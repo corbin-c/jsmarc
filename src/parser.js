@@ -46,13 +46,7 @@ const analyzeFieldNotation = (str) => {
     } else if (this.parentCode !== undefined) {
       return str.filter(e => e.field === this.parentCode)
         .map(e => e.subfield)
-        .some(code => {
-          if (code === false) {
-            return true;
-          } else {
-            return code === recordPart.code;
-          }
-        });
+        .some(code => (code === false) ? true : (code === recordPart.code));
     } else {
       return true;
     }
