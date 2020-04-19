@@ -94,7 +94,11 @@ const commands = {
     let toParse = (ARGS.fields || false);
     toParse = (toParse) ? {toParse:toParse.split(",")}:"*";
     records = MarcParser.parseRecord(records,toParse);
-    CLI.displayRecord(records,(ARGS.format || false));
+    ARGS.format = (ARGS.format || false);
+    if (ARGS.format) {
+      records = await MarcHelper.explainRecord(records,ARGS.format);
+    }
+    CLI.displayRecord(records,ARGS.format);
     process.exit();
   },
   help: () => {
