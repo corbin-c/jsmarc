@@ -81,11 +81,6 @@ class MarcParser {
     this.subfieldSeparator = (params.subfields || this.subfieldSeparator);
     this.parseCode = (params.toParse || "*");
   }
-  toParse(code,parentCode=undefined) {
-    return (...args) => {
-      return analyzeFieldNotation(code).call({parentCode},...args);
-    }
-  }
   parse() { //main parser function
     try {
       this.parseHeader();
@@ -114,7 +109,7 @@ class MarcParser {
   parseBody(rawBody) {
     //read the directory for the fields to be parsed
     this.directory
-      .filter(this.toParse(this.parseCode))
+      .filter(analyzeFieldNotation(this.parseCode))
       .map(e => {
         this.fields.push(this.parseField({
             code: e.code,
@@ -141,7 +136,7 @@ class MarcParser {
           return subfield;
         });
       field.subfields = field.subfields
-        .filter(this.toParse(this.parseCode,field.code))
+        .filter(analyzeFieldNotation(this.parseCode),{parentCode:field.code});
       delete field.value;
     }
     return field;
