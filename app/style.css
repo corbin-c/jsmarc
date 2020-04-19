@@ -133,3 +133,8 @@ fieldset legend, input[type=file], input[type=button] {
 input[disabled] {
   cursor: not-allowed;
 }
+input[type=checkbox] {
+  float: left;
+  margin-bottom: 0;
+  margin-top: 5px;
+}

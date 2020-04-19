@@ -100,7 +100,11 @@ let displayFieldsHelp = async (result,params) => {
     value.innerText = e.value;
     tr.addEventListener("click",() => {
       let target = params.mode;
-      target = {display:"toDisplay",extract:"filterField"}[target];
+      target = {
+        display:"toDisplay",
+        extract:"filterField",
+        summarize:"toExtract"
+      }[target];
       if (typeof target !== "undefined") {
         let targetElement = document.querySelector("#"+target);
         if ((["*",""].indexOf(targetElement.value) >= 0)
@@ -133,14 +137,16 @@ let activateSearch = (value="") => {
   activateSearch();
   [...document.forms].map(e => e.reset());
   let parameters = {};
-  ["cfn","cfz","ssz","mode","helper","filterField","filterValues","toDisplay"]  //PARAMETERS ACQUISITION
+  ["cfn","cfz","ssz","mode","helper","filterField","filterValues","toDisplay",
+  "toExtract","cumul_values","cumul_fields","output"]  //PARAMETERS ACQUISITION
     .map(e => {
       let onEvent = (targetValue) => {
         parameters[e] = targetValue;
         if (e == "mode" && targetValue.length > 0) {
           let ops = { //MODE SELECTOR OPERATIONS MAP
             toggle:(values) => {
-              ["toDisplay","helper","filterField","filterValues"].map((element,i) => {
+              ["toDisplay","helper","filterField","filterValues",
+              "toExtract","cumul_values","cumul_fields","output"].map((element,i) => {
                 let action = "add";
                 if (values.indexOf(i) >= 0) {
                   action = "remove";
@@ -156,8 +162,7 @@ let activateSearch = (value="") => {
             },
             display: () => { ops.toggle([0,1]) },
             extract:() => { ops.toggle([2,3]) },
-            summarize:() => {
-            },
+            summarize:() => { ops.toggle([4,5,6,7]) },
           };
           ops[targetValue]();
         }
@@ -222,7 +227,7 @@ let activateSearch = (value="") => {
         })[0]];
       let filterValues = parameters.filterValues.split("\n").filter(e => e != "");
       if (toParse == ["*"]) {
-        throw new Error("An field to filter has to be selected");
+        throw new Error("A field to filter has to be selected");
       }
       if (filterValues.length == 0) {
         throw new Error("No values to filter provided");
@@ -253,6 +258,9 @@ let activateSearch = (value="") => {
         "text/iso2709",
         "records.mrc");
       progress.classList.add("hidden");
+    },
+    summarize: async (records) => {
+      
     }
   }
   
@@ -265,7 +273,13 @@ let activateSearch = (value="") => {
         e.remove();
       }
     });
-    operations[mode](records);
+    try {
+      operations[mode](records);
+    } catch (e) {
+      alert(`Something went wrong.
+Look at the browser console for more details.`);
+      console.log(e);
+    }
   });
   document.querySelector("h1").addEventListener("click",() => {
     query.classList.remove("hidden");

@@ -59,6 +59,25 @@
         <p id="h_toDisplay" class="helper hidden">❓</p>
         <input class="hidden" type="text" id="toDisplay" name="toDisplay" value="*">
 
+        <label id="l_toExtract" for="toExtract" class="hidden">Fields to extract</label>
+        <p id="h_toExtract" class="helper hidden">❓</p>
+        <input class="hidden" type="text" id="toExtract" name="toExtract" value="010$a">
+        <input type="checkbox" class="hidden" id="cumul_values">
+        <label id="l_cumul_values" for="cumul_values" class="hidden">Cumulate values</label>
+        <input type="checkbox" class="hidden" id="cumul_fields">
+        <label id="l_cumul_fields" for="cumul_fields" class="hidden">Cumulate fields</label>
+        <label id="l_output" class="hidden" for="helper">Output format</label>
+        <select id="output" name="output" class="hidden">
+          <option value="" selected disabled hidden>--- Select ---</option>
+          <option value="html">HTML</option>
+          <option value="json">JSON</option>
+          <option value="tsv">TSV</option>
+        </select>
+
+
+
+
+
         <label for="inputFile">Load a MARC record</label><input type="file" id="inputFile" name="inputFile">
         <input type="button" id="submit" value="Submit" disabled />
       </form>
