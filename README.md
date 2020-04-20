@@ -10,11 +10,11 @@ JavaScript module are provided.
 
 ### Web application
 
-This application relies on Workerify to execute JsMarc off the main event loop, by
-creating a handful of web workers on the fly. These limit the risk of freezing the
-tab & improve performance on large records batches.
+This application relies on [Workerify](https://www.github.com/corbin-c/workerify/)
+to execute JsMarc off the main event loop, by creating a handful of web workers
+on the fly. These limit the risk of freezing the tab & improve performance on large records batches.
 
-Online JsMarc is available at https://corbin-c.github.io/jsmarc
+Online JsMarc is available at https://corbin-c.github.io/jsmarc/app/
 
 ### NodeJS CLI Tool
 
@@ -40,5 +40,5 @@ helper.
 `record` object, with the required fields and subfields structure.**
 
 The MarcHelper module is able to read from MARC definitions files (see folder
-`./definitions/` for furhter details) and enrich records with labels explaining
+[definitions](./definitions/) for furhter details) and enrich records with labels explaining
 the fields, subfields and indicators meanings.
