@@ -5,8 +5,8 @@ MARC (MAchine Readable Cataloging) records, commonly used by libraries.
 
 ## How to use it
 
-JsMarc can be used in several ways: a web interface, a command-line tool and a
-JavaScript module are provided.
+JsMarc can be used in several ways: a web interface, a command-line tool and ES
+modules are provided.
 
 ### Web application
 
@@ -129,9 +129,9 @@ record matches the provided parameters.
 **/!\ This module can't work without the MarcParser, unless you build your own
 `record` object, with the required structure.**
 
-The MarcHelper module is able to read from MARC definitions files (see folder
-[definitions](./definitions/) for further details) and enrich records with labels explaining
-the fields, subfields and indicators meanings.
+The MarcHelper module is able to read from MARC definitions files (see the [`definitions`](./definitions/)
+folder for further details) and enrich records with labels explaining the fields,
+subfields and indicators meanings.
 
 It provides the `explainRecord` function, which takes a parsed Marc record and
 a format as arguments. The function returns a promises which resolves when the MARC
@@ -146,7 +146,7 @@ indicator (if that label was found).
 The `format` parameter has to match one of the keys of the [`formats.json`](./formats.json) object.
 
 It is also possible to reverse search for field codes with the `searchField`
-function. Given a string and a MARC format, it returns a Promise, resolving in 
+function. Given a string and a MARC format, it returns a promise, resolving in 
 an array of code/label pairs:
 
 ```javascript
