@@ -40,7 +40,7 @@ under [`../formats.json`](../formats.json).
 
 The definitions for Unimarc are from the [ABES documentation](http://documentation.abes.fr/sudoc/formats/unmb/index.htm)
 
-The lousy script used for data extraction is located at [`./abes.js`](./abes.js)
+The script used for data extraction is located at [`./abes.js`](./abes.js)
 
 The ABES documentation is [CC BY-SA](http://creativecommons.org/licenses/by-nc-sa/3.0/fr/)
 and so are these definitions.
@@ -49,4 +49,7 @@ and so are these definitions.
 
 ### Marc21
 
-The definitions for MARC21 are from the Library of Congress
+The definitions for MARC21 are from the [Library of Congress](https://www.loc.gov/marc/bibliographic/).
+Being works from the US Federal Government, they are not subject to copyright.
+
+The script used for data extraction is located at [`./loc.js`](./loc.js)
