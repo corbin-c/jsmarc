@@ -19,10 +19,14 @@ Online JsMarc is available at https://corbin-c.github.io/jsmarc/app/
 
 Main features are:
 
- * batch record parsing: displays all the records in a batch in a table, with the raw record followed by selected fields & subfields
- * batch record filtering: giving a list of values and a field, extracts the matching records from a batch
- * data extraction: parses records for a given set of fields and displays a summary
- * MARC help: displays meaning of fields/subfields codes on hover, provides help selecting fields
+ * batch record parsing: displays all the records in a batch in a table, with
+the raw record followed by selected fields & subfields
+ * batch record filtering: extracts the matching records from a batch given a
+list of values and a field. Output is a MARC file to download. 
+ * data extraction: parses records for a given set of fields and displays a
+summary. Outputs a HTML table or a JSON.
+ * MARC help: displays meaning of fields/subfields codes on hover, provides
+help selecting fields
 
 ### NodeJS CLI Tool
 
@@ -31,7 +35,7 @@ Main features are:
 #### Installation
 
 Just clone this repo (`git clone https://github.com/corbin-c/jsmarc.git`). You
-might want to symlink the `marc-node` script to a local bin path.
+might want to symlink the `marc-node` script to your local bin path.
 
 #### Use
 
