@@ -36,6 +36,18 @@ let makeLabel = (label,parent) => {
   }
 }
 
+let makeDownload = (data,type,filename,urlonly=false) => {
+  let a = window.document.createElement("a");
+  a.href = window.URL.createObjectURL(new Blob([data], {type}));
+  a.download = filename;
+  if (urlonly) {
+    return a.href;
+  }
+  document.body.appendChild(a);
+  a.click();        
+  document.body.removeChild(a);
+}
+
 let makeMarcView = (record) => {
   let template = document.querySelector("#marcView");
   let table = document.importNode(template.content, true).querySelector("table");
@@ -237,29 +249,37 @@ let activateSearch = (value="") => {
           return e;
         })
       );
-      console.log(records);
-      ((data,type,filename) => {
-        let a = window.document.createElement("a");
-        a.href = window.URL.createObjectURL(new Blob([data], {type}));
-        a.download = filename;
-        document.body.appendChild(a);
-        a.click();        
-        document.body.removeChild(a);
-      })(records.filter(e => e !== false).join(JSON.parse('"'+parameters.cfn+'"')),
+      makeDownload(
+        records.filter(e => e !== false).join(JSON.parse('"'+parameters.cfn+'"')),
         "text/iso2709",
-        "records.mrc");
+        "records.mrc"
+      );
       progress.classList.add("hidden");
     },
     summarize: async (records) => { //extract data from each record
+      let progess = document.querySelector("#progress");
+      progress.classList.remove("hidden");
+      let output = {
+        html: (data) => {
+          
+        },
+        json: (data) => {
+          data = makeDownload(data,"application/json","summary.json",true);
+          window.location.href = data;
+        }
+      }
       let toParse = parameters.toExtract;
       if (toParse == "*") {
         throw new Error("Some fields have to be selected for extraction");
       }
       let summary = {};
-      await Promise.all(records.split(JSON.parse('"'+parameters.cfn+'"'))
+      records = records.split(JSON.parse('"'+parameters.cfn+'"'));
+      progress.querySelector("progress").setAttribute("max",records.length);
+      await Promise.all(records
         .filter(e => ["","\n"].indexOf(e) < 0)
-        .flatmap(async (e,i) => {
+        .map(async (e,i) => {
           e = await parse(e,{toParse});
+          progress.querySelector("progress").value++;
           e = await e.fields.map(e => {
             if (typeof e.value !== "undefined") {
               return [{ code: e.code, value: e.value }];
@@ -268,7 +288,7 @@ let activateSearch = (value="") => {
                 return { code: e.code+"$"+f.code, value: f.value };
               });
             }
-          }).map(field => {
+          }).flat().map(field => {
             if (typeof summary[field.code] === "undefined") {
               summary[field.code] = [];
             }
@@ -278,8 +298,10 @@ let activateSearch = (value="") => {
               summary[field.code].push(field.value);
             }
           });
-        }));
-        console.log(summary)
+        })
+      );
+      output[parameters.output](JSON.stringify(summary));
+      progress.classList.add("hidden");
     }
   }
   
