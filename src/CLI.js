@@ -38,7 +38,6 @@ let displayRecord = async (record,help=false) => {
       }
       show(e.code,"\t "+e.value);
     } else {
-      console.log();
       show("    "+e.code+"   ",(help)?invert((e.label||"").split("\n")[0]):" ");
       show("indicators",e.indicator.replace(/ /g,"_")+((help)?"\t"+invert(
         (e.indicators_label || []).filter(e => typeof e !== "undefined").join(" | ")
