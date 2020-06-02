@@ -54,6 +54,7 @@ const analyzeFieldNotation = (str) => {
 }
 
 const MARC = { //Template object
+  recordSeparator:"\u001d",
   fieldSeparator:"\u001e",
   subfieldSeparator:"\u001f",
   rawRecord:"",
@@ -150,7 +151,6 @@ let parseRecord = (record,parameters) => {
 }
 let filterRecord = (record,field,values) => {
   field = (typeof field === "string") ? analyzeFieldNotation(field):field;
-  console.log(field.toString());
   let filter = record.fields.find(field);
   if (typeof filter !== "undefined") {
     filter = filter.subfields.find(field,{parentCode:filter.code});
