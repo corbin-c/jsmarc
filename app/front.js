@@ -213,12 +213,16 @@ let activateSearch = (value="") => {
    * separator: parameters.cfn (end of record separator) */
   const operations = {
     display: async (records) => { //parses and displays the required fields of each record
-      query.classList.add("hidden");
+      //query.classList.add("hidden");
       results.classList.remove("hidden");
       records.split(JSON.parse('"'+parameters.cfn+'"'))
         .filter(e => ["","\n"].indexOf(e) < 0)
         .map(async (e,i) => {
-          e = await parse(e,{toParse:parameters.toDisplay});
+          e = await parse(e,{
+            toParse: parameters.toDisplay,
+            fields: JSON.parse('"'+parameters.cfz+'"'),
+            subfields: JSON.parse('"'+parameters.ssz+'"')
+          });
           if (parameters.helper != "disabled") {
             e = await helper(e,parameters.helper);
           }
@@ -238,10 +242,15 @@ let activateSearch = (value="") => {
       }
       records = records.split(JSON.parse('"'+parameters.cfn+'"'))
         .filter(e => ["","\n"].indexOf(e) < 0);
+      progress.querySelector("progress").setAttribute("value",0);
       progress.querySelector("progress").setAttribute("max",records.length);
       records = await Promise.all(
         records.map(async (e,i) => {
-          e = await parse(e,{toParse});
+          e = await parse(e,{
+            toParse,
+            fields: JSON.parse('"'+parameters.cfz+'"'),
+            subfields: JSON.parse('"'+parameters.ssz+'"')
+          });
           e = (await filter(e,toParse,filterValues))
             ? e.rawRecord
             : false; 
@@ -261,9 +270,41 @@ let activateSearch = (value="") => {
       progress.classList.remove("hidden");
       let output = {
         html: (data) => {
-          
+          results.setAttribute("style","display: flex");
+          let template = document.querySelector("#summaryView");
+          Object.keys(data).map((field,i) => {
+            let table = document
+              .importNode(template.content, true)
+              .querySelector("table");
+            results.append(table);
+            let header = table.querySelector("thead tr th");
+            header.innerHTML = field;
+            if (parameters.cumul_values) { //create two columns: values & occurencies
+              header.setAttribute("colspan",2);
+              Object.keys(data[field]).map(entry => {
+                let line = document.createElement("tr");
+                let value = document.createElement("td");
+                let count = document.createElement("td");
+                value.innerHTML = entry;
+                count.innerHTML = data[field][entry];
+                line.append(value);
+                line.append(count);
+                table.querySelector("tbody").append(line);
+              });              
+            } else { //simple case, create one column & fill w/ values
+              table.querySelector(".cumulValues").remove();
+              data[field].map(entry => {
+                let line = document.createElement("tr");
+                let cell = document.createElement("td");
+                cell.innerHTML = entry;
+                line.append(cell);
+                table.querySelector("tbody").append(line);
+              });
+            }
+          });
         },
         json: (data) => {
+          data = JSON.stringify(data);
           data = makeDownload(data,"application/json","summary.json",true);
           window.location.href = data;
         }
@@ -274,11 +315,16 @@ let activateSearch = (value="") => {
       }
       let summary = {};
       records = records.split(JSON.parse('"'+parameters.cfn+'"'));
+      progress.querySelector("progress").setAttribute("value",0);
       progress.querySelector("progress").setAttribute("max",records.length);
       await Promise.all(records
         .filter(e => ["","\n"].indexOf(e) < 0)
         .map(async (e,i) => {
-          e = await parse(e,{toParse});
+          e = await parse(e,{
+            toParse,
+            fields: JSON.parse('"'+parameters.cfz+'"'),
+            subfields: JSON.parse('"'+parameters.ssz+'"')
+          });
           progress.querySelector("progress").value++;
           e = await e.fields.map(e => {
             if (typeof e.value !== "undefined") {
@@ -290,17 +336,21 @@ let activateSearch = (value="") => {
             }
           }).flat().map(field => {
             if (typeof summary[field.code] === "undefined") {
-              summary[field.code] = [];
+              summary[field.code] = (parameters.cumul_values) ? {} : [];
             }
             if (parameters.cumul_values) {
-              //special duplicates reduce
+              if (typeof summary[field.code][field.value] !== "undefined") {
+                summary[field.code][field.value]++;
+              } else {
+                summary[field.code][field.value] = 1;
+              }
             } else {
               summary[field.code].push(field.value);
             }
           });
         })
       );
-      output[parameters.output](JSON.stringify(summary));
+      output[parameters.output](summary);
       progress.classList.add("hidden");
     }
   }
@@ -314,6 +364,7 @@ let activateSearch = (value="") => {
         e.remove();
       }
     });
+    results.setAttribute("style","");
     try {
       operations[mode](records);
     } catch (e) {
