@@ -30,7 +30,7 @@ help selecting fields
 
 ### NodeJS CLI Tool
 
-**/!\ You'll need NodeJS locally installed to execute this script**
+**/!\ You'll need NodeJS locally installed to run this script**
 
 #### Installation
 
@@ -64,6 +64,24 @@ Options:		Syntax: --KEY=VALUE
 	format
 	fields
 ```
+
+#### Sample commands
+
+```
+curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node display - --format=marc21
+```
+
+Grabs two records from the Library of Congress Z3950 server (using my
+[Web-Z3950 NodeJS binding](https://github.com/corbin-c/web-z3950)), displays
+them and explicits the fields.
+
+```
+./marc-node display /path/to/records.mrc --fields=856\$u
+```
+
+Opens the `/path/to/records.mrc` batch of records and only shows the `856$u`
+field. (NB: a backslash is needed to escape the dollar sign)
+
 
 ### Module
 
