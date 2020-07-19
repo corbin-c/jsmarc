@@ -24,7 +24,8 @@ const ARGS_STRUCTURE = {
     "field-separator",
     "subfield-separator",
     "format",
-    "fields"
+    "fields",
+    "values"
   ],
 };
 
@@ -88,7 +89,7 @@ const getParams = () => {
   }
   if (ARGS.fields) {
     params.toParse = ARGS.fields;
-  }  
+  }
   return params;
 };
 
@@ -144,8 +145,32 @@ If FILE is -, read stdin.\n\nCommands:\n\t`
     console.log(help);
     process.exit();
   },
-  filter: () => {
-    process.exit();    
+  filter: async () => {
+    let records = await getInput();
+    let parameters = getParams();
+    if (typeof parameters.toParse ===  "undefined") {
+      DIE(new Error("--fields option is required for record extraction"));
+      process.exit();
+    }
+    if (typeof ARGS.values ===  "undefined") {
+      DIE(new Error("--values option is required for record extraction"));
+      process.exit();
+    }
+    records = splitRecords(records);
+    records = await Promise.all(
+      records.map(async (e,i) => {
+        e = MarcParser.parseRecord(e,parameters);
+        e = (MarcParser.filterRecord(e,parameters.toParse,ARGS.values.split(",")))
+          ? e.rawRecord
+          : false; 
+        return e;
+      })
+    );
+    console.log(records
+      .filter(e => e !== false)
+      .join(((ARGS["record-separator"]
+      || MarcParser.MARC.recordSeparator))));
+    process.exit();
   },
   extract: async () => {
     let output = [];
@@ -163,7 +188,7 @@ If FILE is -, read stdin.\n\nCommands:\n\t`
         console.log("");
       }));
     console.log(JSON.stringify(output));
-    process.exit();    
+    process.exit();
   }
 };
 
