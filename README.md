@@ -63,9 +63,12 @@ Options:		Syntax: --KEY=VALUE
 	subfield-separator
 	format
 	fields
+  values  
 ```
 
 #### Sample commands
+
+##### Full record display with fields explanation
 
 ```
 curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node display - --format=marc21
@@ -75,6 +78,8 @@ Grabs two records from the Library of Congress Z3950 server (using my
 [Web-Z3950 NodeJS binding](https://github.com/corbin-c/web-z3950)), displays
 them and explicits the fields.
 
+##### Field-limited display
+
 ```
 ./marc-node display /path/to/records.mrc --fields=856\$u
 ```
@@ -82,8 +87,10 @@ them and explicits the fields.
 Opens the `/path/to/records.mrc` batch of records and only shows the `856$u`
 field. (NB: a backslash is needed to escape the dollar sign)
 
+##### Data extraction with JSON output
+
 ```
-curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node extract - --fields=100\$a,020\$a --format=marc21
+curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node extract - --fields=100\$a,020\$a
 ```
 
 Extracts the `100$a` and `020$a` fields from two records from the LoC and generates
@@ -133,6 +140,16 @@ the following JSON output:
 	}]
 }]
 ```
+
+##### Record filtering
+
+```
+./marc-node filter ./path/to/batch/records.mrc --fields=020\$a --values=0596001312,"0066620724 (hc)"
+```
+
+Filters a batch of records to only keep records where the `020$a` field matches
+one of the provided comma-separated values (0596001312,"0066620724 (hc)"). Note
+the quotes used when providing values containing spaces.
 
 ### Module
 
