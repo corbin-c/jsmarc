@@ -48,7 +48,7 @@ const checkArgs = (arguments) => {
         console.log(CLI.invert("WARNING:")+"\tUnknown argument \""+e+"\"\n")
     }
   })
-} 
+}
 
 const ARGS = (() => {
   // where the actual arguments are mapped for further use
@@ -145,6 +145,24 @@ If FILE is -, read stdin.\n\nCommands:\n\t`
     process.exit();
   },
   filter: () => {
+    process.exit();    
+  },
+  extract: async () => {
+    let output = [];
+    let records = await getInput();
+    let parameters = getParams();
+    if (typeof parameters.toParse ===  "undefined") {
+      DIE(new Error("--fields option is required for data extraction"));
+      process.exit();
+    }
+    records = splitRecords(records);
+    records = await Promise.all(records
+      .map(async record => {
+        record = MarcParser.parseRecord(record,parameters);
+        output.push({leader:record.leader,fields:record.fields});
+        console.log("");
+      }));
+    console.log(JSON.stringify(output));
     process.exit();    
   }
 };

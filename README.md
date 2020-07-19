@@ -82,6 +82,57 @@ them and explicits the fields.
 Opens the `/path/to/records.mrc` batch of records and only shows the `856$u`
 field. (NB: a backslash is needed to escape the dollar sign)
 
+```
+curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node extract - --fields=100\$a,020\$a --format=marc21
+```
+
+Extracts the `100$a` and `020$a` fields from two records from the LoC and generates
+the following JSON output:
+
+```javascript
+[{
+	"leader": "01208cam a22003014a 4500",
+	"fields": [{
+		"code": "020",
+		"indicator": "  ",
+		"subfields": [{
+			"code": "a",
+			"value": "0066620724 (hc)"
+		}]
+	}, {
+		"code": "100",
+		"indicator": "1 ",
+		"subfields": [{
+			"code": "a",
+			"value": "Torvalds, Linus,"
+		}]
+	}]
+}, {
+	"leader": "01397cam a22003014a 4500",
+	"fields": [{
+		"code": "020",
+		"indicator": "  ",
+		"subfields": [{
+			"code": "a",
+			"value": "0596001312"
+		}]
+	}, {
+		"code": "020",
+		"indicator": "  ",
+		"subfields": [{
+			"code": "a",
+			"value": "0596001088 (pbk.)"
+		}]
+	}, {
+		"code": "100",
+		"indicator": "1 ",
+		"subfields": [{
+			"code": "a",
+			"value": "Raymond, Eric S."
+		}]
+	}]
+}]
+```
 
 ### Module
 
