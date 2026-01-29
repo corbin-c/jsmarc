@@ -1,255 +1,393 @@
 # JsMarc
 
-JsMarc is a Vanilla-JS utility designed by Clément Corbin to handle bibligraphic
-MARC (MAchine Readable Cataloging) records, commonly used by libraries. 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Vanilla JS](https://img.shields.io/badge/Vanilla-JS-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://github.com/corbin-c/jsmarc)
 
-## How to use it
+> A zero-dependency Vanilla JavaScript library for parsing, filtering, extracting, and explaining bibliographic [MARC](https://en.wikipedia.org/wiki/MARC_standards) (MAchine Readable Cataloging) records. Works in browsers and Node.js with no build step.
 
-JsMarc can be used in several ways: a web interface, a command-line tool and ES
-modules are provided.
+JsMarc was created by [Clément Corbin](https://github.com/corbin-c) to make MARC data accessible from the web and the terminal.
 
-### Web application
+---
 
-This application relies on [Workerify](https://www.github.com/corbin-c/workerify/)
-to execute JsMarc off the main event loop, by creating a handful of web workers
-on the fly. These limit the risk of freezing the tab & improve performance on
-large records batches.
+## Features
 
-Online JsMarc is available at https://corbin-c.github.io/jsmarc/app/
+- **Parse MARC records** — Convert raw ISO 2709 MARC data into structured JavaScript objects, handling leader, directory, fields, and subfields.
+- **Filter records** — Extract matching records from a batch by field/subfield values (e.g. filter by ISBN).
+- **Extract data** — Pull specific fields from large record sets, with JSON output.
+- **Explain fields** — Annotate parsed records with human-readable labels using standard MARC definition files (MARC21, UNIMARC).
+- **Search fields** — Reverse-lookup field codes by keyword (e.g. search "author" to find all related fields).
+- **Works everywhere** — Browser (ES modules), Node.js (via a light bridge), and a command-line tool.
+- **Batch processing** — Parse entire `.mrc` files or piped records, not just single entries.
 
-Main features are:
+## Installation
 
- * batch record parsing: displays all the records in a batch in a table, with
-the raw record followed by selected fields & subfields
- * batch record filtering: extracts the matching records from a batch given a
-list of values and a field. Output is a MARC file to download. 
- * data extraction: parses records for a given set of fields and displays a
-summary. Outputs a HTML table or a JSON.
- * MARC help: displays meaning of fields/subfields codes on hover, provides
-help selecting fields
+JsMarc is not published on npm. It is designed to be used directly from the source.
 
-### NodeJS CLI Tool
-
-**/!\ You'll need NodeJS locally installed to run this script**
-
-#### Installation
-
-Just clone this repo (`git clone https://github.com/corbin-c/jsmarc.git`). You
-might want to symlink the `marc-node` script to your local bin path.
-
-#### Use
-
-Execute `./marc-node` to run the CLI tool. Without parameters, it returns the following
-help:
-
-```
-$ ./marc-node
-Error: Mandatory argument: command
-
-Usage: marc-node COMMAND FILE [OPTIONS]
-
-If FILE is -, read stdin.
-
-Commands:
-	display
-	filter
-	extract
-	help
-
-Options:		Syntax: --KEY=VALUE
-	encoding
-	record-separator
-	field-separator
-	subfield-separator
-	format
-	fields
-  values  
+```bash
+git clone https://github.com/corbin-c/jsmarc.git
 ```
 
-#### Sample commands
+**No `npm install`, no build step, no bundler required.**
 
-##### Full record display with fields explanation
+### Browser
 
-```
-curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node display - --format=marc21
-```
+Import modules directly from the source or a hosted URL. No installation needed.
 
-Grabs two records from the Library of Congress Z3950 server (using my
-[Web-Z3950 NodeJS binding](https://github.com/corbin-c/web-z3950)), displays
-them and explicits the fields.
-
-##### Field-limited display
-
-```
-./marc-node display /path/to/records.mrc --fields=856\$u
-```
-
-Opens the `/path/to/records.mrc` batch of records and only shows the `856$u`
-field. (NB: a backslash is needed to escape the dollar sign)
-
-##### Data extraction with JSON output
-
-```
-curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node extract - --fields=100\$a,020\$a
-```
-
-Extracts the `100$a` and `020$a` fields from two records from the LoC and generates
-the following JSON output:
-
-```javascript
-[{
-	"leader": "01208cam a22003014a 4500",
-	"fields": [{
-		"code": "020",
-		"indicator": "  ",
-		"subfields": [{
-			"code": "a",
-			"value": "0066620724 (hc)"
-		}]
-	}, {
-		"code": "100",
-		"indicator": "1 ",
-		"subfields": [{
-			"code": "a",
-			"value": "Torvalds, Linus,"
-		}]
-	}]
-}, {
-	"leader": "01397cam a22003014a 4500",
-	"fields": [{
-		"code": "020",
-		"indicator": "  ",
-		"subfields": [{
-			"code": "a",
-			"value": "0596001312"
-		}]
-	}, {
-		"code": "020",
-		"indicator": "  ",
-		"subfields": [{
-			"code": "a",
-			"value": "0596001088 (pbk.)"
-		}]
-	}, {
-		"code": "100",
-		"indicator": "1 ",
-		"subfields": [{
-			"code": "a",
-			"value": "Raymond, Eric S."
-		}]
-	}]
-}]
-```
-
-##### Record filtering
-
-```
-./marc-node filter ./path/to/batch/records.mrc --fields=020\$a --values=0596001312,"0066620724 (hc)"
-```
-
-Filters a batch of records to only keep records where the `020$a` field matches
-one of the provided comma-separated values (0596001312,"0066620724 (hc)"). Note
-the quotes used when providing values containing spaces.
-
-### Module
-
-The tools presented above all relies on two ES modules, the parser and the
-helper.
-
-Import them with:
-
-```javascript
+```js
 import * as MarcParser from "https://corbin-c.github.io/jsmarc/src/parser.js";
 import * as MarcHelper from "https://corbin-c.github.io/jsmarc/src/helper.js";
 ```
 
-#### MarcParser
+### Node.js
 
-This module exports a few useful tools for working on MARC records.
+Use the `marc-node` executable directly (requires Node.js ≥ 12).
 
-First, it comes with a built-in field code reader, which allows one to pass
-the MarcParser fields codes using the "traditional" notation, which consists of the field
-code and the subfield code separated by a dollar sign (`$`). This notation can be
-used when selecting fields to parse or to filter. For example, the ISBN in Marc21,
-is located at subfield `a` of field `020`, which could be written as `020$a`.
-Multiple fields may be selected, comma-separated. 
-
-The `parseRecord()` function can be called with one record and a facultative set
-of parameters:
-
-```javascript
-MarcParser.parseRecord(record,{
-  toParse, //array of selected fields to work on, as field_code$subfield_code, eg ["856$u"]
-  fieldSeparator,
-  subfieldSeparator //in case the record is not ISO2709 compliant, one may want to adjust the separators
-});
+```bash
+# Optionally symlink it to your PATH
+ln -s /path/to/jsmarc/marc-node /usr/local/bin/marc-node
 ```
 
-It outputs a `MarcParser` object, with the following properties:
+The Node.js bridge (`src/ESrequire.js`) adapts ES module exports to CommonJS `require()` so the same modules run in both environments.
 
-```javascript
-MarcParser {
-  fieldSeparator: '',     //string from parameters
-  subfieldSeparator: '',  //string from parameters
-  rawRecord: '',          //string from record argument
-  leader: '',             //24 first chars of record
-  directory: [            //describes the position, code & length of each one of the fields
-    { code: '001', length: '0012', position: '00000' },
-    ...
-  ],
-  fields: [               //describes all fields
-    { code: '123', value: 'string' },                     //fields without subfields only have a value
-    { code: '456', indicator: '  ', subfields: [Array] }, //otherwise they contain an array of subfields
-    ...                                                   //subfields are structured as { code: "",  value: "" } too
-  ],
-  '@fields': { code: '', indicator: '  ', subfields: [], value: '' },       //field template
-  '@directory': { code: [ 0, 3 ], length: [ 3, 7 ], position: [ 7, 12 ] },  //directory template
-  parseCode: '', //string from parameters
-  header: '' //string: leader + directory
+## Quick Start
+
+### Browser
+
+```js
+import { parseRecord } from "https://corbin-c.github.io/jsmarc/src/parser.js";
+import { explainRecord } from "https://corbin-c.github.io/jsmarc/src/helper.js";
+
+const record = parseRecord(rawMarcString);
+const explained = await explainRecord(record, "marc21");
+
+console.log(explained);
+
+```
+
+### Node.js
+
+```js
+const MarcParser = require("./src/ESrequire.js")("./src/parser.js");
+const MarcHelper = require("./src/ESrequire.js")("./src/helper.js");
+
+const record = MarcParser.parseRecord(rawMarcString);
+const explained = await MarcHelper.explainRecord(record, "marc21");
+
+console.log(explained);
+```
+
+### CLI (one-liner)
+
+```bash
+# Fetch records and display with field explanations
+curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724&format=usmarc" | ./marc-node display - --format=marc21
+```
+
+## CLI Usage
+
+```
+marc-node COMMAND FILE [OPTIONS]
+```
+
+If `FILE` is `-`, the tool reads from stdin.
+
+### Commands
+
+| Command | Description |
+|---------|-------------|
+| `display` | Parse and display records (with optional field explanation via `--format`) |
+| `filter`  | Filter records by field/subfield values |
+| `extract` | Extract specific fields as JSON |
+| `help`    | Show usage information |
+
+### Options
+
+| Option | Syntax | Default | Description |
+|--------|--------|---------|-------------|
+| `--encoding` | string | `utf8` | File encoding when reading from disk |
+| `--record-separator` | string | `\u001d` | Character that separates records in the batch |
+| `--field-separator` | string | `\u001e` | Field separator within a record |
+| `--subfield-separator` | string | `\u001f` | Subfield separator within a field |
+| `--format` | `marc21` or `unimarc` | — | Enrich display with field/subfield labels from definitions |
+| `--fields` | notation string | `*` | Field notation (e.g. `020$a,856$u`) — use `\` to escape `$` in shells |
+| `--values` | comma-separated | — | Values for filtering (quote values containing spaces) |
+
+### Examples
+
+**Display all records with explained fields:**
+
+```bash
+curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | ./marc-node display - --format=marc21
+```
+
+**Limit display to specific fields:**
+
+```bash
+./marc-node display /path/to/records.mrc --fields=856\$u
+```
+
+**Extract fields as JSON:**
+
+```bash
+./marc-node extract /path/to/records.mrc --fields=100\$a,020\$a
+```
+
+Output:
+
+```json
+[{
+  "leader": "01208cam a22003014a 4500",
+  "fields": [
+    { "code": "020", "indicator": "  ", "subfields": [{ "code": "a", "value": "0066620724 (hc)" }] },
+    { "code": "100", "indicator": "1 ", "subfields": [{ "code": "a", "value": "Torvalds, Linus," }] }
+  ]
+}]
+```
+
+**Filter records by value:**
+
+```bash
+./marc-node filter ./records.mrc --fields=020\$a --values=0596001312,"0066620724 (hc)"
+```
+
+Only records whose `020$a` matches one of the given comma-separated values are kept. Output is raw MARC.
+
+**Pipe from stdin:**
+
+```bash
+cat /path/to/records.mrc | ./marc-node display - --fields=245\$a
+```
+
+## API Reference
+
+All exports from the parser and helper modules.
+
+### `src/parser.js`
+
+#### `parseRecord(recordString, options?)`
+
+Parse a raw MARC record string into a structured `MarcParser` object.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `recordString` | `string` | *required* | Raw ISO 2709 MARC record |
+| `options.toParse` | `string \| string[]` | `"*"` | Field notation(s) to parse (e.g. `"020\$a,856\$u"` or `["020\$a"]`). `"*"` parses all fields. |
+| `options.fields` | `string` | `"\u001e"` | Custom field separator |
+| `options.subfields` | `string` | `"\u001f"` | Custom subfield separator |
+
+**Returns:** `MarcParser` — an object with the following shape:
+
+```js
+{
+  rawRecord: string,        // the original record string
+  leader: string,           // first 24 characters
+  header: string,           // leader + directory + field separator
+  fieldSeparator: string,   // field separator used
+  subfieldSeparator: string,// subfield separator used
+  parseCode: string,        // field notation filter applied
+  directory: [{             // parsed directory entries
+    code: string,           // field tag (e.g. "001")
+    length: string,         // field length (zero-padded)
+    position: string        // byte offset from start of body (zero-padded)
+  }],
+  fields: [{               // parsed fields
+    code: string,           // field tag
+    value?: string,         // raw value (control fields: 001-009)
+    indicator?: string,     // two indicator characters (data fields: 010+)
+    subfields?: [{          // parsed subfields (data fields only)
+      code: string,         // subfield code (single character)
+      value: string         // subfield data
+    }]
+  }]
 }
 ```
 
-The `filterRecord()` function is meant to be used with the `.filter()` array method.
-Given a parsed record (a `MarcParser object`), a set of values and a field
-(as `field_code$subfield_code`, e.g. `856$u`), it returns `true` or `false` whether the
-record matches the provided parameters.
+#### `filterRecord(parsedRecord, fieldNotation, values)`
 
-#### MarcHelper
+Check if a parsed record contains matching values for a given field.
 
-**/!\ This module can't work without the MarcParser, unless you build your own
-`record` object, with the required structure.**
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `parsedRecord` | `MarcParser` | A record returned by `parseRecord()` |
+| `fieldNotation` | `string` | Field notation (e.g. `"020\$a"`) |
+| `values` | `string[]` | Values to match against |
 
-The MarcHelper module is able to read from MARC definitions files (see the [`definitions`](./definitions/)
-folder for further details) and enrich records with labels explaining the fields,
-subfields and indicators meanings.
+**Returns:** `boolean` — `true` if the record matches at least one value.
 
-It provides the `explainRecord` function, which takes a parsed Marc record and
-a format as arguments. The function returns a promises which resolves when the MARC
-definitions files have been loaded:
+#### `analyzeFieldNotation(notationString)`
 
-```javascript
-await MarcHelper.explainRecord(parsedRecord,format);
+Parse a field notation string into a predicate function used internally by the parser.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `notationString` | `string` | Comma-separated field notations (e.g. `"020\$a,856\$u"`) or `"*"` |
+
+**Returns:** `Function` — a filter function `(recordPart) => boolean` that tests if a record part matches.
+
+#### `bin`
+
+Binary-safe string utility for byte-level length and slicing (handles multi-byte characters correctly in both browser and Node.js contexts).
+
+```js
+bin.length(str)       // → number (byte length)
+bin.slice(str, start, end)  // → string (byte-level slice)
 ```
 
-This will return a record object, enriched with labels for each field, subfield and
-indicator (if that label was found).
-The `format` parameter has to match one of the keys of the [`formats.json`](./formats.json) object.
+#### `MARC`
 
-It is also possible to reverse search for field codes with the `searchField`
-function. Given a string and a MARC format, it returns a promise, resolving in 
-an array of code/label pairs:
+Default configuration template with ISO 2709 separators:
 
-```javascript
-await MarcHelper.searchField("auteur","unimarc");
-
-//expected ouput (truncated):
-[
-  { code: '200$c', value: "Titre propre d'un auteur différent" },
-  { code: '488$a', value: 'Auteur[7x0 du document en relation]' },
-  { code: '604', value: "Point d'accès sujet - Auteur/Titre" },
-  { code: '604$a', value: 'Auteur' },
-  { code: '701$4', value: "Auteur d'oeuvre adaptée ou continuée" },
-  { code: '702$4', value: "Auteur d'oeuvre adaptée ou continuée" },
-  ...
-]
+```js
+MARC.recordSeparator   // "\u001d"
+MARC.fieldSeparator    // "\u001e"
+MARC.subfieldSeparator // "\u001f"
 ```
+
+#### `MarcParser`
+
+The parser class. Always prefer the `parseRecord()` wrapper unless you need the class directly.
+
+### `src/helper.js`
+
+#### `explainRecord(parsedRecord, format)`
+
+Enrich a parsed record with human-readable labels from MARC definition files.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `parsedRecord` | `MarcParser` | A record returned by `parseRecord()` |
+| `format` | `string` | Format key from `formats.json` (e.g. `"marc21"`, `"unimarc"`) |
+
+**Returns:** `Promise<object>` — the record with added `label` properties on fields, subfields, and indicators.
+
+#### `explainField(field, format)`
+
+Same as `explainRecord` but operates on a single field object.
+
+**Returns:** `Promise<object>` — the field object with added labels.
+
+#### `searchField(searchString, format)`
+
+Search for field/subfield codes by keyword in the definition files.
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `searchString` | `string` | Keyword to search (e.g. `"author"`, `"auteur"`) |
+| `format` | `string` | Format key (e.g. `"marc21"`, `"unimarc"`) |
+
+**Returns:** `Promise<Array<{code: string, value: string}>>` — matching code/label pairs.
+
+```js
+await searchField("auteur", "unimarc");
+// [
+//   { code: "200\$c", value: "Titre propre d'un auteur différent" },
+//   { code: "701\$4", value: "Auteur d'oeuvre adaptée ou continuée" },
+//   ...
+// ]
+```
+
+#### `formats`
+
+A Promise that resolves to the loaded format definitions registry (from `formats.json`). Used internally — you typically access definitions through `explainRecord` or `searchField`.
+
+## Project Structure
+
+```
+jsmarc/
+├── app/                    # Web application
+│   ├── index.html
+│   ├── front.js
+│   └── style.css
+├── definitions/            # MARC format definitions
+│   ├── marc21.json
+│   └── unimarc.json
+├── samples/                # Sample MARC record files
+├── src/                    # Core source modules
+│   ├── parser.js           # Main MARC record parser
+│   ├── helper.js           # Field explanation & search via definitions
+│   ├── CLI.js              # Terminal display utilities
+│   └── ESrequire.js        # Node.js ES module → CommonJS bridge
+├── marc-node               # Node.js CLI executable
+├── formats.json            # Registry mapping format names to definition files
+├── test.js                 # Node.js test suite
+├── test.html               # Browser test page
+├── rec.mrc                 # Sample record file
+└── LICENSE                 # GNU GPL v3
+```
+
+## Supported Formats
+
+JsMarc ships with definition files for two MARC variants:
+
+| Format | Source | License | Language |
+|--------|--------|---------|----------|
+| **MARC21** | Library of Congress | Public domain | English |
+| **UNIMARC** | ABES (Agence Bibliographique de l'Enseignement Supérieur) | CC BY-SA | French |
+
+Definitions provide human-readable labels for every field, subfield, and indicator value. These labels power the `explainRecord` and `searchField` APIs as well as the CLI's `--format` flag.
+
+### Format Definitions
+
+The `formats.json` file maps format names to their definition files:
+
+```json
+{
+  "marc21": "definitions/marc21.json",
+  "unimarc": "definitions/unimarc.json"
+}
+```
+
+#### Adding a custom format
+
+1. Create a JSON file in `definitions/` following the existing schema (see `definitions/marc21.json` for reference):
+   ```json
+   {
+     "010": {
+       "value": "Library of Congress Control Number",
+       "ind1": { "#": "Undefined" },
+       "ind2": { "#": "Undefined" },
+       "subfields": {
+         "a": { "*": "LC control number" }
+       }
+     }
+   }
+   ```
+2. Add an entry to `formats.json`:
+   ```json
+   {
+     "myformat": "definitions/myformat.json"
+   }
+   ```
+3. Use it immediately:
+   ```bash
+   ./marc-node display records.mrc --format=myformat
+   ```
+
+### Web App
+
+A full-featured web interface is hosted at **[corbin-c.github.io/jsmarc/app/](https://corbin-c.github.io/jsmarc/app/)**. It supports batch record parsing, filtering, data extraction (HTML table or JSON), and field explanation on hover. The app uses [Workerify](https://github.com/corbin-c/workerify) to run JsMarc in Web Workers for non-blocking processing of large batches.
+
+## Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes — keep it Vanilla JS, no dependencies
+4. Run the test suites (`node test.js`, open `test.html` in a browser)
+5. Submit a pull request
+
+For major changes, consider opening an issue first to discuss your approach.
+
+## License
+
+JsMarc is released under the [GNU General Public License v3.0](LICENSE). You are free to use, modify, and distribute it under those terms.
+
+## Acknowledgments
+
+- **[Library of Congress](https://www.loc.gov/marc/)** for the MARC21 standard and public-domain field definitions
+- **[ABES](https://www.abes.fr/)** for the UNIMARC field definitions (CC BY-SA)
+- The MARC standards community for decades of cataloging infrastructure
+- **[Workerify](https://github.com/corbin-c/workerify)** for powering the web app's off-thread processing
+- **[Web-Z3950](https://github.com/corbin-c/web-z3950)** by the same author, used in CLI examples for fetching live records
