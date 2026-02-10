@@ -1,0 +1,11 @@
+app/
+samples/
+.git/
+.gitignore
+.npmignore
+vitest.config.ts
+tsconfig.json
+src/**/*.test.ts
+todo
+rec.mrc
+vite.config.ts
