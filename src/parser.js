@@ -43,7 +43,7 @@ const analyzeFieldNotation = (str) => {
   return function(recordPart) {
     if (recordPart.code.length == 3) {
       return str.map(e => e.field).some(code => code == recordPart.code);
-    } else if (this.parentCode !== undefined) {
+    } else if (this?.parentCode !== undefined) {
       return str.filter(e => e.field === this.parentCode)
         .map(e => e.subfield)
         .some(code => (code === false) ? true : (code === recordPart.code));
