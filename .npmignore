@@ -6,6 +6,9 @@ samples/
 vitest.config.ts
 tsconfig.json
 src/**/*.test.ts
-todo
 rec.mrc
 vite.config.ts
+src/parser.js
+src/helper.js
+src/CLI.js
+src/ESrequire.js
