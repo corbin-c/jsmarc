@@ -148,15 +148,15 @@ const MARC: MarcTemplate = {
 };
 
 class MarcParser implements MarcRecord {
-  rawRecord: string;
-  leader: string;
-  header: string;
-  fieldSeparator: string;
-  subfieldSeparator: string;
-  parseCode: string;
-  directory: DirectoryEntry[];
-  fields: Field[];
-  recordSeparator: string;
+  rawRecord!: string;
+  leader!: string;
+  header!: string;
+  fieldSeparator!: string;
+  subfieldSeparator!: string;
+  parseCode!: string;
+  directory!: DirectoryEntry[];
+  fields!: Field[];
+  recordSeparator!: string;
   "@fields": MarcTemplate["@fields"];
   "@directory": MarcTemplate["@directory"];
 
@@ -191,9 +191,8 @@ class MarcParser implements MarcRecord {
       const segment = rawDir.slice(i * 12, (i + 1) * 12);
       const entry: DirectoryEntry = {} as DirectoryEntry;
       Object.keys(this["@directory"]).forEach((k) => {
-        const key = k as keyof typeof this["@directory"];
-        (entry as Record<string, string>)[k] = segment.slice(
-          ...this["@directory"][key],
+        (entry as unknown as Record<string, string>)[k] = segment.slice(
+          ...(this["@directory"] as Record<string, [number, number]>)[k],
         );
       });
       return entry;
