@@ -7,27 +7,33 @@ const bin = { //slice and length function adapted to work on binary count, not c
       return Buffer.from(str).length; //node
     }
   },
-  slice:(str,start,end) => {
-    let length = end - start;
-    for (let x=0;x<start;x++) {
-      if (bin.length(str.slice(0,x)) == start) {
-        start = x;
-        break;
+  slice(str, start, end) {
+    // Build byte-to-char offset map (computed once per slice call)
+    let bytePos = 0;
+    const byteToChar = new Array(str.length + 1);
+    for (let i = 0; i <= str.length; i++) {
+      byteToChar[bytePos] = i;
+      if (i < str.length) {
+        const code = str.charCodeAt(i);
+        bytePos +=
+          code >= 0xd800 && code <= 0xdbff
+            ? 4 // high surrogate pair (2 UTF-16 code units = 4 bytes in UTF-8)
+            : code <= 0x7f
+              ? 1
+              : code <= 0x7ff
+                ? 2
+                : 3; // code > 0x7FF and not surrogate
       }
     }
-    str = str.slice(start)
-    if (typeof end !== "undefined") {
-      for (let x=0;x<end;x++) {
-        if (bin.length(str.slice(0,x)) == (length)) {
-          end = x;
-          break;
-        }
-      }
-      return str.slice(0,end)
-    } else {
-      return str;
+    byteToChar[bytePos] = str.length; // sentinel for end-of-string
+
+    const charStart = byteToChar[start];
+    if (typeof end === "undefined") {
+      return str.slice(charStart);
     }
-  }
+    const charEnd = byteToChar[end];
+    return str.slice(charStart, charEnd);
+  },
 }
 const analyzeFieldNotation = (str) => {
   if (str == "*") {

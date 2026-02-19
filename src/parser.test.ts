@@ -425,3 +425,78 @@ describe("edge cases", () => {
     expect(result).toHaveProperty("header");
   });
 });
+
+// ---------------------------------------------------------------------------
+// parseRecord matches expected output (golden master)
+// ---------------------------------------------------------------------------
+describe("parseRecord matches expected output", () => {
+  it("matches expected output for loc.mrc", () => {
+    const expected = JSON.parse(
+      readFileSync(resolve(__dirname, "..", "samples", "loc.mrc.json"), "utf-8"),
+    );
+    const raw = readMarcFile("loc.mrc");
+    const records = splitRecords(raw);
+
+    expect(records.length).toBe(expected.length);
+
+    for (let i = 0; i < records.length; i++) {
+      const result = parseRecord(records[i]);
+      const plain = { ...result };
+      expect(plain).toStrictEqual(expected[i]);
+    }
+  });
+
+  it("matches expected output for sudoc.mrc", () => {
+    const expected = JSON.parse(
+      readFileSync(resolve(__dirname, "..", "samples", "sudoc.mrc.json"), "utf-8"),
+    );
+    const raw = readMarcFile("sudoc.mrc");
+    const records = splitRecords(raw);
+
+    expect(records.length).toBe(expected.length);
+
+    for (let i = 0; i < records.length; i++) {
+      const result = parseRecord(records[i]);
+      const plain = { ...result };
+      expect(plain).toStrictEqual(expected[i]);
+    }
+  });
+
+  it("matches expected output for openedition_marc21.iso2709", () => {
+    const expected = JSON.parse(
+      readFileSync(
+        resolve(__dirname, "..", "samples", "openedition_marc21.iso2709.json"),
+        "utf-8",
+      ),
+    );
+    const raw = readMarcFile("openedition_marc21.iso2709");
+    const records = splitRecords(raw);
+
+    expect(records.length).toBe(expected.length);
+
+    for (let i = 0; i < records.length; i++) {
+      const result = parseRecord(records[i]);
+      const plain = { ...result };
+      expect(plain).toStrictEqual(expected[i]);
+    }
+  });
+
+  it("matches expected output for openedition_unimarc.iso2709", () => {
+    const expected = JSON.parse(
+      readFileSync(
+        resolve(__dirname, "..", "samples", "openedition_unimarc.iso2709.json"),
+        "utf-8",
+      ),
+    );
+    const raw = readMarcFile("openedition_unimarc.iso2709");
+    const records = splitRecords(raw);
+
+    expect(records.length).toBe(expected.length);
+
+    for (let i = 0; i < records.length; i++) {
+      const result = parseRecord(records[i]);
+      const plain = { ...result };
+      expect(plain).toStrictEqual(expected[i]);
+    }
+  });
+});

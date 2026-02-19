@@ -73,28 +73,31 @@ const bin = {
   },
 
   slice(str: string, start: number, end?: number): string {
-    let length = end! - start;
-
-    for (let x = 0; x < start; x++) {
-      if (bin.length(str.slice(0, x)) === start) {
-        start = x;
-        break;
+    // Build byte-to-char offset map (computed once per slice call)
+    let bytePos = 0;
+    const byteToChar: number[] = new Array(str.length + 1);
+    for (let i = 0; i <= str.length; i++) {
+      byteToChar[bytePos] = i;
+      if (i < str.length) {
+        const code = str.charCodeAt(i);
+        bytePos +=
+          code >= 0xd800 && code <= 0xdbff
+            ? 4 // high surrogate pair (2 UTF-16 code units = 4 bytes in UTF-8)
+            : code <= 0x7f
+              ? 1
+              : code <= 0x7ff
+                ? 2
+                : 3; // code > 0x7FF and not surrogate
       }
     }
+    byteToChar[bytePos] = str.length; // sentinel for end-of-string
 
-    str = str.slice(start);
-
-    if (typeof end !== "undefined") {
-      for (let x = 0; x < end!; x++) {
-        if (bin.length(str.slice(0, x)) === length) {
-          end = x;
-          break;
-        }
-      }
-      return str.slice(0, end);
+    const charStart = byteToChar[start];
+    if (typeof end === "undefined") {
+      return str.slice(charStart);
     }
-
-    return str;
+    const charEnd = byteToChar[end];
+    return str.slice(charStart, charEnd);
   },
 };
 
