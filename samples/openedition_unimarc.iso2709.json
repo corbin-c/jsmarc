@@ -1,0 +1,1108 @@
+[
+  {
+    "recordSeparator": "\u001d",
+    "fieldSeparator": "\u001e",
+    "subfieldSeparator": "\u001f",
+    "rawRecord": "03395    a2200457   4500001001200000010001800012100004100030101000800071200046800079210006200547230002400609310019100633330122500824336000902049337001902058452007102077610012102148615001202269700002402281701003002305701002702335701002502362701003202387701002802419701002602447701002502473701003102498701002602529701002902555701002702584701002602611701002802637701002602665701003502691701002902726702002402755702002602779702002802805801003802833856006602871\u001eOB-efr-2310\u001e  \u001fa9782728310159\u001e  \u001fa20200413e20132005     fre 50        \u001e  \u001fafre\u001e  \u001faNaples, Rome, Florence\u001fbRessource Ã©lectronique\u001feUne histoire comparÃ©e des milieux intellectuels italiens (XVII-XVIIIe siÃ¨cles)\u001ffAntonella Alimento,Jean Boutier,Marina Caffiero,Elvira Chiosi,Girolamo DeÂ Miranda,Maria Pia Donato,Marina Formica,Daniela Gallo,Mirabelle Madignier,Brigitte Marin,Nicola Michelassi,Maria Pia Paoli,Anna Maria Rao,Antonella Romano,Marcello Verga,SalomÃ© VueltaÂ GarcÃ­a,FranÃ§oise Waquet\u001fgJean Boutier,Brigitte Marin,Antonella Romano\u001e  \u001faRome\u001fcPublications de lâÃcole franÃ§aise de Rome\u001fd2013\u001e  \u001faDonnÃ©es textuelles\u001e  \u001faL'accÃ¨s complet au document est ouvert Ã  tous dans sa version HTML. L'accÃ¨s aux autres formats (PDF, Epub) est rÃ©servÃ© aux usagers des Ã©tablissements qui en ont fait l'acquisition.\u001e  \u001faComment saisir lâactivitÃ© intellectuelle Ã  lâÃ©poque moderne ? Comment faire dialoguer des traditions historiographiques â la franÃ§aise et lâitalienne â qui, pour Ãªtre proches au plan gÃ©ographique, nâen mobilisent pas moins des questionnaires, des mÃ©thodes, des objets divergents ? En quoi un travail de ce type peut-il contribuer Ã  lâanalyse du travail intellectuel contemporain ? Le volume quâon prÃ©sente ici offre les rÃ©sultats dâun programme de recherche qui a accueilli pendant cinq ans, Ã  lâÃcole franÃ§aise de Rome, des chercheurs italiens et franÃ§ais engagÃ©s dans une analyse comparative susceptible de contribuer Ã  lâÃ©clairage de ces questions. Trois sites, Naples, Rome, Florence, ont alimentÃ© la comparaison sur la base dâun questionnaire commun dont les rÃ©sultats sont proposÃ©s dans les trois textes de synthÃ¨se correspondant Ã  chacune des villes. Des Ã©tudes locales et plus circonstanciÃ©es sont venues enrichir ces textes de synthÃ¨se, ainsi que des recherches engageant conjointement les trois villes. Lâadjonction dâannexes et dâune large bibliographie offre des outils de travail susceptibles dâapprofondir la recherche et de prolonger la rÃ©flexion.\u001e  \u001faHTML\u001e  \u001faNavigateur Web\u001e 0\u001fcRome\u001fnPublications de lâÃcole franÃ§aise de Rome\u001fy9782728307395\u001e0 \u001faintellectuels\u001faRÃ©publique romaine\u001faacadÃ©mies\u001faNaples\u001faRome\u001faFlorence\u001faacadÃ©mie de la Crusca\u001faacadÃ©mie Fiorentina\u001e  \u001faHistory\u001e 1\u001faBoutier,\u001fbJean\u001f4070\u001e 1\u001faAlimento,\u001fbAntonella\u001f4070\u001e 1\u001faCaffiero,\u001fbMarina\u001f4070\u001e 1\u001faChiosi,\u001fbElvira\u001f4070\u001e 1\u001faDeÂ Miranda,\u001fbGirolamo\u001f4070\u001e 1\u001faDonato,\u001fbMaria Pia\u001f4070\u001e 1\u001faFormica,\u001fbMarina\u001f4070\u001e 1\u001faGallo,\u001fbDaniela\u001f4070\u001e 1\u001faMadignier,\u001fbMirabelle\u001f4070\u001e 1\u001faMarin,\u001fbBrigitte\u001f4070\u001e 1\u001faMichelassi,\u001fbNicola\u001f4070\u001e 1\u001faPaoli,\u001fbMaria Pia\u001f4070\u001e 1\u001faRao,\u001fbAnna Maria\u001f4070\u001e 1\u001faRomano,\u001fbAntonella\u001f4070\u001e 1\u001faVerga,\u001fbMarcello\u001f4070\u001e 1\u001faVueltaÂ GarcÃ­a,\u001fbSalomÃ©\u001f4070\u001e 1\u001faWaquet,\u001fbFranÃ§oise\u001f4070\u001e 1\u001faBoutier,\u001fbJean\u001f4651\u001e 1\u001faMarin,\u001fbBrigitte\u001f4651\u001e 1\u001faRomano,\u001fbAntonella\u001f4651\u001e 0\u001faFR\u001fbFrMaCLE\u001fc2013-06-18T14:32:31Z\u001e4 \u001fuhttp://books.openedition.org/efr/2310\u001f2Naples, Rome, Florence\u001e",
+    "leader": "03395    a2200457   4500",
+    "directory": [
+      {
+        "code": "001",
+        "length": "0012",
+        "position": "00000"
+      },
+      {
+        "code": "010",
+        "length": "0018",
+        "position": "00012"
+      },
+      {
+        "code": "100",
+        "length": "0041",
+        "position": "00030"
+      },
+      {
+        "code": "101",
+        "length": "0008",
+        "position": "00071"
+      },
+      {
+        "code": "200",
+        "length": "0468",
+        "position": "00079"
+      },
+      {
+        "code": "210",
+        "length": "0062",
+        "position": "00547"
+      },
+      {
+        "code": "230",
+        "length": "0024",
+        "position": "00609"
+      },
+      {
+        "code": "310",
+        "length": "0191",
+        "position": "00633"
+      },
+      {
+        "code": "330",
+        "length": "1225",
+        "position": "00824"
+      },
+      {
+        "code": "336",
+        "length": "0009",
+        "position": "02049"
+      },
+      {
+        "code": "337",
+        "length": "0019",
+        "position": "02058"
+      },
+      {
+        "code": "452",
+        "length": "0071",
+        "position": "02077"
+      },
+      {
+        "code": "610",
+        "length": "0121",
+        "position": "02148"
+      },
+      {
+        "code": "615",
+        "length": "0012",
+        "position": "02269"
+      },
+      {
+        "code": "700",
+        "length": "0024",
+        "position": "02281"
+      },
+      {
+        "code": "701",
+        "length": "0030",
+        "position": "02305"
+      },
+      {
+        "code": "701",
+        "length": "0027",
+        "position": "02335"
+      },
+      {
+        "code": "701",
+        "length": "0025",
+        "position": "02362"
+      },
+      {
+        "code": "701",
+        "length": "0032",
+        "position": "02387"
+      },
+      {
+        "code": "701",
+        "length": "0028",
+        "position": "02419"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02447"
+      },
+      {
+        "code": "701",
+        "length": "0025",
+        "position": "02473"
+      },
+      {
+        "code": "701",
+        "length": "0031",
+        "position": "02498"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02529"
+      },
+      {
+        "code": "701",
+        "length": "0029",
+        "position": "02555"
+      },
+      {
+        "code": "701",
+        "length": "0027",
+        "position": "02584"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02611"
+      },
+      {
+        "code": "701",
+        "length": "0028",
+        "position": "02637"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02665"
+      },
+      {
+        "code": "701",
+        "length": "0035",
+        "position": "02691"
+      },
+      {
+        "code": "701",
+        "length": "0029",
+        "position": "02726"
+      },
+      {
+        "code": "702",
+        "length": "0024",
+        "position": "02755"
+      },
+      {
+        "code": "702",
+        "length": "0026",
+        "position": "02779"
+      },
+      {
+        "code": "702",
+        "length": "0028",
+        "position": "02805"
+      },
+      {
+        "code": "801",
+        "length": "0038",
+        "position": "02833"
+      },
+      {
+        "code": "856",
+        "length": "0066",
+        "position": "02871"
+      }
+    ],
+    "fields": [
+      {
+        "code": "001",
+        "value": "OB-efr-2310"
+      },
+      {
+        "code": "010",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "9782728310159"
+          }
+        ]
+      },
+      {
+        "code": "100",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "20200413e20132005     fre 50        "
+          }
+        ]
+      },
+      {
+        "code": "101",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "fre"
+          }
+        ]
+      },
+      {
+        "code": "200",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Naples, Rome, Florence"
+          },
+          {
+            "code": "b",
+            "value": "Ressource Ã©lectronique"
+          },
+          {
+            "code": "e",
+            "value": "Une histoire comparÃ©e des milieux intellectuels italiens (XVII-XVIIIe siÃ¨cles)"
+          },
+          {
+            "code": "f",
+            "value": "Antonella Alimento,Jean Boutier,Marina Caffiero,Elvira Chiosi,Girolamo DeÂ Miranda,Maria Pia Donato,Marina Formica,Daniela Gallo,Mirabelle Madignier,Brigitte Marin,Nicola Michelassi,Maria Pia Paoli,Anna Maria Rao,Antonella Romano,Marcello Verga,SalomÃ© VueltaÂ GarcÃ­a,FranÃ§oise Waquet"
+          },
+          {
+            "code": "g",
+            "value": "Jean Boutier,Brigitte Marin,A"
+          }
+        ]
+      },
+      {
+        "code": "210",
+        "value": "ntonella Romano"
+      },
+      {
+        "code": "230",
+        "indicator": "Ã§",
+        "subfields": [
+          {
+            "code": "d",
+            "value": "2013"
+          }
+        ]
+      },
+      {
+        "code": "330",
+        "value": "ments qui en ont fait l'acquisition."
+      },
+      {
+        "code": "336",
+        "value": "dâun"
+      },
+      {
+        "code": "337",
+        "value": "e large bibliograph"
+      },
+      {
+        "code": "452",
+        "value": "ie offre des outils de travail susceptibles dâapprofondir la reche"
+      },
+      {
+        "code": "610",
+        "value": "rche et de prolonger la rÃ©flexion."
+      },
+      {
+        "code": "615",
+        "indicator": "de",
+        "subfields": [
+          {
+            "code": "y",
+            "value": "978"
+          }
+        ]
+      },
+      {
+        "code": "700",
+        "value": "2728307395"
+      },
+      {
+        "code": "701",
+        "indicator": "ue",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "RÃ©publique romaine"
+          },
+          {
+            "code": "a",
+            "value": "a"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "ca",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Naples"
+          },
+          {
+            "code": "a",
+            "value": "Rome"
+          },
+          {
+            "code": "a",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "Fl",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "acadÃ©mie de "
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "la",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "acadÃ©mie Fiorentin"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "value": "a"
+      },
+      {
+        "code": "701",
+        "indicator": "Je",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "nt",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "o,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Marina"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "vi",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "a,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Girolamo"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "\u001fb",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "a,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Marina"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "\u001fb",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": ",\u001f",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "n,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Brigitte"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "Ni",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "702",
+        "indicator": " P",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "702",
+        "indicator": " M",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "702",
+        "indicator": "nt",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "801",
+        "indicator": "rc",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "856",
+        "indicator": "Sa",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      }
+    ],
+    "@fields": {
+      "code": "",
+      "indicator": "  ",
+      "subfields": [],
+      "value": ""
+    },
+    "@directory": {
+      "code": [
+        0,
+        3
+      ],
+      "length": [
+        3,
+        7
+      ],
+      "position": [
+        7,
+        12
+      ]
+    },
+    "parseCode": "*",
+    "header": "03395    a2200457   4500001001200000010001800012100004100030101000800071200046800079210006200547230002400609310019100633330122500824336000902049337001902058452007102077610012102148615001202269700002402281701003002305701002702335701002502362701003202387701002802419701002602447701002502473701003102498701002602529701002902555701002702584701002602611701002802637701002602665701003502691701002902726702002402755702002602779702002802805801003802833856006602871\u001e"
+  },
+  {
+    "recordSeparator": "\u001d",
+    "fieldSeparator": "\u001e",
+    "subfieldSeparator": "\u001f",
+    "rawRecord": "03395    a2200457   4500001001200000010001800012100004100030101000800071200046800079210006200547230002400609310019100633330122500824336000902049337001902058452007102077610012102148615001202269700002402281701003002305701002702335701002502362701003202387701002802419701002602447701002502473701003102498701002602529701002902555701002702584701002602611701002802637701002602665701003502691701002902726702002402755702002602779702002802805801003802833856006602871\u001eOB-efr-2310\u001e  \u001fa9782728310159\u001e  \u001fa20200413e20132005     fre 50        \u001e  \u001fafre\u001e  \u001faNaples, Rome, Florence\u001fbRessource Ã©lectronique\u001feUne histoire comparÃ©e des milieux intellectuels italiens (XVII-XVIIIe siÃ¨cles)\u001ffAntonella Alimento,Jean Boutier,Marina Caffiero,Elvira Chiosi,Girolamo DeÂ Miranda,Maria Pia Donato,Marina Formica,Daniela Gallo,Mirabelle Madignier,Brigitte Marin,Nicola Michelassi,Maria Pia Paoli,Anna Maria Rao,Antonella Romano,Marcello Verga,SalomÃ© VueltaÂ GarcÃ­a,FranÃ§oise Waquet\u001fgJean Boutier,Brigitte Marin,Antonella Romano\u001e  \u001faRome\u001fcPublications de lâÃcole franÃ§aise de Rome\u001fd2013\u001e  \u001faDonnÃ©es textuelles\u001e  \u001faL'accÃ¨s complet au document est ouvert Ã  tous dans sa version HTML. L'accÃ¨s aux autres formats (PDF, Epub) est rÃ©servÃ© aux usagers des Ã©tablissements qui en ont fait l'acquisition.\u001e  \u001faComment saisir lâactivitÃ© intellectuelle Ã  lâÃ©poque moderne ? Comment faire dialoguer des traditions historiographiques â la franÃ§aise et lâitalienne â qui, pour Ãªtre proches au plan gÃ©ographique, nâen mobilisent pas moins des questionnaires, des mÃ©thodes, des objets divergents ? En quoi un travail de ce type peut-il contribuer Ã  lâanalyse du travail intellectuel contemporain ? Le volume quâon prÃ©sente ici offre les rÃ©sultats dâun programme de recherche qui a accueilli pendant cinq ans, Ã  lâÃcole franÃ§aise de Rome, des chercheurs italiens et franÃ§ais engagÃ©s dans une analyse comparative susceptible de contribuer Ã  lâÃ©clairage de ces questions. Trois sites, Naples, Rome, Florence, ont alimentÃ© la comparaison sur la base dâun questionnaire commun dont les rÃ©sultats sont proposÃ©s dans les trois textes de synthÃ¨se correspondant Ã  chacune des villes. Des Ã©tudes locales et plus circonstanciÃ©es sont venues enrichir ces textes de synthÃ¨se, ainsi que des recherches engageant conjointement les trois villes. Lâadjonction dâannexes et dâune large bibliographie offre des outils de travail susceptibles dâapprofondir la recherche et de prolonger la rÃ©flexion.\u001e  \u001faHTML\u001e  \u001faNavigateur Web\u001e 0\u001fcRome\u001fnPublications de lâÃcole franÃ§aise de Rome\u001fy9782728307395\u001e0 \u001faintellectuels\u001faRÃ©publique romaine\u001faacadÃ©mies\u001faNaples\u001faRome\u001faFlorence\u001faacadÃ©mie de la Crusca\u001faacadÃ©mie Fiorentina\u001e  \u001faHistory\u001e 1\u001faBoutier,\u001fbJean\u001f4070\u001e 1\u001faAlimento,\u001fbAntonella\u001f4070\u001e 1\u001faCaffiero,\u001fbMarina\u001f4070\u001e 1\u001faChiosi,\u001fbElvira\u001f4070\u001e 1\u001faDeÂ Miranda,\u001fbGirolamo\u001f4070\u001e 1\u001faDonato,\u001fbMaria Pia\u001f4070\u001e 1\u001faFormica,\u001fbMarina\u001f4070\u001e 1\u001faGallo,\u001fbDaniela\u001f4070\u001e 1\u001faMadignier,\u001fbMirabelle\u001f4070\u001e 1\u001faMarin,\u001fbBrigitte\u001f4070\u001e 1\u001faMichelassi,\u001fbNicola\u001f4070\u001e 1\u001faPaoli,\u001fbMaria Pia\u001f4070\u001e 1\u001faRao,\u001fbAnna Maria\u001f4070\u001e 1\u001faRomano,\u001fbAntonella\u001f4070\u001e 1\u001faVerga,\u001fbMarcello\u001f4070\u001e 1\u001faVueltaÂ GarcÃ­a,\u001fbSalomÃ©\u001f4070\u001e 1\u001faWaquet,\u001fbFranÃ§oise\u001f4070\u001e 1\u001faBoutier,\u001fbJean\u001f4651\u001e 1\u001faMarin,\u001fbBrigitte\u001f4651\u001e 1\u001faRomano,\u001fbAntonella\u001f4651\u001e 0\u001faFR\u001fbFrMaCLE\u001fc2013-06-18T14:32:31Z\u001e4 \u001fuhttp://books.openedition.org/efr/2310\u001f2Naples, Rome, Florence\u001e",
+    "leader": "03395    a2200457   4500",
+    "directory": [
+      {
+        "code": "001",
+        "length": "0012",
+        "position": "00000"
+      },
+      {
+        "code": "010",
+        "length": "0018",
+        "position": "00012"
+      },
+      {
+        "code": "100",
+        "length": "0041",
+        "position": "00030"
+      },
+      {
+        "code": "101",
+        "length": "0008",
+        "position": "00071"
+      },
+      {
+        "code": "200",
+        "length": "0468",
+        "position": "00079"
+      },
+      {
+        "code": "210",
+        "length": "0062",
+        "position": "00547"
+      },
+      {
+        "code": "230",
+        "length": "0024",
+        "position": "00609"
+      },
+      {
+        "code": "310",
+        "length": "0191",
+        "position": "00633"
+      },
+      {
+        "code": "330",
+        "length": "1225",
+        "position": "00824"
+      },
+      {
+        "code": "336",
+        "length": "0009",
+        "position": "02049"
+      },
+      {
+        "code": "337",
+        "length": "0019",
+        "position": "02058"
+      },
+      {
+        "code": "452",
+        "length": "0071",
+        "position": "02077"
+      },
+      {
+        "code": "610",
+        "length": "0121",
+        "position": "02148"
+      },
+      {
+        "code": "615",
+        "length": "0012",
+        "position": "02269"
+      },
+      {
+        "code": "700",
+        "length": "0024",
+        "position": "02281"
+      },
+      {
+        "code": "701",
+        "length": "0030",
+        "position": "02305"
+      },
+      {
+        "code": "701",
+        "length": "0027",
+        "position": "02335"
+      },
+      {
+        "code": "701",
+        "length": "0025",
+        "position": "02362"
+      },
+      {
+        "code": "701",
+        "length": "0032",
+        "position": "02387"
+      },
+      {
+        "code": "701",
+        "length": "0028",
+        "position": "02419"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02447"
+      },
+      {
+        "code": "701",
+        "length": "0025",
+        "position": "02473"
+      },
+      {
+        "code": "701",
+        "length": "0031",
+        "position": "02498"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02529"
+      },
+      {
+        "code": "701",
+        "length": "0029",
+        "position": "02555"
+      },
+      {
+        "code": "701",
+        "length": "0027",
+        "position": "02584"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02611"
+      },
+      {
+        "code": "701",
+        "length": "0028",
+        "position": "02637"
+      },
+      {
+        "code": "701",
+        "length": "0026",
+        "position": "02665"
+      },
+      {
+        "code": "701",
+        "length": "0035",
+        "position": "02691"
+      },
+      {
+        "code": "701",
+        "length": "0029",
+        "position": "02726"
+      },
+      {
+        "code": "702",
+        "length": "0024",
+        "position": "02755"
+      },
+      {
+        "code": "702",
+        "length": "0026",
+        "position": "02779"
+      },
+      {
+        "code": "702",
+        "length": "0028",
+        "position": "02805"
+      },
+      {
+        "code": "801",
+        "length": "0038",
+        "position": "02833"
+      },
+      {
+        "code": "856",
+        "length": "0066",
+        "position": "02871"
+      }
+    ],
+    "fields": [
+      {
+        "code": "001",
+        "value": "OB-efr-2310"
+      },
+      {
+        "code": "010",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "9782728310159"
+          }
+        ]
+      },
+      {
+        "code": "100",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "20200413e20132005     fre 50        "
+          }
+        ]
+      },
+      {
+        "code": "101",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "fre"
+          }
+        ]
+      },
+      {
+        "code": "200",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Naples, Rome, Florence"
+          },
+          {
+            "code": "b",
+            "value": "Ressource Ã©lectronique"
+          },
+          {
+            "code": "e",
+            "value": "Une histoire comparÃ©e des milieux intellectuels italiens (XVII-XVIIIe siÃ¨cles)"
+          },
+          {
+            "code": "f",
+            "value": "Antonella Alimento,Jean Boutier,Marina Caffiero,Elvira Chiosi,Girolamo DeÂ Miranda,Maria Pia Donato,Marina Formica,Daniela Gallo,Mirabelle Madignier,Brigitte Marin,Nicola Michelassi,Maria Pia Paoli,Anna Maria Rao,Antonella Romano,Marcello Verga,SalomÃ© VueltaÂ GarcÃ­a,FranÃ§oise Waquet"
+          },
+          {
+            "code": "g",
+            "value": "Jean Boutier,Brigitte Marin,A"
+          }
+        ]
+      },
+      {
+        "code": "210",
+        "value": "ntonella Romano"
+      },
+      {
+        "code": "230",
+        "indicator": "Ã§",
+        "subfields": [
+          {
+            "code": "d",
+            "value": "2013"
+          }
+        ]
+      },
+      {
+        "code": "330",
+        "value": "ments qui en ont fait l'acquisition."
+      },
+      {
+        "code": "336",
+        "value": "dâun"
+      },
+      {
+        "code": "337",
+        "value": "e large bibliograph"
+      },
+      {
+        "code": "452",
+        "value": "ie offre des outils de travail susceptibles dâapprofondir la reche"
+      },
+      {
+        "code": "610",
+        "value": "rche et de prolonger la rÃ©flexion."
+      },
+      {
+        "code": "615",
+        "indicator": "de",
+        "subfields": [
+          {
+            "code": "y",
+            "value": "978"
+          }
+        ]
+      },
+      {
+        "code": "700",
+        "value": "2728307395"
+      },
+      {
+        "code": "701",
+        "indicator": "ue",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "RÃ©publique romaine"
+          },
+          {
+            "code": "a",
+            "value": "a"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "ca",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Naples"
+          },
+          {
+            "code": "a",
+            "value": "Rome"
+          },
+          {
+            "code": "a",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "Fl",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "acadÃ©mie de "
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "la",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "acadÃ©mie Fiorentin"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "value": "a"
+      },
+      {
+        "code": "701",
+        "indicator": "Je",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "nt",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "o,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Marina"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "vi",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "a,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Girolamo"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "\u001fb",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "a,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Marina"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "\u001fb",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": ",\u001f",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "n,",
+        "subfields": [
+          {
+            "code": "b",
+            "value": "Brigitte"
+          },
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "701",
+        "indicator": "Ni",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "702",
+        "indicator": " P",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "702",
+        "indicator": " M",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "702",
+        "indicator": "nt",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "801",
+        "indicator": "rc",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      },
+      {
+        "code": "856",
+        "indicator": "Sa",
+        "subfields": [
+          {
+            "code": "4",
+            "value": "070"
+          }
+        ]
+      }
+    ],
+    "@fields": {
+      "code": "",
+      "indicator": "  ",
+      "subfields": [],
+      "value": ""
+    },
+    "@directory": {
+      "code": [
+        0,
+        3
+      ],
+      "length": [
+        3,
+        7
+      ],
+      "position": [
+        7,
+        12
+      ]
+    },
+    "parseCode": "*",
+    "header": "03395    a2200457   4500001001200000010001800012100004100030101000800071200046800079210006200547230002400609310019100633330122500824336000902049337001902058452007102077610012102148615001202269700002402281701003002305701002702335701002502362701003202387701002802419701002602447701002502473701003102498701002602529701002902555701002702584701002602611701002802637701002602665701003502691701002902726702002402755702002602779702002802805801003802833856006602871\u001e"
+  }
+]

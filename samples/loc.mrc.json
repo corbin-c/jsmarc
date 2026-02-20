@@ -1,0 +1,934 @@
+[
+  {
+    "recordSeparator": "\u001d",
+    "fieldSeparator": "\u001e",
+    "subfieldSeparator": "\u001f",
+    "rawRecord": "01208cam a22003014a 4500001000900000005001700009008004100026906004500067925004400112955023000156010001700386020002000403040001800423042000800441043001200449050002500461082002100486100002800507245009800535250001200633260004400645300002700689600002800716650004600744630001100790700002000801856008500821\u001e12252055\u001e20031223200144.0\u001e001207s2001    nyu           000 0beng  \u001e  \u001fa7\u001fbcbc\u001fcorignew\u001fd1\u001feocip\u001ff20\u001fgy-gencatlg\u001e0 \u001faacquire\u001fb2 shelf copies\u001fxpolicy default\u001e  \u001fato SSCD pc14 12-07-00; jf01 to sl 12-19-00; jf12 to Dewey 12-19-00; aa05 12-19-00\u001faps15 2001-08-20 bk rec'd, to CIP ver.\u001fajf00 2001-08-22\u001ffjf04 2001-08-22 to S.L.\u001fgjf12 2001-08-23 to bccd\u001fajf01 2002-01-22 copy 2 added to BCCD\u001e  \u001fa   00054199 \u001e  \u001fa0066620724 (hc)\u001e  \u001faDLC\u001fcDLC\u001fdDLC\u001e  \u001fapcc\u001e  \u001fae-fi---\u001e00\u001faQA76.2.T67\u001fbT67 2001\u001e00\u001fa005.1/092\u001faB\u001f221\u001e1 \u001faTorvalds, Linus,\u001fd1969-\u001e10\u001faJust for fun :\u001fbthe story of an accidental revolutionary /\u001fcLinus Torvalds and David Diamond.\u001e  \u001fa1st ed.\u001e  \u001faNew York, NY :\u001fbHarperBusiness,\u001fcc2001.\u001e  \u001faxxii, 262 p. ;\u001fc25 cm.\u001e10\u001faTorvalds, Linus,\u001fd1969-\u001e 0\u001faComputer programmers\u001fzFinland\u001fvBiography.\u001e00\u001faLinux.\u001e1 \u001faDiamond, David.\u001e42\u001f3Publisher description\u001fuhttp://www.loc.gov/catdir/description/hc043/00054199.html\u001e",
+    "leader": "01208cam a22003014a 4500",
+    "directory": [
+      {
+        "code": "001",
+        "length": "0009",
+        "position": "00000"
+      },
+      {
+        "code": "005",
+        "length": "0017",
+        "position": "00009"
+      },
+      {
+        "code": "008",
+        "length": "0041",
+        "position": "00026"
+      },
+      {
+        "code": "906",
+        "length": "0045",
+        "position": "00067"
+      },
+      {
+        "code": "925",
+        "length": "0044",
+        "position": "00112"
+      },
+      {
+        "code": "955",
+        "length": "0230",
+        "position": "00156"
+      },
+      {
+        "code": "010",
+        "length": "0017",
+        "position": "00386"
+      },
+      {
+        "code": "020",
+        "length": "0020",
+        "position": "00403"
+      },
+      {
+        "code": "040",
+        "length": "0018",
+        "position": "00423"
+      },
+      {
+        "code": "042",
+        "length": "0008",
+        "position": "00441"
+      },
+      {
+        "code": "043",
+        "length": "0012",
+        "position": "00449"
+      },
+      {
+        "code": "050",
+        "length": "0025",
+        "position": "00461"
+      },
+      {
+        "code": "082",
+        "length": "0021",
+        "position": "00486"
+      },
+      {
+        "code": "100",
+        "length": "0028",
+        "position": "00507"
+      },
+      {
+        "code": "245",
+        "length": "0098",
+        "position": "00535"
+      },
+      {
+        "code": "250",
+        "length": "0012",
+        "position": "00633"
+      },
+      {
+        "code": "260",
+        "length": "0044",
+        "position": "00645"
+      },
+      {
+        "code": "300",
+        "length": "0027",
+        "position": "00689"
+      },
+      {
+        "code": "600",
+        "length": "0028",
+        "position": "00716"
+      },
+      {
+        "code": "650",
+        "length": "0046",
+        "position": "00744"
+      },
+      {
+        "code": "630",
+        "length": "0011",
+        "position": "00790"
+      },
+      {
+        "code": "700",
+        "length": "0020",
+        "position": "00801"
+      },
+      {
+        "code": "856",
+        "length": "0085",
+        "position": "00821"
+      }
+    ],
+    "fields": [
+      {
+        "code": "001",
+        "value": "12252055"
+      },
+      {
+        "code": "005",
+        "value": "20031223200144.0"
+      },
+      {
+        "code": "008",
+        "value": "001207s2001    nyu           000 0beng  "
+      },
+      {
+        "code": "906",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "7"
+          },
+          {
+            "code": "b",
+            "value": "cbc"
+          },
+          {
+            "code": "c",
+            "value": "orignew"
+          },
+          {
+            "code": "d",
+            "value": "1"
+          },
+          {
+            "code": "e",
+            "value": "ocip"
+          },
+          {
+            "code": "f",
+            "value": "20"
+          },
+          {
+            "code": "g",
+            "value": "y-gencatlg"
+          }
+        ]
+      },
+      {
+        "code": "925",
+        "indicator": "0 ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "acquire"
+          },
+          {
+            "code": "b",
+            "value": "2 shelf copies"
+          },
+          {
+            "code": "x",
+            "value": "policy default"
+          }
+        ]
+      },
+      {
+        "code": "955",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "to SSCD pc14 12-07-00; jf01 to sl 12-19-00; jf12 to Dewey 12-19-00; aa05 12-19-00"
+          },
+          {
+            "code": "a",
+            "value": "ps15 2001-08-20 bk rec'd, to CIP ver."
+          },
+          {
+            "code": "a",
+            "value": "jf00 2001-08-22"
+          },
+          {
+            "code": "f",
+            "value": "jf04 2001-08-22 to S.L."
+          },
+          {
+            "code": "g",
+            "value": "jf12 2001-08-23 to bccd"
+          },
+          {
+            "code": "a",
+            "value": "jf01 2002-01-22 copy 2 added to BCCD"
+          }
+        ]
+      },
+      {
+        "code": "010",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "   00054199 "
+          }
+        ]
+      },
+      {
+        "code": "020",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "0066620724 (hc)"
+          }
+        ]
+      },
+      {
+        "code": "040",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DLC"
+          },
+          {
+            "code": "c",
+            "value": "DLC"
+          },
+          {
+            "code": "d",
+            "value": "DLC"
+          }
+        ]
+      },
+      {
+        "code": "042",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "pcc"
+          }
+        ]
+      },
+      {
+        "code": "043",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "e-fi---"
+          }
+        ]
+      },
+      {
+        "code": "050",
+        "indicator": "00",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "QA76.2.T67"
+          },
+          {
+            "code": "b",
+            "value": "T67 2001"
+          }
+        ]
+      },
+      {
+        "code": "082",
+        "indicator": "00",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "005.1/092"
+          },
+          {
+            "code": "a",
+            "value": "B"
+          },
+          {
+            "code": "2",
+            "value": "21"
+          }
+        ]
+      },
+      {
+        "code": "100",
+        "indicator": "1 ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Torvalds, Linus,"
+          },
+          {
+            "code": "d",
+            "value": "1969-"
+          }
+        ]
+      },
+      {
+        "code": "245",
+        "indicator": "10",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Just for fun :"
+          },
+          {
+            "code": "b",
+            "value": "the story of an accidental revolutionary /"
+          },
+          {
+            "code": "c",
+            "value": "Linus Torvalds and David Diamond."
+          }
+        ]
+      },
+      {
+        "code": "250",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "1st ed."
+          }
+        ]
+      },
+      {
+        "code": "260",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "New York, NY :"
+          },
+          {
+            "code": "b",
+            "value": "HarperBusiness,"
+          },
+          {
+            "code": "c",
+            "value": "c2001."
+          }
+        ]
+      },
+      {
+        "code": "300",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "xxii, 262 p. ;"
+          },
+          {
+            "code": "c",
+            "value": "25 cm."
+          }
+        ]
+      },
+      {
+        "code": "600",
+        "indicator": "10",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Torvalds, Linus,"
+          },
+          {
+            "code": "d",
+            "value": "1969-"
+          }
+        ]
+      },
+      {
+        "code": "650",
+        "indicator": " 0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Computer programmers"
+          },
+          {
+            "code": "z",
+            "value": "Finland"
+          },
+          {
+            "code": "v",
+            "value": "Biography."
+          }
+        ]
+      },
+      {
+        "code": "630",
+        "indicator": "00",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Linux."
+          }
+        ]
+      },
+      {
+        "code": "700",
+        "indicator": "1 ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Diamond, David."
+          }
+        ]
+      },
+      {
+        "code": "856",
+        "indicator": "42",
+        "subfields": [
+          {
+            "code": "3",
+            "value": "Publisher description"
+          },
+          {
+            "code": "u",
+            "value": "http://www.loc.gov/catdir/description/hc043/00054199.html"
+          }
+        ]
+      }
+    ],
+    "@fields": {
+      "code": "",
+      "indicator": "  ",
+      "subfields": [],
+      "value": ""
+    },
+    "@directory": {
+      "code": [
+        0,
+        3
+      ],
+      "length": [
+        3,
+        7
+      ],
+      "position": [
+        7,
+        12
+      ]
+    },
+    "parseCode": "*",
+    "header": "01208cam a22003014a 4500001000900000005001700009008004100026906004500067925004400112955023000156010001700386020002000403040001800423042000800441043001200449050002500461082002100486100002800507245009800535250001200633260004400645300002700689600002800716650004600744630001100790700002000801856008500821\u001e"
+  },
+  {
+    "recordSeparator": "\u001d",
+    "fieldSeparator": "\u001e",
+    "subfieldSeparator": "\u001f",
+    "rawRecord": "01397cam a22003014a 4500001000900000005001700009008004100026906004500067925004400112955025400156010001700410020001500427020002200442040001800464042000800482050002700490082001700517100002100534245015100555250001300706260005200719300002600771504006400797630001100861650002600872856009100898856010600989\u001e12285199\u001e20090811083738.0\u001e010122s2001    cc       b    001 0 eng  \u001e  \u001fa7\u001fbcbc\u001fcorignew\u001fd1\u001feocip\u001ff20\u001fgy-gencatlg\u001e0 \u001faacquire\u001fb2 shelf copies\u001fxpolicy default\u001e  \u001fato ASCD pc16 01-22-01; jf07 to subject 01-25-2001; jf01 to sl 1-25-01; jf12 to Dewey 01-30-01;aa03 1-31-01\u001faps16 2001-08-03 bk rec'd, to CIP ver.;\u001ffjf05 2001-08-08 to shelflist\u001fajf00 2001-08-13\u001fgjf12 2001-08-17 to bccd\u001fajf16 2003-11-03 copy2 to BCCD\u001e  \u001fa  2001021087\u001e  \u001fa0596001312\u001e  \u001fa0596001088 (pbk.)\u001e  \u001faDLC\u001fcDLC\u001fdDLC\u001e  \u001fapcc\u001e00\u001faQA76.76.O63\u001fbR397 2001\u001e00\u001fa005.4/32\u001f221\u001e1 \u001faRaymond, Eric S.\u001e14\u001faThe cathedral and the bazaar :\u001fbmusings on Linux and Open Source by an accidental revolutionary /\u001fcEric S. Raymond ; with a foreword by Bob Young.\u001e  \u001faRev. ed.\u001e  \u001faBeijing ;\u001faCambridge, Mass. :\u001fbO'Reilly,\u001fc2001.\u001e  \u001faxiv, 241 p. ;\u001fc22 cm.\u001e  \u001faIncludes bibliographical references (p. 234-235) and index.\u001e00\u001faLinux.\u001e 0\u001faOpen source software.\u001e42\u001f3Publisher description\u001fuhttp://www.loc.gov/catdir/enhancements/fy0715/2001021087-d.html\u001e42\u001f3Contributor biographical information\u001fuhttp://www.loc.gov/catdir/enhancements/fy0915/2001021087-b.html\u001e",
+    "leader": "01397cam a22003014a 4500",
+    "directory": [
+      {
+        "code": "001",
+        "length": "0009",
+        "position": "00000"
+      },
+      {
+        "code": "005",
+        "length": "0017",
+        "position": "00009"
+      },
+      {
+        "code": "008",
+        "length": "0041",
+        "position": "00026"
+      },
+      {
+        "code": "906",
+        "length": "0045",
+        "position": "00067"
+      },
+      {
+        "code": "925",
+        "length": "0044",
+        "position": "00112"
+      },
+      {
+        "code": "955",
+        "length": "0254",
+        "position": "00156"
+      },
+      {
+        "code": "010",
+        "length": "0017",
+        "position": "00410"
+      },
+      {
+        "code": "020",
+        "length": "0015",
+        "position": "00427"
+      },
+      {
+        "code": "020",
+        "length": "0022",
+        "position": "00442"
+      },
+      {
+        "code": "040",
+        "length": "0018",
+        "position": "00464"
+      },
+      {
+        "code": "042",
+        "length": "0008",
+        "position": "00482"
+      },
+      {
+        "code": "050",
+        "length": "0027",
+        "position": "00490"
+      },
+      {
+        "code": "082",
+        "length": "0017",
+        "position": "00517"
+      },
+      {
+        "code": "100",
+        "length": "0021",
+        "position": "00534"
+      },
+      {
+        "code": "245",
+        "length": "0151",
+        "position": "00555"
+      },
+      {
+        "code": "250",
+        "length": "0013",
+        "position": "00706"
+      },
+      {
+        "code": "260",
+        "length": "0052",
+        "position": "00719"
+      },
+      {
+        "code": "300",
+        "length": "0026",
+        "position": "00771"
+      },
+      {
+        "code": "504",
+        "length": "0064",
+        "position": "00797"
+      },
+      {
+        "code": "630",
+        "length": "0011",
+        "position": "00861"
+      },
+      {
+        "code": "650",
+        "length": "0026",
+        "position": "00872"
+      },
+      {
+        "code": "856",
+        "length": "0091",
+        "position": "00898"
+      },
+      {
+        "code": "856",
+        "length": "0106",
+        "position": "00989"
+      }
+    ],
+    "fields": [
+      {
+        "code": "001",
+        "value": "12285199"
+      },
+      {
+        "code": "005",
+        "value": "20090811083738.0"
+      },
+      {
+        "code": "008",
+        "value": "010122s2001    cc       b    001 0 eng  "
+      },
+      {
+        "code": "906",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "7"
+          },
+          {
+            "code": "b",
+            "value": "cbc"
+          },
+          {
+            "code": "c",
+            "value": "orignew"
+          },
+          {
+            "code": "d",
+            "value": "1"
+          },
+          {
+            "code": "e",
+            "value": "ocip"
+          },
+          {
+            "code": "f",
+            "value": "20"
+          },
+          {
+            "code": "g",
+            "value": "y-gencatlg"
+          }
+        ]
+      },
+      {
+        "code": "925",
+        "indicator": "0 ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "acquire"
+          },
+          {
+            "code": "b",
+            "value": "2 shelf copies"
+          },
+          {
+            "code": "x",
+            "value": "policy default"
+          }
+        ]
+      },
+      {
+        "code": "955",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "to ASCD pc16 01-22-01; jf07 to subject 01-25-2001; jf01 to sl 1-25-01; jf12 to Dewey 01-30-01;aa03 1-31-01"
+          },
+          {
+            "code": "a",
+            "value": "ps16 2001-08-03 bk rec'd, to CIP ver.;"
+          },
+          {
+            "code": "f",
+            "value": "jf05 2001-08-08 to shelflist"
+          },
+          {
+            "code": "a",
+            "value": "jf00 2001-08-13"
+          },
+          {
+            "code": "g",
+            "value": "jf12 2001-08-17 to bccd"
+          },
+          {
+            "code": "a",
+            "value": "jf16 2003-11-03 copy2 to BCCD"
+          }
+        ]
+      },
+      {
+        "code": "010",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "  2001021087"
+          }
+        ]
+      },
+      {
+        "code": "020",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "0596001312"
+          }
+        ]
+      },
+      {
+        "code": "020",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "0596001088 (pbk.)"
+          }
+        ]
+      },
+      {
+        "code": "040",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DLC"
+          },
+          {
+            "code": "c",
+            "value": "DLC"
+          },
+          {
+            "code": "d",
+            "value": "DLC"
+          }
+        ]
+      },
+      {
+        "code": "042",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "pcc"
+          }
+        ]
+      },
+      {
+        "code": "050",
+        "indicator": "00",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "QA76.76.O63"
+          },
+          {
+            "code": "b",
+            "value": "R397 2001"
+          }
+        ]
+      },
+      {
+        "code": "082",
+        "indicator": "00",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "005.4/32"
+          },
+          {
+            "code": "2",
+            "value": "21"
+          }
+        ]
+      },
+      {
+        "code": "100",
+        "indicator": "1 ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Raymond, Eric S."
+          }
+        ]
+      },
+      {
+        "code": "245",
+        "indicator": "14",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "The cathedral and the bazaar :"
+          },
+          {
+            "code": "b",
+            "value": "musings on Linux and Open Source by an accidental revolutionary /"
+          },
+          {
+            "code": "c",
+            "value": "Eric S. Raymond ; with a foreword by Bob Young."
+          }
+        ]
+      },
+      {
+        "code": "250",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Rev. ed."
+          }
+        ]
+      },
+      {
+        "code": "260",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Beijing ;"
+          },
+          {
+            "code": "a",
+            "value": "Cambridge, Mass. :"
+          },
+          {
+            "code": "b",
+            "value": "O'Reilly,"
+          },
+          {
+            "code": "c",
+            "value": "2001."
+          }
+        ]
+      },
+      {
+        "code": "300",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "xiv, 241 p. ;"
+          },
+          {
+            "code": "c",
+            "value": "22 cm."
+          }
+        ]
+      },
+      {
+        "code": "504",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Includes bibliographical references (p. 234-235) and index."
+          }
+        ]
+      },
+      {
+        "code": "630",
+        "indicator": "00",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Linux."
+          }
+        ]
+      },
+      {
+        "code": "650",
+        "indicator": " 0",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Open source software."
+          }
+        ]
+      },
+      {
+        "code": "856",
+        "indicator": "42",
+        "subfields": [
+          {
+            "code": "3",
+            "value": "Publisher description"
+          },
+          {
+            "code": "u",
+            "value": "http://www.loc.gov/catdir/enhancements/fy0715/2001021087-d.html"
+          }
+        ]
+      },
+      {
+        "code": "856",
+        "indicator": "42",
+        "subfields": [
+          {
+            "code": "3",
+            "value": "Contributor biographical information"
+          },
+          {
+            "code": "u",
+            "value": "http://www.loc.gov/catdir/enhancements/fy0915/2001021087-b.html"
+          }
+        ]
+      }
+    ],
+    "@fields": {
+      "code": "",
+      "indicator": "  ",
+      "subfields": [],
+      "value": ""
+    },
+    "@directory": {
+      "code": [
+        0,
+        3
+      ],
+      "length": [
+        3,
+        7
+      ],
+      "position": [
+        7,
+        12
+      ]
+    },
+    "parseCode": "*",
+    "header": "01397cam a22003014a 4500001000900000005001700009008004100026906004500067925004400112955025400156010001700410020001500427020002200442040001800464042000800482050002700490082001700517100002100534245015100555250001300706260005200719300002600771504006400797630001100861650002600872856009100898856010600989\u001e"
+  }
+]
