@@ -1,0 +1,74 @@
+import { parseRecord, analyzeFieldNotation, type MarcRecord, type Field } from "@jsmarc/parser"
+import { explainRecord, searchField, formats, type ExplainedRecord, type SearchResult } from "@jsmarc/helper"
+
+const defaultParseOptions = {
+  fields: "\u001e",
+  subfields: "\u001f",
+}
+
+type WorkerMessage =
+  | { id: string; type: "parse"; record: string; options?: { toParse?: string; fields?: string; subfields?: string } }
+  | { id: string; type: "filter"; record: string; notation: string; values: string[]; options?: { fields?: string; subfields?: string } }
+  | { id: string; type: "explain"; record: string; format: string; options?: { fields?: string; subfields?: string } }
+  | { id: string; type: "search"; query: string; format: string }
+
+type WorkerResponse =
+  | { id: string; result: MarcRecord | boolean | ExplainedRecord | SearchResult[] }
+  | { id: string; error: string }
+
+self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
+  const { id, type } = e.data
+  try {
+    let result: MarcRecord | boolean | ExplainedRecord | SearchResult[]
+    switch (type) {
+      case "parse": {
+        const { record, options } = e.data
+        result = parseRecord(record, {
+          ...defaultParseOptions,
+          ...options,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any)
+        break
+      }
+      case "filter": {
+        const { record, notation, values, options } = e.data
+        const parsed = parseRecord(record, {
+          ...defaultParseOptions,
+          ...options,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any)
+        result = parsed.fields.some((field: Field) => {
+          const filterFn = analyzeFieldNotation(notation)
+          return filterFn.call({ parentCode: field.code }, field) && values.some(v => {
+            if (field.value !== undefined) return field.value.includes(v)
+            if (field.subfields) return Object.values(field.subfields).some((sf: unknown) => (sf as { value: string }).value.includes(v))
+            return false
+          })
+        })
+        if (!result) result = false
+        break
+      }
+      case "explain": {
+        const { record, format, options } = e.data
+        const parsed = parseRecord(record, {
+          ...defaultParseOptions,
+          ...options,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any)
+        result = await explainRecord(parsed, format)
+        break
+      }
+      case "search": {
+        const { query, format } = e.data
+        result = await searchField(query, format)
+        break
+      }
+    }
+    self.postMessage({ id, result } satisfies WorkerResponse)
+  } catch (err) {
+    self.postMessage({ id, error: err instanceof Error ? err.message : String(err) } satisfies WorkerResponse)
+  }
+}
+
+// Pre-load format definitions so first search/explain call is instant
+await formats

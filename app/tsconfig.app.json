@@ -22,7 +22,9 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@jsmarc/parser": ["../src/parser.ts"],
+      "@jsmarc/helper": ["../src/helper.ts"]
     }
   },
   "include": ["src"]
