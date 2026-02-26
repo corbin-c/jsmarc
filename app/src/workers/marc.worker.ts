@@ -1,5 +1,5 @@
-import { parseRecord, analyzeFieldNotation, type MarcRecord, type Field } from "@jsmarc/parser"
-import { explainRecord, searchField, formats, type ExplainedRecord, type SearchResult } from "@jsmarc/helper"
+import { parseRecord, analyzeFieldNotation, type Field } from "@jsmarc/parser"
+import { explainRecord, searchField, formats } from "@jsmarc/helper"
 
 const defaultParseOptions = {
   fields: "\u001e",
@@ -13,20 +13,29 @@ type WorkerMessage =
   | { id: string; type: "search"; query: string; format: string }
 
 type WorkerResponse =
-  | { id: string; result: MarcRecord | boolean | ExplainedRecord | SearchResult[] }
+  | { id: string; result: unknown }
   | { id: string; error: string }
+
+let formatsReady = false
+
+async function ensureFormats(): Promise<void> {
+  if (!formatsReady) {
+    await formats
+    formatsReady = true
+  }
+}
 
 self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
   const { id, type } = e.data
   try {
-    let result: MarcRecord | boolean | ExplainedRecord | SearchResult[]
+    let result: unknown
     switch (type) {
       case "parse": {
         const { record, options } = e.data
         result = parseRecord(record, {
           ...defaultParseOptions,
           ...options,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any)
         break
       }
@@ -35,7 +44,7 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
         const parsed = parseRecord(record, {
           ...defaultParseOptions,
           ...options,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any)
         result = parsed.fields.some((field: Field) => {
           const filterFn = analyzeFieldNotation(notation)
@@ -49,16 +58,18 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
         break
       }
       case "explain": {
+        await ensureFormats()
         const { record, format, options } = e.data
         const parsed = parseRecord(record, {
           ...defaultParseOptions,
           ...options,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any)
         result = await explainRecord(parsed, format)
         break
       }
       case "search": {
+        await ensureFormats()
         const { query, format } = e.data
         result = await searchField(query, format)
         break
@@ -69,6 +80,3 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
     self.postMessage({ id, error: err instanceof Error ? err.message : String(err) } satisfies WorkerResponse)
   }
 }
-
-// Pre-load format definitions so first search/explain call is instant
-await formats
