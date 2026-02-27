@@ -23,6 +23,32 @@ jobs:
       - run: npx tsc --noEmit
       - run: npx vitest run
 
+  deploy-app:
+    name: Deploy App to GitHub Pages
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install app dependencies
+        working-directory: app
+        run: npm ci
+      - name: Build app
+        working-directory: app
+        run: npm run build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: app/dist
+          destination_dir: app
+          keep_files: true
+
   publish:
     name: Publish to npm
     needs: test
