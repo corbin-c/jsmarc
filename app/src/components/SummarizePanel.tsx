@@ -3,6 +3,14 @@ import { useAppState } from "@/lib/context"
 import { parseInWorker } from "@/lib/worker-client"
 import type { Field } from "@jsmarc/parser"
 
+function parseSep(raw: string): string {
+  try {
+    return JSON.parse('"' + raw + '"') as string
+  } catch {
+    return raw
+  }
+}
+
 interface SummaryData {
   [fieldCode: string]: string[] | { [value: string]: number }
 }
@@ -31,9 +39,9 @@ export const SummarizePanel: FC = () => {
     dispatch({ type: "SET_PROCESSING", isProcessing: true })
 
     try {
-      const recordSep = JSON.parse('"' + state.recordSeparator + '"') as string
-      const fieldSep = JSON.parse('"' + state.fieldSeparator + '"') as string
-      const subfieldSep = JSON.parse('"' + state.subfieldSeparator + '"') as string
+      const recordSep = parseSep(state.recordSeparator)
+      const fieldSep = parseSep(state.fieldSeparator)
+      const subfieldSep = parseSep(state.subfieldSeparator)
 
       if (!state.toExtract || state.toExtract === "*") {
         throw new Error("Some fields have to be selected for extraction")

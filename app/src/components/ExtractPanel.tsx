@@ -4,6 +4,14 @@ import { filterInWorker } from "@/lib/worker-client"
 import { Button } from "./ui/button"
 import { Download } from "lucide-react"
 
+function parseSep(raw: string): string {
+  try {
+    return JSON.parse('"' + raw + '"') as string
+  } catch {
+    return raw
+  }
+}
+
 export const ExtractPanel: FC = () => {
   const { state, dispatch } = useAppState()
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null)
@@ -18,9 +26,9 @@ export const ExtractPanel: FC = () => {
     dispatch({ type: "SET_PROCESSING", isProcessing: true })
 
     try {
-      const recordSep = JSON.parse('"' + state.recordSeparator + '"') as string
-      const fieldSep = JSON.parse('"' + state.fieldSeparator + '"') as string
-      const subfieldSep = JSON.parse('"' + state.subfieldSeparator + '"') as string
+      const recordSep = parseSep(state.recordSeparator)
+      const fieldSep = parseSep(state.fieldSeparator)
+      const subfieldSep = parseSep(state.subfieldSeparator)
       const values = state.filterValues.split("\n").filter(v => v.trim() !== "")
 
       if (!state.filterField || state.filterField === "*") {

@@ -4,6 +4,14 @@ import { parseInWorker, explainInWorker } from "@/lib/worker-client"
 import type { MarcRecord } from "@jsmarc/parser"
 import type { ExplainedRecord } from "@jsmarc/helper"
 
+function parseSep(raw: string): string {
+  try {
+    return JSON.parse('"' + raw + '"') as string
+  } catch {
+    return raw
+  }
+}
+
 interface DisplayedField {
   code: string
   indicator: string
@@ -43,9 +51,9 @@ export const DisplayPanel: FC = () => {
     dispatch({ type: "SET_PROCESSING", isProcessing: true })
 
     try {
-      const recordSep = JSON.parse('"' + state.recordSeparator + '"') as string
-      const fieldSep = JSON.parse('"' + state.fieldSeparator + '"') as string
-      const subfieldSep = JSON.parse('"' + state.subfieldSeparator + '"') as string
+      const recordSep = parseSep(state.recordSeparator)
+      const fieldSep = parseSep(state.fieldSeparator)
+      const subfieldSep = parseSep(state.subfieldSeparator)
 
       const rawRecords = state.fileContent.split(recordSep).filter(r => !["", "\n"].includes(r))
       const total = rawRecords.length
