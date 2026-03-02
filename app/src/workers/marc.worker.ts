@@ -1,13 +1,6 @@
-// Fix relative fetch paths: the worker script is in assets/ but data files are in the app root.
-// Compute the app base URL from the worker's own URL (go up one directory from assets/).
-const _origFetch = globalThis.fetch.bind(globalThis)
-const _appBase = new URL("..", (globalThis as any).location?.href || import.meta.url).href
-globalThis.fetch = ((input: RequestInfo | URL, init?: RequestInit) => {
-  if (typeof input === "string" && !input.startsWith("http") && !input.startsWith("/")) {
-    return _origFetch(new URL(input, _appBase).href, init)
-  }
-  return _origFetch(input, init)
-}) as typeof globalThis.fetch
+// This side-effect import MUST be first — it patches fetch before
+// @jsmarc/helper's format-loading IIFE evaluates.
+import "./fetch-interceptor.js"
 
 import { parseRecord, analyzeFieldNotation, type Field } from "@jsmarc/parser"
 import { explainRecord, searchField, formats } from "@jsmarc/helper"
