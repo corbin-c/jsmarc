@@ -1,9 +1,4 @@
-// This side-effect import MUST be first — it patches fetch before
-// @jsmarc/helper's format-loading IIFE evaluates.
-import "./fetch-interceptor.js"
-
 import { parseRecord, analyzeFieldNotation, type Field } from "@jsmarc/parser"
-import { explainRecord, searchField, formats } from "@jsmarc/helper"
 
 const defaultParseOptions = {
   fields: "\u001e",
@@ -13,21 +8,10 @@ const defaultParseOptions = {
 type WorkerMessage =
   | { id: string; type: "parse"; record: string; options?: { toParse?: string; fields?: string; subfields?: string } }
   | { id: string; type: "filter"; record: string; notation: string; values: string[]; options?: { fields?: string; subfields?: string } }
-  | { id: string; type: "explain"; record: string; format: string; options?: { fields?: string; subfields?: string } }
-  | { id: string; type: "search"; query: string; format: string }
 
 type WorkerResponse =
   | { id: string; result: unknown }
   | { id: string; error: string }
-
-let formatsReady = false
-
-async function ensureFormats(): Promise<void> {
-  if (!formatsReady) {
-    await formats
-    formatsReady = true
-  }
-}
 
 self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
   const { id, type } = e.data
@@ -59,23 +43,6 @@ self.onmessage = async (e: MessageEvent<WorkerMessage>) => {
           })
         })
         if (!result) result = false
-        break
-      }
-      case "explain": {
-        await ensureFormats()
-        const { record, format, options } = e.data
-        const parsed = parseRecord(record, {
-          ...defaultParseOptions,
-          ...options,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        } as any)
-        result = await explainRecord(parsed, format)
-        break
-      }
-      case "search": {
-        await ensureFormats()
-        const { query, format } = e.data
-        result = await searchField(query, format)
         break
       }
     }

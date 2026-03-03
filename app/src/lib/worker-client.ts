@@ -1,5 +1,5 @@
 import type { MarcRecord } from "@jsmarc/parser"
-import type { ExplainedRecord, SearchResult } from "@jsmarc/helper"
+import { explainRecord, searchField } from "@jsmarc/helper"
 
 let worker: Worker | null = null
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -7,7 +7,9 @@ const pending = new Map<string, { resolve: (value: any) => void; reject: (error:
 
 function getWorker(): Worker {
   if (!worker) {
-    worker = new Worker(new URL("../workers/marc.worker.ts", import.meta.url), { type: "module" })
+    worker = new Worker(new URL("../workers/marc.worker.ts", import.meta.url), {
+      type: "module",
+    })
     worker.onmessage = (e: MessageEvent<{ id: string; result?: unknown; error?: string }>) => {
       const { id, result, error } = e.data
       const handlers = pending.get(id)
@@ -39,12 +41,26 @@ export function filterInWorker(record: string, notation: string, values: string[
   return send({ type: "filter", record, notation, values, options })
 }
 
-export function explainInWorker(record: string, format: string, options?: { fields?: string; subfields?: string }): Promise<ExplainedRecord> {
-  return send({ type: "explain", record, format, options })
+export async function explainInWorker(
+  record: string,
+  format: string,
+  options?: { fields?: string; subfields?: string },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<any> {
+  // Import parser functions directly since we need them
+  const { parseRecord } = await import("@jsmarc/parser")
+  const parsed = parseRecord(record, {
+    fields: options?.fields ?? "\u001e",
+    subfields: options?.subfields ?? "\u001f",
+  })
+  return explainRecord(parsed, format)
 }
 
-export function searchInWorker(query: string, format: string): Promise<SearchResult[]> {
-  return send({ type: "search", query, format })
+export async function searchInWorker(
+  query: string,
+  format: string,
+): Promise<Array<{ code: string; value: string }>> {
+  return searchField(query, format)
 }
 
 export function terminateWorker(): void {
