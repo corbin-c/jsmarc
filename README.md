@@ -389,6 +389,15 @@ For major changes, consider opening an issue first to discuss your approach.
 
 JsMarc is released under the [GNU General Public License v3.0](LICENSE). You are free to use, modify, and distribute it under those terms.
 
+## Sample Records
+
+The MARC records in `samples/` and `rec.mrc` are provided for demonstration and
+educational purposes only. They were obtained from publicly accessible library
+catalogs and belong to their respective institutions (Library of Congress,
+SUDOC/ABES, OpenEdition, BnF). These files are not part of the JsMarc project
+and are not covered by the project's license. If you believe your rights are
+infringed, please open an issue.
+
 ## Acknowledgments
 
 - **[Library of Congress](https://www.loc.gov/marc/)** for the MARC21 standard and public-domain field definitions
