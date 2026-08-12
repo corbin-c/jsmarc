@@ -368,7 +368,7 @@ The `formats.json` file maps format names to their definition files:
 
 ### Web App
 
-A full-featured web interface is hosted at **[corbin-c.github.io/jsmarc/app/](https://corbin-c.github.io/jsmarc/app/)**. It supports batch record parsing, filtering, data extraction (HTML table or JSON), and field explanation on hover.
+A full-featured web interface is hosted at **[corbin-c.github.io/jsmarc/](https://corbin-c.github.io/jsmarc/)**. It supports batch record parsing, filtering, data extraction (HTML table or JSON), and field explanation on hover.
 
 ## Contributing
 
