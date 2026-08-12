@@ -97,7 +97,7 @@ export function Sidebar({ onOpenHelp, onSubmit }: SidebarProps) {
 
       <Button
         className="mt-auto w-full"
-        disabled={!state.fileContent || state.isProcessing}
+        disabled={!state.isFileLoaded || state.isProcessing}
         onClick={onSubmit}
       >
         <Play className="size-4" />

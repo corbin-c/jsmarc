@@ -38,20 +38,15 @@ No bundler required. The source ships as TypeScript — run it directly with a T
 
 ### Browser
 
-The web application at `app/` imports the legacy `.js` source files directly, hosted on GitHub Pages. These `.js` files are kept in the repository for the web app's use but are excluded from the npm package. For new browser projects, import the `.ts` source directly from the repository:
-
-```js
-import * as MarcParser from "https://corbin-c.github.io/jsmarc/src/parser.ts";
-import * as MarcHelper from "https://corbin-c.github.io/jsmarc/src/helper.ts";
-```
+The web application at `app/` imports the legacy `.js` source files directly, hosted on GitHub Pages: [https://corbin-c.github.io/jsmarc/]
 
 ### Node.js
 
 Use native ESM imports with a TypeScript runtime such as [tsx](https://github.com/privatenumber/tsx):
 
 ```js
-import { parseRecord } from "jsmarc";
-import { explainRecord } from "jsmarc/helper";
+import { parseRecord } from 'jsmarc'
+import { explainRecord } from 'jsmarc/helper'
 ```
 
 ## Quick Start
@@ -59,20 +54,20 @@ import { explainRecord } from "jsmarc/helper";
 ### Node.js
 
 ```js
-import { parseRecord } from "jsmarc";
-import { explainRecord } from "jsmarc/helper";
+import { parseRecord } from 'jsmarc'
+import { explainRecord } from 'jsmarc/helper'
 
-const record = parseRecord(rawMarcString);
-const explained = await explainRecord(record, "marc21");
+const record = parseRecord(rawMarcString)
+const explained = await explainRecord(record, 'marc21')
 
-console.log(explained);
+console.log(explained)
 ```
 
 ### CLI (one-liner)
 
 ```bash
 # Fetch records and display with field explanations
-curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724&format=usmarc" | npx marc-node display - --format=marc21
+curl "https://web-z3950-master.onrender.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724&format=usmarc" | npx marc-node display - --format=marc21
 ```
 
 ## CLI Usage
@@ -89,31 +84,31 @@ tsx marc-node.ts COMMAND FILE [OPTIONS]
 
 ### Commands
 
-| Command | Description |
-|---------|-------------|
+| Command   | Description                                                                |
+| --------- | -------------------------------------------------------------------------- |
 | `display` | Parse and display records (with optional field explanation via `--format`) |
-| `filter`  | Filter records by field/subfield values |
-| `extract` | Extract specific fields as JSON |
-| `help`    | Show usage information |
+| `filter`  | Filter records by field/subfield values                                    |
+| `extract` | Extract specific fields as JSON                                            |
+| `help`    | Show usage information                                                     |
 
 ### Options
 
-| Option | Syntax | Default | Description |
-|--------|--------|---------|-------------|
-| `--encoding` | string | `utf8` | File encoding when reading from disk |
-| `--record-separator` | string | `\u001d` | Character that separates records in the batch |
-| `--field-separator` | string | `\u001e` | Field separator within a record |
-| `--subfield-separator` | string | `\u001f` | Subfield separator within a field |
-| `--format` | `marc21` or `unimarc` | — | Enrich display with field/subfield labels from definitions |
-| `--fields` | notation string | `*` | Field notation (e.g. `020$a,856$u`) — use `\` to escape `$` in shells |
-| `--values` | comma-separated | — | Values for filtering (quote values containing spaces) |
+| Option                 | Syntax                | Default  | Description                                                           |
+| ---------------------- | --------------------- | -------- | --------------------------------------------------------------------- |
+| `--encoding`           | string                | `utf8`   | File encoding when reading from disk                                  |
+| `--record-separator`   | string                | `\u001d` | Character that separates records in the batch                         |
+| `--field-separator`    | string                | `\u001e` | Field separator within a record                                       |
+| `--subfield-separator` | string                | `\u001f` | Subfield separator within a field                                     |
+| `--format`             | `marc21` or `unimarc` | —        | Enrich display with field/subfield labels from definitions            |
+| `--fields`             | notation string       | `*`      | Field notation (e.g. `020$a,856$u`) — use `\` to escape `$` in shells |
+| `--values`             | comma-separated       | —        | Values for filtering (quote values containing spaces)                 |
 
 ### Examples
 
 **Display all records with explained fields:**
 
 ```bash
-curl "https://web-z3950.herokuapp.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | npx marc-node display - --format=marc21
+curl "https://web-z3950-master.onrender.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | npx marc-node display - --format=marc21
 ```
 
 **Limit display to specific fields:**
@@ -131,13 +126,15 @@ npx marc-node extract /path/to/records.mrc --fields=100\$a,020\$a
 Output:
 
 ```json
-[{
-  "leader": "01208cam a22003014a 4500",
-  "fields": [
-    { "code": "020", "indicator": "  ", "subfields": [{ "code": "a", "value": "0066620724 (hc)" }] },
-    { "code": "100", "indicator": "1 ", "subfields": [{ "code": "a", "value": "Torvalds, Linus," }] }
-  ]
-}]
+[
+  {
+    "leader": "01208cam a22003014a 4500",
+    "fields": [
+      { "code": "020", "indicator": "  ", "subfields": [{ "code": "a", "value": "0066620724 (hc)" }] },
+      { "code": "100", "indicator": "1 ", "subfields": [{ "code": "a", "value": "Torvalds, Linus," }] }
+    ]
+  }
+]
 ```
 
 **Filter records by value:**
@@ -164,12 +161,12 @@ All exports from the parser and helper modules.
 
 Parse a raw MARC record string into a structured `MarcParser` object.
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `recordString` | `string` | *required* | Raw ISO 2709 MARC record |
-| `options.toParse` | `string \| string[]` | `"*"` | Field notation(s) to parse (e.g. `"020\$a,856\$u"` or `["020\$a"]`). `"*"` parses all fields. |
-| `options.fields` | `string` | `"\u001e"` | Custom field separator |
-| `options.subfields` | `string` | `"\u001f"` | Custom subfield separator |
+| Parameter           | Type                 | Default    | Description                                                                                   |
+| ------------------- | -------------------- | ---------- | --------------------------------------------------------------------------------------------- |
+| `recordString`      | `string`             | _required_ | Raw ISO 2709 MARC record                                                                      |
+| `options.toParse`   | `string \| string[]` | `"*"`      | Field notation(s) to parse (e.g. `"020\$a,856\$u"` or `["020\$a"]`). `"*"` parses all fields. |
+| `options.fields`    | `string`             | `"\u001e"` | Custom field separator                                                                        |
+| `options.subfields` | `string`             | `"\u001f"` | Custom subfield separator                                                                     |
 
 **Returns:** `MarcParser` — an object with the following shape:
 
@@ -202,11 +199,11 @@ Parse a raw MARC record string into a structured `MarcParser` object.
 
 Check if a parsed record contains matching values for a given field.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `parsedRecord` | `MarcParser` | A record returned by `parseRecord()` |
-| `fieldNotation` | `string` | Field notation (e.g. `"020\$a"`) |
-| `values` | `string[]` | Values to match against |
+| Parameter       | Type         | Description                          |
+| --------------- | ------------ | ------------------------------------ |
+| `parsedRecord`  | `MarcParser` | A record returned by `parseRecord()` |
+| `fieldNotation` | `string`     | Field notation (e.g. `"020\$a"`)     |
+| `values`        | `string[]`   | Values to match against              |
 
 **Returns:** `boolean` — `true` if the record matches at least one value.
 
@@ -214,8 +211,8 @@ Check if a parsed record contains matching values for a given field.
 
 Parse a field notation string into a predicate function used internally by the parser.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter        | Type     | Description                                                       |
+| ---------------- | -------- | ----------------------------------------------------------------- |
 | `notationString` | `string` | Comma-separated field notations (e.g. `"020\$a,856\$u"`) or `"*"` |
 
 **Returns:** `Function` — a filter function `(recordPart) => boolean` that tests if a record part matches.
@@ -225,8 +222,8 @@ Parse a field notation string into a predicate function used internally by the p
 Binary-safe string utility for byte-level length and slicing (handles multi-byte characters correctly in both browser and Node.js contexts).
 
 ```js
-bin.length(str)       // → number (byte length)
-bin.slice(str, start, end)  // → string (byte-level slice)
+bin.length(str) // → number (byte length)
+bin.slice(str, start, end) // → string (byte-level slice)
 ```
 
 #### `MARC`
@@ -234,8 +231,8 @@ bin.slice(str, start, end)  // → string (byte-level slice)
 Default configuration template with ISO 2709 separators:
 
 ```js
-MARC.recordSeparator   // "\u001d"
-MARC.fieldSeparator    // "\u001e"
+MARC.recordSeparator // "\u001d"
+MARC.fieldSeparator // "\u001e"
 MARC.subfieldSeparator // "\u001f"
 ```
 
@@ -249,10 +246,10 @@ The parser class. Always prefer the `parseRecord()` wrapper unless you need the 
 
 Enrich a parsed record with human-readable labels from MARC definition files.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `parsedRecord` | `MarcParser` | A record returned by `parseRecord()` |
-| `format` | `string` | Format key from `formats.json` (e.g. `"marc21"`, `"unimarc"`) |
+| Parameter      | Type         | Description                                                   |
+| -------------- | ------------ | ------------------------------------------------------------- |
+| `parsedRecord` | `MarcParser` | A record returned by `parseRecord()`                          |
+| `format`       | `string`     | Format key from `formats.json` (e.g. `"marc21"`, `"unimarc"`) |
 
 **Returns:** `Promise<object>` — the record with added `label` properties on fields, subfields, and indicators.
 
@@ -266,15 +263,15 @@ Same as `explainRecord` but operates on a single field object.
 
 Search for field/subfield codes by keyword in the definition files.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter      | Type     | Description                                     |
+| -------------- | -------- | ----------------------------------------------- |
 | `searchString` | `string` | Keyword to search (e.g. `"author"`, `"auteur"`) |
-| `format` | `string` | Format key (e.g. `"marc21"`, `"unimarc"`) |
+| `format`       | `string` | Format key (e.g. `"marc21"`, `"unimarc"`)       |
 
 **Returns:** `Promise<Array<{code: string, value: string}>>` — matching code/label pairs.
 
 ```js
-await searchField("auteur", "unimarc");
+await searchField('auteur', 'unimarc')
 // [
 //   { code: "200\$c", value: "Titre propre d'un auteur différent" },
 //   { code: "701\$4", value: "Auteur d'oeuvre adaptée ou continuée" },
@@ -324,10 +321,10 @@ The `src/parser.js`, `src/helper.js`, and `src/CLI.js` files are the original Ja
 
 JsMarc ships with definition files for two MARC variants:
 
-| Format | Source | License | Language |
-|--------|--------|---------|----------|
-| **MARC21** | Library of Congress | Public domain | English |
-| **UNIMARC** | ABES (Agence Bibliographique de l'Enseignement Supérieur) | CC BY-SA | French |
+| Format      | Source                                                    | License       | Language |
+| ----------- | --------------------------------------------------------- | ------------- | -------- |
+| **MARC21**  | Library of Congress                                       | Public domain | English  |
+| **UNIMARC** | ABES (Agence Bibliographique de l'Enseignement Supérieur) | CC BY-SA      | French   |
 
 Definitions provide human-readable labels for every field, subfield, and indicator value. These labels power the `explainRecord` and `searchField` APIs as well as the CLI's `--format` flag.
 
@@ -345,6 +342,7 @@ The `formats.json` file maps format names to their definition files:
 #### Adding a custom format
 
 1. Create a JSON file in `definitions/` following the existing schema (see `definitions/marc21.json` for reference):
+
    ```json
    {
      "010": {
@@ -357,20 +355,24 @@ The `formats.json` file maps format names to their definition files:
      }
    }
    ```
+
 2. Add an entry to `formats.json`:
+
    ```json
    {
      "myformat": "definitions/myformat.json"
    }
    ```
+
 3. Use it immediately:
+
    ```bash
    npx marc-node display records.mrc --format=myformat
    ```
 
 ### Web App
 
-A full-featured web interface is hosted at **[corbin-c.github.io/jsmarc/app/](https://corbin-c.github.io/jsmarc/app/)**. It supports batch record parsing, filtering, data extraction (HTML table or JSON), and field explanation on hover. The app uses [Workerify](https://github.com/corbin-c/workerify) to run JsMarc in Web Workers for non-blocking processing of large batches.
+A full-featured web interface is hosted at **[corbin-c.github.io/jsmarc/](https://corbin-c.github.io/jsmarc/)**. It supports batch record parsing, filtering, data extraction (HTML table or JSON), and field explanation on hover.
 
 ## Contributing
 
@@ -403,5 +405,4 @@ infringed, please open an issue.
 - **[Library of Congress](https://www.loc.gov/marc/)** for the MARC21 standard and public-domain field definitions
 - **[ABES](https://www.abes.fr/)** for the UNIMARC field definitions (CC BY-SA)
 - The MARC standards community for decades of cataloging infrastructure
-- **[Workerify](https://github.com/corbin-c/workerify)** for powering the web app's off-thread processing
 - **[Web-Z3950](https://github.com/corbin-c/web-z3950)** by the same author, used in CLI examples for fetching live records

@@ -5,8 +5,8 @@ export type AppMode = "display" | "extract" | "summarize"
 
 export interface AppState {
   // File
-  fileContent: string | null
   fileName: string
+  isFileLoaded: boolean
 
   // Mode
   mode: AppMode
@@ -39,7 +39,7 @@ export interface AppState {
 
 // --- Actions ---
 export type AppAction =
-  | { type: "SET_FILE"; content: string; name: string }
+  | { type: "SET_FILE"; name: string }
   | { type: "SET_MODE"; mode: AppMode }
   | { type: "SET_RECORD_SEPARATOR"; value: string }
   | { type: "SET_FIELD_SEPARATOR"; value: string }
@@ -57,8 +57,8 @@ export type AppAction =
 
 // --- Initial State ---
 export const initialState: AppState = {
-  fileContent: null,
   fileName: "",
+  isFileLoaded: false,
   mode: "display",
   recordSeparator: "\\u001d",
   fieldSeparator: "\\u001e",
@@ -79,7 +79,7 @@ export const initialState: AppState = {
 export function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
     case "SET_FILE":
-      return { ...state, fileContent: action.content, fileName: action.name }
+      return { ...state, fileName: action.name, isFileLoaded: true }
     case "SET_MODE":
       return { ...state, mode: action.mode }
     case "SET_RECORD_SEPARATOR":
@@ -107,7 +107,7 @@ export function appReducer(state: AppState, action: AppAction): AppState {
     case "SET_PROGRESS":
       return { ...state, progress: action.progress, progressMax: action.progressMax }
     case "RESET":
-      return { ...initialState, fileContent: state.fileContent, fileName: state.fileName }
+      return { ...initialState, fileName: state.fileName, isFileLoaded: state.isFileLoaded }
     default:
       return state
   }

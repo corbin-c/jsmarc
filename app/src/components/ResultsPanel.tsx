@@ -46,7 +46,7 @@ export function ResultsPanel() {
 
       {/* Results area */}
       <div className="flex-1 overflow-y-auto p-6">
-        {!state.fileContent ? (
+        {!state.isFileLoaded ? (
           <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
             Load a MARC file to get started.
           </div>

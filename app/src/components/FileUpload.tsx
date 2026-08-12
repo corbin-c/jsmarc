@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState, type DragEvent } from "react"
 import { useAppState } from "@/lib/context"
+import { setFileContent } from "@/lib/fileContentHolder"
 import { Upload } from "lucide-react"
 
 export function FileUpload() {
@@ -11,7 +12,8 @@ export function FileUpload() {
     const reader = new FileReader()
     reader.onload = (e) => {
       const content = e.target?.result as string
-      dispatch({ type: "SET_FILE", content, name: file.name })
+      setFileContent(content)
+      dispatch({ type: "SET_FILE", name: file.name })
     }
     reader.readAsText(file)
   }, [dispatch])
@@ -31,14 +33,14 @@ export function FileUpload() {
           isDragging
             ? "border-primary bg-primary/10"
             : "border-border hover:border-primary/50 hover:bg-accent/50"
-        } ${state.fileContent ? "border-green-500 bg-green-500/5" : ""}`}
+        } ${state.isFileLoaded ? "border-green-500 bg-green-500/5" : ""}`}
         onClick={() => inputRef.current?.click()}
         onDragOver={(e) => { e.preventDefault(); setIsDragging(true) }}
         onDragLeave={() => setIsDragging(false)}
         onDrop={onDrop}
       >
         <Upload className="size-5 text-muted-foreground" />
-        {state.fileContent ? (
+        {state.isFileLoaded ? (
           <p className="text-sm font-medium text-green-600 dark:text-green-400">{state.fileName}</p>
         ) : (
           <p className="text-sm text-muted-foreground">

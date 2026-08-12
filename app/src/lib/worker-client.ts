@@ -41,6 +41,14 @@ export function filterInWorker(record: string, notation: string, values: string[
   return send({ type: "filter", record, notation, values, options })
 }
 
+export function parseBatchInWorker(records: string[], options?: { toParse?: string; fields?: string; subfields?: string }): Promise<MarcRecord[]> {
+  return send({ type: "parseBatch", records, options })
+}
+
+export function filterBatchInWorker(records: string[], notation: string, values: string[], options?: { fields?: string; subfields?: string }): Promise<boolean[]> {
+  return send({ type: "filterBatch", records, notation, values, options })
+}
+
 export async function explainInWorker(
   record: string,
   format: string,

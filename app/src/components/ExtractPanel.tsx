@@ -1,6 +1,7 @@
-import { useState, type FC } from "react"
+import { useState } from "react"
 import { useAppState } from "@/lib/context"
-import { filterInWorker } from "@/lib/worker-client"
+import { getFileContent } from "@/lib/fileContentHolder"
+import { filterBatchInWorker } from "@/lib/worker-client"
 import { Button } from "./ui/button"
 import { Download } from "lucide-react"
 
@@ -10,14 +11,15 @@ function parseSep(raw: string): string {
   )
 }
 
-export const ExtractPanel: FC = () => {
+export const ExtractPanel = () => {
   const { state, dispatch } = useAppState()
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null)
   const [matchCount, setMatchCount] = useState<number | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   const process = async () => {
-    if (!state.fileContent) return
+    const fileContent = getFileContent()
+    if (!fileContent) return
     setError(null)
     setDownloadUrl(null)
     setMatchCount(null)
@@ -36,25 +38,31 @@ export const ExtractPanel: FC = () => {
         throw new Error("No values to filter provided")
       }
 
-      const rawRecords = state.fileContent.split(recordSep).filter(r => !["", "\n"].includes(r))
+      const rawRecords = fileContent.split(recordSep).filter(r => !["", "\n"].includes(r))
       const total = rawRecords.length
       dispatch({ type: "SET_PROGRESS", progress: 0, progressMax: total })
 
       const matches: string[] = []
+      const BATCH_SIZE = 50
 
-      for (let i = 0; i < rawRecords.length; i++) {
-        const passed = await filterInWorker(rawRecords[i], state.filterField, values, {
+      for (let i = 0; i < rawRecords.length; i += BATCH_SIZE) {
+        const batch = rawRecords.slice(i, i + BATCH_SIZE)
+        const filterResults = await filterBatchInWorker(batch, state.filterField, values, {
           fields: fieldSep,
           subfields: subfieldSep,
         })
-        if (passed) {
-          matches.push(rawRecords[i])
+        for (let j = 0; j < filterResults.length; j++) {
+          if (filterResults[j]) {
+            matches.push(batch[j])
+          }
         }
-        dispatch({ type: "SET_PROGRESS", progress: i + 1, progressMax: total })
 
-        if (i % 10 === 0) {
-          await new Promise(r => setTimeout(r, 0))
-        }
+        const batchEnd = Math.min(i + BATCH_SIZE, total)
+        dispatch({ type: "SET_PROGRESS", progress: batchEnd, progressMax: total })
+        setMatchCount(matches.length)
+
+        // Yield every batch
+        await new Promise(r => setTimeout(r, 0))
       }
 
       setMatchCount(matches.length)
