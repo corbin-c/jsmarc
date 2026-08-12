@@ -84,7 +84,7 @@ export default defineConfig(({ command }) => ({
     },
     serveDefinitionsPlugin(),
   ],
-  base: command === "serve" ? "/" : "/jsmarc/app/",
+  base: command === "serve" ? "/" : "/jsmarc/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "./src"),
