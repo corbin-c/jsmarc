@@ -1,5 +1,4 @@
 import type { Field, MarcRecord } from "./parser.js";
-
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -37,24 +36,35 @@ const DEFINITIONS = "formats.json";
 
 type JsonPrimitive = Record<string, unknown>;
 
-const getJson: (file: string) => JsonPrimitive | Promise<JsonPrimitive> = (() => {
-  try {
-    // Node.js context: require is available via tsx/vitest runtime
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const nodeRequire = (globalThis as Record<string, unknown>).require as
-      | ((id: string) => typeof import("node:fs"))
-      | undefined;
-    if (nodeRequire) {
-      const { readFileSync } = nodeRequire("fs");
-      return (file: string): JsonPrimitive =>
-        JSON.parse(readFileSync(file, "utf8")) as JsonPrimitive;
+const getJson: (file: string) => Promise<JsonPrimitive> = (() => {
+  // Lazy-loaded Node.js modules (only in Node.js runtime)
+  let nodeLoad: Promise<{ readFileSync: (p: string, enc: string) => string; resolve: (f: string) => string }> | null = null;
+
+  const loadNode = (): Promise<{ readFileSync: (p: string, enc: string) => string; resolve: (f: string) => string }> => {
+    if (!nodeLoad) {
+      nodeLoad = (async () => {
+        const fs = await import("node:fs");
+        const path = await import("node:path");
+        const url = await import("node:url");
+        const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+        const projectRoot = path.resolve(__dirname, "..");
+        return {
+          readFileSync: fs.readFileSync as (p: string, enc: string) => string,
+          resolve: (file: string) => path.resolve(projectRoot, file),
+        };
+      })();
     }
-    throw new Error("require not available");
-  } catch {
+    return nodeLoad;
+  };
+
+  return async (file: string): Promise<JsonPrimitive> => {
+    if (typeof process !== "undefined" && process.versions?.node) {
+      const node = await loadNode();
+      return JSON.parse(node.readFileSync(node.resolve(file), "utf8")) as JsonPrimitive;
+    }
     // Browser fallback
-    return async (file: string): Promise<JsonPrimitive> =>
-      (await (await fetch(file)).json()) as JsonPrimitive;
-  }
+    return (await (await fetch(file)).json()) as JsonPrimitive;
+  };
 })();
 
 // ---------------------------------------------------------------------------
@@ -63,21 +73,13 @@ const getJson: (file: string) => JsonPrimitive | Promise<JsonPrimitive> = (() =>
 
 let formats: Promise<FormatMap> = ((formDefs: string) => {
   return new Promise<FormatMap>(async (resolve) => {
-    let prefix = "../";
-    let defs: Record<string, string>;
-
-    try {
-      defs = (await getJson(prefix + formDefs)) as unknown as Record<string, string>;
-    } catch {
-      prefix = "";
-      defs = (await getJson(prefix + formDefs)) as unknown as Record<string, string>;
-    }
+    const defs = (await getJson(formDefs)) as unknown as Record<string, string>;
 
     const result: Record<string, Record<string, FieldDefinition>> = {};
     await Promise.all(
       Object.keys(defs).map(async (key) => {
         result[key] = (await getJson(
-          prefix + defs[key],
+          defs[key],
         )) as unknown as Record<string, FieldDefinition>;
       }),
     );

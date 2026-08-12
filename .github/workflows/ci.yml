@@ -48,7 +48,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: app/dist
           destination_dir: app
-          keep_files: true
+          keep_files: false
 
   publish:
     name: Publish to npm
