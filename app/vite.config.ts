@@ -1,9 +1,9 @@
 import fs from "fs"
+import { copyFileSync, existsSync, mkdirSync } from "node:fs"
 import path from "path"
 import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig, type Plugin } from "vite"
-import { viteStaticCopy } from "vite-plugin-static-copy"
 
 function serveDefinitionsPlugin(): Plugin {
   return {
@@ -57,18 +57,31 @@ export default defineConfig(({ command }) => ({
   plugins: [
     react(),
     tailwindcss(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: "../definitions/*",
-          dest: "definitions",
-        },
-        {
-          src: "../formats.json",
-          dest: ".",
-        },
-      ],
-    }),
+    {
+      name: "copy-static-assets",
+      apply: "build",
+      closeBundle() {
+        const distDir = path.resolve(import.meta.dirname, "dist");
+        const projectRoot = path.resolve(import.meta.dirname, "..");
+
+        // Copy formats.json to dist/
+        copyFileSync(
+          path.resolve(projectRoot, "formats.json"),
+          path.resolve(distDir, "formats.json"),
+        );
+
+        // Copy definitions/* to dist/definitions/
+        const definitionsDest = path.resolve(distDir, "definitions");
+        if (!existsSync(definitionsDest)) mkdirSync(definitionsDest, { recursive: true });
+        const definitionsSrc = path.resolve(projectRoot, "definitions");
+        for (const file of fs.readdirSync(definitionsSrc)) {
+          copyFileSync(
+            path.resolve(definitionsSrc, file),
+            path.resolve(definitionsDest, file),
+          );
+        }
+      },
+    },
     serveDefinitionsPlugin(),
   ],
   base: command === "serve" ? "/" : "/jsmarc/app/",
