@@ -1,0 +1,32 @@
+1. ESM strict mode this crash (parser.ts)
+The original analyzeFieldNotation accessed this.parentCode without a guard. In CommonJS/sloppy mode, this defaults to globalThis — so it silently worked. But in ESM strict mode, this is undefined, causing:
+TypeError: Cannot read properties of undefined (reading 'parentCode')
+Fix: this.parentCode → this?.parentCode
+2. Two wrong test assertions (parser.test.ts)
+The original logic had surprising fallthrough behavior that the test assertions didn't match:
+- fn({code: "20"}) when called without a bound context returns true (not false) — because a short code without this hits the final return true fallthrough.
+- When parentCode "999" is not in the notation "020$a,856$u", the filtered array is empty and .some() returns false (not true).
+3. Non-deterministic tests (helper.test.ts)
+Two tests used .find() predicates like f => f.indicator !== undefined to pick "any field with indicators." But some MARC21 records have fields with indicators that aren't in the MARC21 format definition — explainField then returns the field unchanged (no indicators_label), breaking the assertion.
+Fix: Narrowed to f => f.code === "245" && f.indicator !== undefined — title field is always defined.
+4. Dead code in old marc-node
+The original marc-node defined let tabToSpace = (str) => str.replace(/\t/g,"    "); — but never called it anywhere. Removed in the TypeScript port.
+5. Type-changing variable pattern (helper.ts)
+The original helper.js started formats as a Promise, then reassigned it to the resolved value after loading:
+(async () => {
+  formats = await formats;
+})();
+This works in JS but breaks TypeScript's type tracking. The TS version keeps it as Promise<FormatMap> consistently.
+6. TypeScript-unfriendly Object.assign pattern (parser.ts)
+The Record class initializes all its properties with Object.assign(this, JSON.parse(JSON.stringify(MARC))). TypeScript can't statically prove this, so it flagged 7 properties as uninitialized. Fixed with ! definite assignment assertions.
+
+Here are the two oddities from src/CLI.js:
+1. No-op — process.stdout.columns; (line 3)
+Reads the property and discards it. Does absolutely nothing. In the TypeScript port, this was rewritten as process.stdout.columns ?? 80 and actually used as a fallback for when the terminal width is undefined (e.g., when piped).
+2. out.push[out.length-1] bug — line 15
+The developer meant out[out.length-1] (check if the last pushed element equals line to avoid duplicates). But they wrote out.push[out.length-1], which indexes into the push function object as if it were an array — always returning undefined. So undefined != line is always true, and the duplicate-avoidance check is completely dead. The intended logic was:
+// Bug: out.push[out.length-1]  → always undefined
+if ((i == a.length-1) && (out.push[out.length-1] != line)) {
+// Meant: out[out.length-1]  → actual last element
+if ((i == a.length-1) && (out[out.length-1] != line)) {
+Both bugs were carried over into src/CLI.ts — they're still there. Want me to fix them?

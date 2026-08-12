@@ -1,0 +1,146 @@
+[
+  {
+    "recordSeparator": "\u001d",
+    "fieldSeparator": "\u001e",
+    "subfieldSeparator": "\u001f",
+    "rawRecord": "01660    a2200133   4500008004100000022001400041040001200055041000800067245001200075256002700087260001900114520134000133856005301473\u001e161103e||||||||xx |||||s|||||||||0|fre|d\u001e  \u001fa2498-0730\u001e  \u001faFrMaCLE\u001e  \u001fafre\u001e00\u001faAnatoli\u001e  \u001faDonnÃ©es informatiques\u001e  \u001fbCNRS Ãditions\u001e  \u001faAnatoli est la nouvelle sÃ©rie des Cahiers dâÃ©tudes sur la MÃ©diterranÃ©e orientale et le monde turco-iranine (CEMOTI). Cette publication annuelle est consacrÃ©e Ã  lâÃ©tude pluridisciplinaire de lâespace qui sâÃ©tend de lâAdriatique Ã  la Caspienne. Elle sâintÃ©resse aux cultures - grecque, latine, slave, turque, persane, gÃ©orgienne, armÃ©nienne, juive, etc - qui lâont habitÃ© et faÃ§onnÃ©. Les territoires de cet espace aujourdâhui fragmentÃ©, furent jadis unifiÃ©s, au moins partiellement, par les pouvoirs impÃ©riaux, dont le dernier fut lâempire ottoman. Ils en gardent bien des traits communs, souvent sous forme latente. Lâimportance de cet espace pour lâUnion europÃ©enne est une Ã©vidence.  Anatoli is the new serie of Cahiers d'Ã©tudes sur la MÃ©diterranÃ©e orientale et le monde turco-iranine (CEMOTI).This annual publication is devoted to the interdisciplinary study of the space between the Adriatic and Caspian seas. It focused on Greak, Latin, Slavish, Turkish, Persian, Georgian, Armenian, Jewish cutlures... which inhabited and shaped it. Today the territories of theses regions are fragmented but in the past they were unified by imperial powers, the Ottoman empire being the last one. They preserved numerous common features. The importance of the space for the European Uniion is obvious.\u001e  \u001fuhttp://journals.openedition.org/anatoli\u001fyAnatoli\u001e",
+    "leader": "01660    a2200133   4500",
+    "directory": [
+      {
+        "code": "008",
+        "length": "0041",
+        "position": "00000"
+      },
+      {
+        "code": "022",
+        "length": "0014",
+        "position": "00041"
+      },
+      {
+        "code": "040",
+        "length": "0012",
+        "position": "00055"
+      },
+      {
+        "code": "041",
+        "length": "0008",
+        "position": "00067"
+      },
+      {
+        "code": "245",
+        "length": "0012",
+        "position": "00075"
+      },
+      {
+        "code": "256",
+        "length": "0027",
+        "position": "00087"
+      },
+      {
+        "code": "260",
+        "length": "0019",
+        "position": "00114"
+      },
+      {
+        "code": "520",
+        "length": "1340",
+        "position": "00133"
+      },
+      {
+        "code": "856",
+        "length": "0053",
+        "position": "01473"
+      }
+    ],
+    "fields": [
+      {
+        "code": "008",
+        "value": "161103e||||||||xx |||||s|||||||||0|fre|d"
+      },
+      {
+        "code": "022",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "2498-0730"
+          }
+        ]
+      },
+      {
+        "code": "040",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "FrMaCLE"
+          }
+        ]
+      },
+      {
+        "code": "041",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "fre"
+          }
+        ]
+      },
+      {
+        "code": "245",
+        "indicator": "00",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "Anatoli"
+          }
+        ]
+      },
+      {
+        "code": "256",
+        "indicator": "  ",
+        "subfields": [
+          {
+            "code": "a",
+            "value": "DonnÃ©es informatique"
+          }
+        ]
+      },
+      {
+        "code": "260",
+        "value": "s"
+      },
+      {
+        "code": "520",
+        "value": "ons"
+      },
+      {
+        "code": "856",
+        "value": "s common features. The importance of the space for th"
+      }
+    ],
+    "@fields": {
+      "code": "",
+      "indicator": "  ",
+      "subfields": [],
+      "value": ""
+    },
+    "@directory": {
+      "code": [
+        0,
+        3
+      ],
+      "length": [
+        3,
+        7
+      ],
+      "position": [
+        7,
+        12
+      ]
+    },
+    "parseCode": "*",
+    "header": "01660    a2200133   4500008004100000022001400041040001200055041000800067245001200075256002700087260001900114520134000133856005301473\u001e"
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "name": "jsmarc",
+  "version": "2.0.0",
+  "description": "A zero-dependency library for parsing, filtering, extracting, and explaining bibliographic MARC records",
+  "type": "module",
+  "main": "./src/parser.ts",
+  "exports": {
+    ".": "./src/parser.ts",
+    "./helper": "./src/helper.ts",
+    "./cli": "./src/cli.ts"
+  },
+  "bin": {
+    "marc-node": "./marc-node.ts"
+  },
+  "files": [
+    "src/",
+    "definitions/",
+    "formats.json",
+    "marc-node.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "cli": "tsx marc-node.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corbin-c/jsmarc.git"
+  },
+  "keywords": ["marc", "marc21", "unimarc", "iso2709", "bibliographic", "library", "cataloging", "parser"],
+  "author": "Clément Corbin",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0"
+  },
+  "dependencies": {
+    "tsx": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
