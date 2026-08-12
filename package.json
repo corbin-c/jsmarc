@@ -1,6 +1,6 @@
 {
   "name": "jsmarc",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A zero-dependency library for parsing, filtering, extracting, and explaining bibliographic MARC records",
   "type": "module",
   "main": "./src/parser.ts",
