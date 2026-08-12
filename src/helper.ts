@@ -35,7 +35,6 @@ export interface ExplainedRecord extends Omit<MarcRecord, "fields"> {
 const DEFINITIONS = "formats.json";
 
 type JsonPrimitive = Record<string, unknown>;
-
 const getJson: (file: string) => Promise<JsonPrimitive> = (() => {
   // Lazy-loaded Node.js modules (only in Node.js runtime)
   let nodeLoad: Promise<{ readFileSync: (p: string, enc: string) => string; resolve: (f: string) => string }> | null = null;
@@ -43,14 +42,14 @@ const getJson: (file: string) => Promise<JsonPrimitive> = (() => {
   const loadNode = (): Promise<{ readFileSync: (p: string, enc: string) => string; resolve: (f: string) => string }> => {
     if (!nodeLoad) {
       nodeLoad = (async () => {
-        const fs = await import("node:fs");
-        const path = await import("node:path");
-        const url = await import("node:url");
-        const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+        const fs: any = await import("no" + "de:fs");
+        const path: any = await import("no" + "de:path");
+        const urlMod: any = await import("no" + "de:url");
+        const __dirname = path.dirname(urlMod.fileURLToPath(import.meta.url));
         const projectRoot = path.resolve(__dirname, "..");
         return {
           readFileSync: fs.readFileSync as (p: string, enc: string) => string,
-          resolve: (file: string) => path.resolve(projectRoot, file),
+          resolve: (file: string) => path.resolve(projectRoot, file) as string,
         };
       })();
     }
