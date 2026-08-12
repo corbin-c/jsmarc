@@ -63,7 +63,7 @@ console.log(explained)
 
 ```bash
 # Fetch records and display with field explanations
-curl "https://web-z3950-master.onrender.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724&format=usmarc" | npx marc-node display - --format=marc21
+curl "https://z3950.nibroc.fr/?server=lx2.loc.gov:210/LCDB&isbn=0066620724&format=usmarc" | npx marc-node display - --format=marc21
 ```
 
 ## CLI Usage
@@ -104,7 +104,7 @@ tsx marc-node.ts COMMAND FILE [OPTIONS]
 **Display all records with explained fields:**
 
 ```bash
-curl "https://web-z3950-master.onrender.com/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | npx marc-node display - --format=marc21
+curl "https://z3950.nibroc.fr/?server=lx2.loc.gov:210/LCDB&isbn=0066620724,0596001312&format=usmarc" | npx marc-node display - --format=marc21
 ```
 
 **Limit display to specific fields:**
