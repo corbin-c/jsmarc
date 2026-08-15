@@ -293,13 +293,10 @@ jsmarc/
 ├── samples/                # Sample MARC record files
 ├── src/                    # Core source modules
 │   ├── parser.ts           # Main MARC record parser (TypeScript)
-│   ├── parser.js           # Legacy JS — used by web app via GitHub Pages
 │   ├── parser.test.ts      # Vitest test suites
 │   ├── helper.ts           # Field explanation & search via definitions
-│   ├── helper.js           # Legacy JS — used by web app via GitHub Pages
 │   ├── helper.test.ts
 │   ├── CLI.ts              # Terminal display utilities (TypeScript)
-│   ├── CLI.js              # Legacy JS — used by web app via GitHub Pages
 ├── marc-node.ts            # Node.js CLI executable (TypeScript, published as bin)
 ├── formats.json            # Registry mapping format names to definition files
 ├── rec.mrc                 # Sample record file
@@ -308,10 +305,6 @@ jsmarc/
 ├── vitest.config.ts        # Vitest test runner configuration
 └── LICENSE                 # GNU GPL v3
 ```
-
-### Notes on the legacy `.js` files
-
-The `src/parser.js`, `src/helper.js`, and `src/CLI.js` files are the original JavaScript implementations kept for backward compatibility with the web application at `app/`. They are excluded from the npm package. The TypeScript source (`.ts` files) is the canonical, maintained codebase that ships with the npm package.
 
 ## Supported Formats
 
